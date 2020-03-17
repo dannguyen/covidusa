@@ -8,8 +8,8 @@ from sys import stderr
 DEST_PATH = Path('data/fused/jhcsse_normalized.csv')
 SRC_DIR = Path('data/collected/jhcsse/')
 SRC_FILES = {
-    'timeseries_confirmed': SRC_DIR.joinpath('timeseries_confirmed.csv'),
-    'timeseries_deaths': SRC_DIR.joinpath('timeseries_deaths.csv')
+    'confirmed': SRC_DIR.joinpath('timeseries_confirmed.csv'),
+    'deaths': SRC_DIR.joinpath('timeseries_deaths.csv')
 }
 
 COMMON_HEADERS = ('country_region', 'province_state', 'latitude', 'longitude')
