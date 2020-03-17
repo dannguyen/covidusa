@@ -107,13 +107,14 @@ def wrangle_state_series(series):
 def main():
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     srcdata = _load_src_data()
-    outdata = extract_states_metas()
+    statedata = extract_states_metas()
 
-    for state_ab, sdict in outdata.items():
+    for state_ab, sdict in statedata.items():
         _series = extract_state_series(state_ab, sdict['state']['name'], srcdata)
         sdata = wrangle_state_series(_series)
         sdict.update(sdata)
 
+    outdata = {'states': statedata}
 
     outtext = json.dumps(outdata, indent=2)
     DEST_PATH.write_text(outtext)
