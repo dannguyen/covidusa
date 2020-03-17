@@ -1,160 +1,53 @@
-# pydataproject-template
-
-**Dan's template for Python-based data-wrangling projects**
-
-## Why? 
-
-Because I always forget how to do this stuff, when starting new projects... :(
-
-## How to use
-
-Clone this repo and install `myfoo` as a local project:
-
-```sh
-$ git clone https://github.com/dannguyen/pydataproject-template.git
-$ cd pydataproject-template
-$ pip install -e .
-$ python myfoo  # prints hello world
-```
-
-To see an example of how the [Makefile](Makefile) executes the data-processing pipeline, e.g. creating the `data/sqlized.sqlite` database from [data/stashed/hello.txt](data/stashed/hello.txt):
-
-```sh
-$ make ALL
-```
+# covid19-change-tracker
 
 
-To run tests:
+Data courtesy of the daily snapshots from [Johns Hopkins Center for Systems Science and Engineering](https://systems.jhu.edu/research/public-health/ncov/)
 
-```sh
-$ pytest
-```
+https://github.com/CSSEGISandData/COVID-19
 
-
-## Stages of data work
-
-
-### stash
-
-the raw, original data. In its original form, including disparate file formats and across multiple files:
-
-[data/stashed/hello.txt](data/stashed/hello.txt):
-
-```
-name    birthday    city
-Hopper, Grace   12/9/1906   NYC
-Kernighan, Brian    1/1/1942    Toronto
-Apple, Tim  11/1/1960   Mobile
-```
+- Timeseries confirmed: https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv
+- Timeseries deaths: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv
+- Daily reports: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/03-16-2020.csv
 
 
-[data/stashed/world.txt](data/stashed/world.txt):
+## Other good trackers
+
+- JH's Desktop tracker: https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
+- https://ncov2019.live/data
+- https://covidtracking.com/
 
 
-```
-name    birthday    city
-Cage, Nicolas   1/7/1964    Long Beach
-Weaver, Sigourney   10/8/1949   Manhattan
-```
+## TODO
+
+- rename lookups/us_states.csv to lookups/fips.csv
+- wrangle places.csv
+- wrangle us_state_counts
+- wrangle country_counts for main countries: iran, china, south_korea, italy, canada, mexico, uk
+- optionally: make a us_cities count 
+- wrangle fields should be:
+    - state, name, fips, current_day_confirmed, current_day_deaths, yesterday_confirmed, previous_7days_confirmed, previous_14days_confirmed, date_first_confirmed
+
+- get census counts
 
 
-### collate
+### data insights
 
-This step gathers all the original data files and:
-
-- converts the file formats, e.g. getting CSV out of PDF, XLS, HTML, etc.
-- concatenates the data into a single file, when the original data was split across multiple files (e.g. by year)
-
-Very little to no cleaning is done, with the exception of cleaning up header names and changing column order.
-
-```sh
-$ make collate
-```
-
-- calls [scripts/collate.py](scripts/collate.py)
-
-Which converts and concatenates the 2 stashed tab-delimited files into a single CSV:
-
-[data/collated/helloworld.csv](data/collated/helloworld.csv)
-
-```
-source,full_name,birthdate,birthplace
-hello,"Hopper, Grace",12/9/1906,NYC
-hello,"Kernighan, Brian",1/1/1942,Toronto
-hello,"Apple, Tim",11/1/1960,Mobile
-world,"Cage, Nicolas",1/7/1964,Long Beach
-world,"Weaver, Sigourney",10/8/1949,Manhattan
-
-```
+- For each state, show:
+    - infections per capita
+    - earliest infection
+    - day to day change
+    - weekly change
+    - 14 day change
 
 
-A `source` column is added to keep track of where each data record came from (e.g. either the `hello` or the `world` file). Existing columns are renamed, e.g. `name` to `full_name`, `birthday` to `birthdate`, and `city` to `birthplace`. But otherwise, the actual content of the data is untouched. 
+- D3
+    - load csv, show basic numbers
+    - Make data table listing each state
 
-Think of the **collate** step as doing the least amount of work and data alteration to deliver the most convenient, easy-to-understand files for the person doing the next phase of **wrangling**.
-
-
-### wrangle
-
-Wrangle is a catch-all term for data transformation, cleaning, filtering, tidying, and reconciling, i.e. when the data becomes all but impossible to revert to its original "stashed" form. Which is *fine* – this kind of irreversible work is needed with real-world data, which wasn't collected or structured to accommodate whatever interesting and bespoke analysis and project you have in mind. 
-
-
-Running the `make wrangle` step simply executes the [scripts/wrangle.py](scripts/wrangle.py) file. Which reads from [data/collated/helloworld.csv](data/collated/helloworld.csv) and produces [data/wrangled/helloworld.csv](data/wrangled/helloworld.csv):
+- Svelte
+    - Make state endpoints/click events
+    - get state shapefiles
 
 
-```
-source,last_name,first_name,current_age,birthdate,birthplace
-hello,Apple,Tim,59,1960-11-01,Mobile
-world,Cage,Nicolas,55,1964-01-07,Long Beach
-hello,Hopper,Grace,112,1906-12-09,NYC
-hello,Kernighan,Brian,77,1942-01-01,Toronto
-world,Weaver,Sigourney,70,1949-10-08,Manhattan
-```
-
-
-Because the example data is pretty trivial, there aren't any irreversible steps. But you can see that the data itself has been transformed and augmented far beyond what the **collate** step did:
-
-- `full_name` column was parsed and split into `last_name` and `first_name`
-- `birthdate` column was reformatted from `M/D/YYYY` to iso8601's `yyyy-mm-dd`
-- `current_age` column is derived from `birthdate`
-
-
-### sqlize
-
-I find SQL to be one of the fastest and most convenient ways to explore newly organized data (e.g. tabular data, via collated and wrangled), especially with the ubiquity of SQLite.
-
-In this template repo I've included a shell script, [scripts/sqlize.sh](scripts/sqlize.sh), that reads the CSVs from data/collated and data/wrangled and, from each CSV, creates a quick and dumb table (i.e. every field is just plain text), e.g. `collated_helloworld` and `wrangled_helloworld`, and throws it in a file, [data/myfoo.sqlite](data/myfoo.sqlite)
-
-Oftentimes, with a very complicated data set, the wrangling process is a lot of trial and error. I find writing SQL queries to do sanity checks and aggregations more efficient than R and pandas, generally, but everyone has differing opinions and tolerances of SQL :)
-
-Run `make sqlize` to build [data/myfoo.sqlite](data/myfoo.sqlite). Or, run the data work from the start with `make ALL`
- 
-
-
-
-## Examples in action
-
-- https://github.com/storydrivendatasets/white_house_salaries
-
-
-## Tree inventory
-
-```
-├── data
-|   ├── myfoo.sqlite      -- a quick database created by `make sqlize`
-|   | 
-│   ├── stashed             -- store your original and immutable datafiles here
-│   └── wrangled            -- the end-result of wrangling, ideally csv files
-|
-├── data-manifest.yaml      -- lightweight log of where you got your data
-|
-├── myfoo                   -- python package for data processing scripts
-├── scripts                 -- helper scripts, not necessarily python
-└── tests                   -- tests for your python package
-```
-
-
-## Resources
-
-- This [great answer to the question, *Importing modules from parent folder*](https://stackoverflow.com/a/50194143/160863), is something I always forget how to do.
-
+# make a separate front-end site? (nah)
 
