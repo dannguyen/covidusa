@@ -10,14 +10,14 @@ STUB_STASHED = data/stashed/hello.txt \
 help:
 	@echo 'Run `make ALL` to see how things run from scratch'
 
-ALL: collect fuse wrangle build
+ALL: collect fuse wrangle site
 
 
-build: data/wrangled/state_summaries.json
+site: data/wrangled/state_summaries.json
 
 	cp data/wrangled/state_summaries.json jekyllsite/_data/state_summaries.json
-	cd jekyllsite && bundle exec jekyll build
-	rsync -av jekyllsite/_site/* docs/
+	cd jekyllsite && bundle exec jekyll build --incremental
+	rsync -arv --checksum jekyllsite/_site/ docs
 
 
 clean:
