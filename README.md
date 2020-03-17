@@ -1,7 +1,21 @@
 # covid19-change-tracker
 
+Visit it at: [https://dannguyen.github.io/covidusa](https://dannguyen.github.io/covidusa)
+
+
+## Dev notes
+
+To collect the data, normalize (i.e. fuse), wrangle, and then build the jekyll site into /docs, run the `make ALL` task:
+
+```sh
+$ make ALL
+```
+
+
+## Resources
 
 Data courtesy of the daily snapshots from [Johns Hopkins Center for Systems Science and Engineering](https://systems.jhu.edu/research/public-health/ncov/)
+
 
 https://github.com/CSSEGISandData/COVID-19
 

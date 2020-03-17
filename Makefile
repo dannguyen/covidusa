@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY : clean help ALL
+.PHONY : clean help ALL wrangle build
 
 SQLIZED_DB = data/myfoo.sqlite
 STUB_WRANGLED = data/wrangled/helloworld.csv
@@ -10,60 +10,28 @@ STUB_STASHED = data/stashed/hello.txt \
 help:
 	@echo 'Run `make ALL` to see how things run from scratch'
 
-ALL: clean sqlize
+ALL: collect fuse wrangle build
 
 
-clean: clean_sqlize
-	@echo --- Cleaning stubs
-	rm -f $(STUB_WRANGLED)
-	rm -f $(STUB_COLLATED)
+build: data/wrangled/state_summaries.json
+
+	cp data/wrangled/state_summaries.json jekyllsite/_data/state_summaries.json
+	cd jekyllsite && bundle exec jekyll build
+	rsync -av jekyllsite/_site/* docs/
 
 
-clean_sqlize:
-	test -f $(SQLIZED_DB)  && rm $(SQLIZED_DB) || true
-
-# change sqlize task to do something else besides sqlize_bootstrap.sh,
-# when you need something more sophisticated
-sqlize: $(SQLIZED_DB)
-# create data/sqlized/mydata.sqlite from CSVs in wrangled
-$(SQLIZED_DB): wrangle clean_sqlize
-	@echo ""
-	@echo --- SQLizing tables $@
-	@echo
-	./scripts/sqlize.sh \
-      $(SQLIZED_DB) data/collated collated
-
-	@echo ""
-	@echo "---"
-	./scripts/sqlize.sh \
-      $(SQLIZED_DB) data/wrangled wrangled
+clean:
+	@echo --- Cleaning derivations
 
 
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo "--- Open database with this command:"
-	@echo ""
-	@echo "      " open $(SQLIZED_DB)
+collect:
+	./scripts/collect_jhcsse_data.py
 
+fuse:
+	./scripts/fuse_jhcsse_data.py
 
-# wrangle task should ideally call wrangling scripts
-# e.g. myfoo/wrangle/my_wrangler.py
-wrangle: $(STUB_WRANGLED)
+wrangle: data/wrangled/state_summaries.json
 
-$(STUB_WRANGLED): $(STUB_COLLATED) ./scripts/wrangle.py
-	@echo ""
-	@echo --- Wrangling $@
-	@echo
-
+data/wrangled/state_summaries.json:
 	./scripts/wrangle.py
-
-
-collate: $(STUB_COLLATED)
-
-$(STUB_COLLATED): $(STUB_STASHED) ./scripts/collate.py
-	@echo ""
-	@echo --- Collating $@
-
-	./scripts/collate.py
 

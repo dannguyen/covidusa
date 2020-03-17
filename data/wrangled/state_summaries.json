@@ -1,11 +1,9 @@
 {
-  "states": {
-    "AL": {
-      "state": {
-        "postal_code": "AL",
-        "name": "Alabama",
-        "fips": "01"
-      },
+  "states": [
+    {
+      "abbr": "AL",
+      "name": "Alabama",
+      "fips": "01",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 29,
@@ -29,12 +27,10 @@
         "14": {}
       }
     },
-    "AK": {
-      "state": {
-        "postal_code": "AK",
-        "name": "Alaska",
-        "fips": "02"
-      },
+    {
+      "abbr": "AK",
+      "name": "Alaska",
+      "fips": "02",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 1,
@@ -58,12 +54,10 @@
         "14": {}
       }
     },
-    "AZ": {
-      "state": {
-        "postal_code": "AZ",
-        "name": "Arizona",
-        "fips": "04"
-      },
+    {
+      "abbr": "AZ",
+      "name": "Arizona",
+      "fips": "04",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 18,
@@ -99,12 +93,10 @@
         }
       }
     },
-    "AR": {
-      "state": {
-        "postal_code": "AR",
-        "name": "Arkansas",
-        "fips": "05"
-      },
+    {
+      "abbr": "AR",
+      "name": "Arkansas",
+      "fips": "05",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 22,
@@ -128,12 +120,10 @@
         "14": {}
       }
     },
-    "CA": {
-      "state": {
-        "postal_code": "CA",
-        "name": "California",
-        "fips": "06"
-      },
+    {
+      "abbr": "CA",
+      "name": "California",
+      "fips": "06",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 557,
@@ -169,12 +159,10 @@
         }
       }
     },
-    "CO": {
-      "state": {
-        "postal_code": "CO",
-        "name": "Colorado",
-        "fips": "08"
-      },
+    {
+      "abbr": "CO",
+      "name": "Colorado",
+      "fips": "08",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 160,
@@ -204,12 +192,10 @@
         "14": {}
       }
     },
-    "CT": {
-      "state": {
-        "postal_code": "CT",
-        "name": "Connecticut",
-        "fips": "09"
-      },
+    {
+      "abbr": "CT",
+      "name": "Connecticut",
+      "fips": "09",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 30,
@@ -233,12 +219,10 @@
         "14": {}
       }
     },
-    "DE": {
-      "state": {
-        "postal_code": "DE",
-        "name": "Delaware",
-        "fips": "10"
-      },
+    {
+      "abbr": "DE",
+      "name": "Delaware",
+      "fips": "10",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 8,
@@ -262,12 +246,10 @@
         "14": {}
       }
     },
-    "DC": {
-      "state": {
-        "postal_code": "DC",
-        "name": "District of Columbia",
-        "fips": "11"
-      },
+    {
+      "abbr": "DC",
+      "name": "District of Columbia",
+      "fips": "11",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 22,
@@ -291,12 +273,10 @@
         "14": {}
       }
     },
-    "FL": {
-      "state": {
-        "postal_code": "FL",
-        "name": "Florida",
-        "fips": "12"
-      },
+    {
+      "abbr": "FL",
+      "name": "Florida",
+      "fips": "12",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 155,
@@ -332,12 +312,10 @@
         }
       }
     },
-    "GA": {
-      "state": {
-        "postal_code": "GA",
-        "name": "Georgia",
-        "fips": "13"
-      },
+    {
+      "abbr": "GA",
+      "name": "Georgia",
+      "fips": "13",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 121,
@@ -367,12 +345,10 @@
         "14": {}
       }
     },
-    "HI": {
-      "state": {
-        "postal_code": "HI",
-        "name": "Hawaii",
-        "fips": "15"
-      },
+    {
+      "abbr": "HI",
+      "name": "Hawaii",
+      "fips": "15",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 7,
@@ -402,12 +378,10 @@
         "14": {}
       }
     },
-    "ID": {
-      "state": {
-        "postal_code": "ID",
-        "name": "Idaho",
-        "fips": "16"
-      },
+    {
+      "abbr": "ID",
+      "name": "Idaho",
+      "fips": "16",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 5,
@@ -431,12 +405,10 @@
         "14": {}
       }
     },
-    "IL": {
-      "state": {
-        "postal_code": "IL",
-        "name": "Illinois",
-        "fips": "17"
-      },
+    {
+      "abbr": "IL",
+      "name": "Illinois",
+      "fips": "17",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 105,
@@ -472,12 +444,10 @@
         }
       }
     },
-    "IN": {
-      "state": {
-        "postal_code": "IN",
-        "name": "Indiana",
-        "fips": "18"
-      },
+    {
+      "abbr": "IN",
+      "name": "Indiana",
+      "fips": "18",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 25,
@@ -507,12 +477,10 @@
         "14": {}
       }
     },
-    "IA": {
-      "state": {
-        "postal_code": "IA",
-        "name": "Iowa",
-        "fips": "19"
-      },
+    {
+      "abbr": "IA",
+      "name": "Iowa",
+      "fips": "19",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 23,
@@ -542,12 +510,10 @@
         "14": {}
       }
     },
-    "KS": {
-      "state": {
-        "postal_code": "KS",
-        "name": "Kansas",
-        "fips": "20"
-      },
+    {
+      "abbr": "KS",
+      "name": "Kansas",
+      "fips": "20",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 11,
@@ -577,12 +543,10 @@
         "14": {}
       }
     },
-    "KY": {
-      "state": {
-        "postal_code": "KY",
-        "name": "Kentucky",
-        "fips": "21"
-      },
+    {
+      "abbr": "KY",
+      "name": "Kentucky",
+      "fips": "21",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 21,
@@ -612,12 +576,10 @@
         "14": {}
       }
     },
-    "LA": {
-      "state": {
-        "postal_code": "LA",
-        "name": "Louisiana",
-        "fips": "22"
-      },
+    {
+      "abbr": "LA",
+      "name": "Louisiana",
+      "fips": "22",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 136,
@@ -647,12 +609,10 @@
         "14": {}
       }
     },
-    "ME": {
-      "state": {
-        "postal_code": "ME",
-        "name": "Maine",
-        "fips": "23"
-      },
+    {
+      "abbr": "ME",
+      "name": "Maine",
+      "fips": "23",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 17,
@@ -676,12 +636,10 @@
         "14": {}
       }
     },
-    "MD": {
-      "state": {
-        "postal_code": "MD",
-        "name": "Maryland",
-        "fips": "24"
-      },
+    {
+      "abbr": "MD",
+      "name": "Maryland",
+      "fips": "24",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 41,
@@ -711,12 +669,10 @@
         "14": {}
       }
     },
-    "MA": {
-      "state": {
-        "postal_code": "MA",
-        "name": "Massachusetts",
-        "fips": "25"
-      },
+    {
+      "abbr": "MA",
+      "name": "Massachusetts",
+      "fips": "25",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 197,
@@ -752,12 +708,10 @@
         }
       }
     },
-    "MI": {
-      "state": {
-        "postal_code": "MI",
-        "name": "Michigan",
-        "fips": "26"
-      },
+    {
+      "abbr": "MI",
+      "name": "Michigan",
+      "fips": "26",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 53,
@@ -781,12 +735,10 @@
         "14": {}
       }
     },
-    "MN": {
-      "state": {
-        "postal_code": "MN",
-        "name": "Minnesota",
-        "fips": "27"
-      },
+    {
+      "abbr": "MN",
+      "name": "Minnesota",
+      "fips": "27",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 54,
@@ -816,12 +768,10 @@
         "14": {}
       }
     },
-    "MS": {
-      "state": {
-        "postal_code": "MS",
-        "name": "Mississippi",
-        "fips": "28"
-      },
+    {
+      "abbr": "MS",
+      "name": "Mississippi",
+      "fips": "28",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 13,
@@ -845,12 +795,10 @@
         "14": {}
       }
     },
-    "MO": {
-      "state": {
-        "postal_code": "MO",
-        "name": "Missouri",
-        "fips": "29"
-      },
+    {
+      "abbr": "MO",
+      "name": "Missouri",
+      "fips": "29",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 6,
@@ -880,12 +828,10 @@
         "14": {}
       }
     },
-    "MT": {
-      "state": {
-        "postal_code": "MT",
-        "name": "Montana",
-        "fips": "30"
-      },
+    {
+      "abbr": "MT",
+      "name": "Montana",
+      "fips": "30",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 7,
@@ -909,12 +855,10 @@
         "14": {}
       }
     },
-    "NE": {
-      "state": {
-        "postal_code": "NE",
-        "name": "Nebraska",
-        "fips": "31"
-      },
+    {
+      "abbr": "NE",
+      "name": "Nebraska",
+      "fips": "31",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 18,
@@ -944,12 +888,10 @@
         "14": {}
       }
     },
-    "NV": {
-      "state": {
-        "postal_code": "NV",
-        "name": "Nevada",
-        "fips": "32"
-      },
+    {
+      "abbr": "NV",
+      "name": "Nevada",
+      "fips": "32",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 45,
@@ -979,12 +921,10 @@
         "14": {}
       }
     },
-    "NH": {
-      "state": {
-        "postal_code": "NH",
-        "name": "New Hampshire",
-        "fips": "33"
-      },
+    {
+      "abbr": "NH",
+      "name": "New Hampshire",
+      "fips": "33",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 17,
@@ -1020,12 +960,10 @@
         }
       }
     },
-    "NJ": {
-      "state": {
-        "postal_code": "NJ",
-        "name": "New Jersey",
-        "fips": "34"
-      },
+    {
+      "abbr": "NJ",
+      "name": "New Jersey",
+      "fips": "34",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 178,
@@ -1055,12 +993,10 @@
         "14": {}
       }
     },
-    "NM": {
-      "state": {
-        "postal_code": "NM",
-        "name": "New Mexico",
-        "fips": "35"
-      },
+    {
+      "abbr": "NM",
+      "name": "New Mexico",
+      "fips": "35",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 17,
@@ -1084,12 +1020,10 @@
         "14": {}
       }
     },
-    "NY": {
-      "state": {
-        "postal_code": "NY",
-        "name": "New York",
-        "fips": "36"
-      },
+    {
+      "abbr": "NY",
+      "name": "New York",
+      "fips": "36",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 967,
@@ -1125,12 +1059,10 @@
         }
       }
     },
-    "NC": {
-      "state": {
-        "postal_code": "NC",
-        "name": "North Carolina",
-        "fips": "37"
-      },
+    {
+      "abbr": "NC",
+      "name": "North Carolina",
+      "fips": "37",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 38,
@@ -1160,12 +1092,10 @@
         "14": {}
       }
     },
-    "ND": {
-      "state": {
-        "postal_code": "ND",
-        "name": "North Dakota",
-        "fips": "38"
-      },
+    {
+      "abbr": "ND",
+      "name": "North Dakota",
+      "fips": "38",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 1,
@@ -1189,12 +1119,10 @@
         "14": {}
       }
     },
-    "OH": {
-      "state": {
-        "postal_code": "OH",
-        "name": "Ohio",
-        "fips": "39"
-      },
+    {
+      "abbr": "OH",
+      "name": "Ohio",
+      "fips": "39",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 50,
@@ -1218,12 +1146,10 @@
         "14": {}
       }
     },
-    "OK": {
-      "state": {
-        "postal_code": "OK",
-        "name": "Oklahoma",
-        "fips": "40"
-      },
+    {
+      "abbr": "OK",
+      "name": "Oklahoma",
+      "fips": "40",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 10,
@@ -1253,12 +1179,10 @@
         "14": {}
       }
     },
-    "OR": {
-      "state": {
-        "postal_code": "OR",
-        "name": "Oregon",
-        "fips": "41"
-      },
+    {
+      "abbr": "OR",
+      "name": "Oregon",
+      "fips": "41",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 39,
@@ -1294,12 +1218,10 @@
         }
       }
     },
-    "PA": {
-      "state": {
-        "postal_code": "PA",
-        "name": "Pennsylvania",
-        "fips": "42"
-      },
+    {
+      "abbr": "PA",
+      "name": "Pennsylvania",
+      "fips": "42",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 77,
@@ -1329,12 +1251,10 @@
         "14": {}
       }
     },
-    "PR": {
-      "state": {
-        "postal_code": "PR",
-        "name": "Puerto Rico",
-        "fips": "72"
-      },
+    {
+      "abbr": "PR",
+      "name": "Puerto Rico",
+      "fips": "72",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 5,
@@ -1358,12 +1278,10 @@
         "14": {}
       }
     },
-    "RI": {
-      "state": {
-        "postal_code": "RI",
-        "name": "Rhode Island",
-        "fips": "44"
-      },
+    {
+      "abbr": "RI",
+      "name": "Rhode Island",
+      "fips": "44",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 21,
@@ -1399,12 +1317,10 @@
         }
       }
     },
-    "SC": {
-      "state": {
-        "postal_code": "SC",
-        "name": "South Carolina",
-        "fips": "45"
-      },
+    {
+      "abbr": "SC",
+      "name": "South Carolina",
+      "fips": "45",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 33,
@@ -1434,12 +1350,10 @@
         "14": {}
       }
     },
-    "SD": {
-      "state": {
-        "postal_code": "SD",
-        "name": "South Dakota",
-        "fips": "46"
-      },
+    {
+      "abbr": "SD",
+      "name": "South Dakota",
+      "fips": "46",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 10,
@@ -1463,12 +1377,10 @@
         "14": {}
       }
     },
-    "TN": {
-      "state": {
-        "postal_code": "TN",
-        "name": "Tennessee",
-        "fips": "47"
-      },
+    {
+      "abbr": "TN",
+      "name": "Tennessee",
+      "fips": "47",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 52,
@@ -1498,12 +1410,10 @@
         "14": {}
       }
     },
-    "TX": {
-      "state": {
-        "postal_code": "TX",
-        "name": "Texas",
-        "fips": "48"
-      },
+    {
+      "abbr": "TX",
+      "name": "Texas",
+      "fips": "48",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 85,
@@ -1533,12 +1443,10 @@
         "14": {}
       }
     },
-    "UT": {
-      "state": {
-        "postal_code": "UT",
-        "name": "Utah",
-        "fips": "49"
-      },
+    {
+      "abbr": "UT",
+      "name": "Utah",
+      "fips": "49",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 39,
@@ -1568,12 +1476,10 @@
         "14": {}
       }
     },
-    "VT": {
-      "state": {
-        "postal_code": "VT",
-        "name": "Vermont",
-        "fips": "50"
-      },
+    {
+      "abbr": "VT",
+      "name": "Vermont",
+      "fips": "50",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 12,
@@ -1603,12 +1509,10 @@
         "14": {}
       }
     },
-    "VI": {
-      "state": {
-        "postal_code": "VI",
-        "name": "Virgin Islands",
-        "fips": "78"
-      },
+    {
+      "abbr": "VI",
+      "name": "Virgin Islands",
+      "fips": "78",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 1,
@@ -1632,12 +1536,10 @@
         "14": {}
       }
     },
-    "VA": {
-      "state": {
-        "postal_code": "VA",
-        "name": "Virginia",
-        "fips": "51"
-      },
+    {
+      "abbr": "VA",
+      "name": "Virginia",
+      "fips": "51",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 49,
@@ -1667,12 +1569,10 @@
         "14": {}
       }
     },
-    "WA": {
-      "state": {
-        "postal_code": "WA",
-        "name": "Washington",
-        "fips": "53"
-      },
+    {
+      "abbr": "WA",
+      "name": "Washington",
+      "fips": "53",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 904,
@@ -1708,12 +1608,10 @@
         }
       }
     },
-    "WV": {
-      "state": {
-        "postal_code": "WV",
-        "name": "West Virginia",
-        "fips": "54"
-      },
+    {
+      "abbr": "WV",
+      "name": "West Virginia",
+      "fips": "54",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 0,
@@ -1726,12 +1624,10 @@
         "14": {}
       }
     },
-    "WI": {
-      "state": {
-        "postal_code": "WI",
-        "name": "Wisconsin",
-        "fips": "55"
-      },
+    {
+      "abbr": "WI",
+      "name": "Wisconsin",
+      "fips": "55",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 47,
@@ -1755,12 +1651,10 @@
         "14": {}
       }
     },
-    "WY": {
-      "state": {
-        "postal_code": "WY",
-        "name": "Wyoming",
-        "fips": "56"
-      },
+    {
+      "abbr": "WY",
+      "name": "Wyoming",
+      "fips": "56",
       "latest": {
         "date": "2020-03-16",
         "confirmed": 3,
@@ -1784,5 +1678,5 @@
         "14": {}
       }
     }
-  }
+  ]
 }

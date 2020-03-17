@@ -33,15 +33,15 @@ def _load_src_data():
 
 
 def extract_states_metas():
-    meta = {}
+    meta = []
     statelookups = list(csv.DictReader(LOOKUPS_PATH.open()))
     for s in statelookups:
-        o = {'state': {}}
-        o['state']['postal_code'] = s['postal_code']
-        o['state']['name'] = s['full_name']
-        o['state']['fips'] = s['fips']
+        o = {}
+        o['abbr'] = s['postal_code']
+        o['name'] = s['full_name']
+        o['fips'] = s['fips']
 
-        meta[s['postal_code']] = o
+        meta.append(o)
     return meta
 
 
@@ -107,14 +107,14 @@ def wrangle_state_series(series):
 def main():
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     srcdata = _load_src_data()
-    statedata = extract_states_metas()
+    states = extract_states_metas()
 
-    for state_ab, sdict in statedata.items():
-        _series = extract_state_series(state_ab, sdict['state']['name'], srcdata)
-        sdata = wrangle_state_series(_series)
-        sdict.update(sdata)
+    for s in states:
+        _series = extract_state_series(s['abbr'], s['name'], srcdata)
+        s_data = wrangle_state_series(_series)
+        s.update(s_data)
 
-    outdata = {'states': statedata}
+    outdata = {'states': states}
 
     outtext = json.dumps(outdata, indent=2)
     DEST_PATH.write_text(outtext)
