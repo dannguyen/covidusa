@@ -12,21 +12,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Utah | CovidUSA</title>
+<title>CovidUSA | A state-by-state tracker of Covid-19</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Utah" />
+<meta property="og:title" content="CovidUSA" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A state-by-state tracker of Covid-19" />
 <meta property="og:description" content="A state-by-state tracker of Covid-19" />
-<link rel="canonical" href="https://dannguyen.github.io/covidusa/states/UT/" />
-<meta property="og:url" content="https://dannguyen.github.io/covidusa/states/UT/" />
+<link rel="canonical" href="http://localhost:4000/covidusa/map.html" />
+<meta property="og:url" content="http://localhost:4000/covidusa/map.html" />
 <meta property="og:site_name" content="CovidUSA" />
 <script type="application/ld+json">
-{"url":"https://dannguyen.github.io/covidusa/states/UT/","headline":"Utah","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/covidusa/map.html","headline":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-<link rel="stylesheet" href="/covidusa/assets/css/style.css?v=0.0.1a">
+<link rel="stylesheet" href="/covidusa/assets/css/style.css?v=">
 <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -42,60 +42,36 @@
 
 
 
-<header id="site-header" class="header">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<style>
 
+    .state {
+      fill: #ddf;
+      stroke: #ffd;
+      stroke-linejoin: round;
+    }
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+    #mapbox{
+        height: 700px;
+        width: 980px;
+    }
 
-
-    <a class="navbar-brand" href="https://dannguyen.github.io/covidusa/">CovidUSA</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="https://github.com/dannguyen/covidusa">Github</a>
-      </div>
-    </div>
-  </div>
-
-</nav>
-
-
-    </header><!-- end header -->
+    #mapwrap{
+        border: 1px solid purple;
+    }
+</style>
 
 
 
 
 
-<section id="page-meta">
-  <div class="container">
-    <h1 class="page-title title">
-      Utah
-    </h1>
-  </div>
-</section>
-
-<section id="page-body">
-  <article id="page-content">
-    <div class="container">
-      
-
-
-<h1>Utah UT</h1>
-
-<code>
-    {"abbr"=>"UT", "name"=>"Utah", "fips"=>"49", "latest"=>{"date"=>"2020-03-16", "confirmed"=>39, "deaths"=>0}, "first"=>{"date"=>"2020-03-07", "days_ago"=>9, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-15", "days_ago"=>1, "confirmed"=>28, "confirmed_count_change"=>11, "confirmed_pct_change"=>39.3}, "7"=>{"date"=>"2020-03-09", "days_ago"=>7, "confirmed"=>1, "confirmed_count_change"=>38, "confirmed_pct_change"=>3800.0}, "14"=>{}}}
-</code>
-
-
-    </div>
-  </article>
-</section>
+<script>
 
 
 
+</script>
 
 
 

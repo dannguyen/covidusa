@@ -24,6 +24,15 @@ https://github.com/CSSEGISandData/COVID-19
 - Daily reports: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/03-16-2020.csv
 
 
+### US cartographic shapefiles: 
+
+https://github.com/topojson/us-atlas
+
+Kos cartogram: https://docs.google.com/spreadsheets/d/1LrBXlqrtSZwyYOkpEEXFwQggvtR0bHHTxs9kq4kjOjw/edit#gid=134715392
+
+
+
+
 ## Other good trackers
 - https://www.washingtonpost.com/graphics/2020/world/mapping-spread-new-coronavirus/
 - JH's Desktop tracker: https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
@@ -51,21 +60,16 @@ https://github.com/CSSEGISandData/COVID-19
 
 ### data insights
 
-- For each state, show:
-    - infections per capita
-    - earliest infection
-    - day to day change
-    - weekly change
-    - 14 day change
-
+- generate summary
+    - total cases/deaths U.S.
+    - total cases/deaths world
+    - rename confirmed to cases
+    - start date and latest date
+    - last_updated date
 
 - D3
     - load csv, show basic numbers
     - Make data table listing each state
-
-- Svelte
-    - Make state endpoints/click events
-    - get state shapefiles
 
 
 # make a separate front-end site? (nah)
