@@ -43,6 +43,12 @@ Kos cartogram: https://docs.google.com/spreadsheets/d/1LrBXlqrtSZwyYOkpEEXFwQggv
 - https://www.cnn.com/2020/03/03/health/us-coronavirus-cases-state-by-state/index.html
 - https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
 
+## Other data
+
+### hospital beds
+
+https://www.nytimes.com/interactive/2020/03/17/upshot/hospital-bed-shortages-coronavirus.html
+
 ## TODO
 
 - rename lookups/us_states.csv to lookups/fips.csv
