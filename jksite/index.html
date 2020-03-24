@@ -1,0 +1,135 @@
+---
+layout: base
+---
+
+
+
+<section class="hero">
+
+    <div class="container">
+        <h1 class="site-title">
+            Covid USA
+        </h1>
+
+        <h3>testing testing</h3>
+        <p>
+
+            <strong>super awesome description goes here</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium asperiores illum alias inventore voluptas animi sed est nesciunt aspernatur. Tenetur natus autem dolor laudantium amet quisquam distinctio similique aperiam voluptatem?
+
+        </p>
+
+    </div>
+</section>
+
+<section class="tkmap">
+    <div class="container">
+        {% include nation_map.html %}
+    </div>
+
+</section>
+
+
+
+<div class="container">
+
+    <table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Days Since First Case</th>
+            <th>Cases</th>
+            <th>Pct Change Yesterday</th>
+            <th>Count Change Last Week</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for state in site.data.state_summaries.states %}
+        <tr class="state">
+            <td class="name">
+                <a href="{{ state.abbr | datapage_url: 'states' }}">{{state.name}}</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                {{ state.first.days_ago }}
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    {{state.latest.confirmed}}
+                </span>
+                <span class="yesterday change">
+                    {% assign ctchange = state.days_ago['1']['confirmed_count_change']  %}
+
+                    {% if ctchange > 0 %}
+                        <span class="num positive">
+                            ↑{{ ctchange }}
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ ctchange }}
+                        </span>
+                    {% endif %}
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                {% assign _cval = state.days_ago['1']['confirmed_pct_change']  %}
+                {% if _cval > 0 %}
+                    <span class="num positive">
+                        ↑{{ _cval | round }}%
+                    </span>
+                {% elsif ctchange < 0 %}
+                    <span class="num negative">
+                        ↓{{ _cval | round}}%
+                    </span>
+                {% endif %}
+            </td>
+
+            <td class="confirmed weekly-change count">
+                {% assign _cval = state.days_ago['7']['confirmed_count_change']  %}
+                {% if _cval > 0 %}
+                    <span class="num positive">
+                        ↑{{ _cval  }}
+                    </span>
+                {% elsif ctchange < 0 %}
+                    <span class="num negative">
+                        ↓{{ _cval  }}
+                    </span>
+                {% endif %}
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                {% assign _cval = state.days_ago['7']['confirmed_pct_change']  %}
+                {% if _cval > 0 %}
+                    <span class="num positive">
+                        ↑{{ _cval }}%
+                    </span>
+                {% elsif ctchange < 0 %}
+                    <span class="num negative">
+                        ↓{{ _cval }}%
+                    </span>
+                {% endif %}
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    {{state.latest.deaths}}
+                </span>
+            </td>
+
+        </tr>
+
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+
+</div>

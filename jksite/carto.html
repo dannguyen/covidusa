@@ -1,0 +1,72 @@
+---
+layout: base
+notes: |
+    just a test
+
+    https://bl.ocks.org/eesur/8678df74ee7efab6d645de07a79ebcc5
+
+    http://datawanderings.com/2018/10/28/making-a-map-in-d3-js-v-5/
+---
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<style>
+
+    .state {
+      fill: #ddf;
+      stroke: #ffd;
+      stroke-linejoin: round;
+    }
+
+    #mapbox{
+        height: 560px;
+        width: 960px;
+    }
+
+    #mapwrap{
+        border: 1px solid purple;
+    }
+
+    .border:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+#state {
+        padding-left: 20px;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+    .border:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    .state-label {
+        fill: #fff;
+        fill-opacity: .9;
+        letter-spacing: 1px;
+        font-size: 18px;
+        font-weight: 600;
+        text-anchor: middle;
+        pointer-events: none;
+    }
+
+</style>
+
+
+
+<div id="mapwrap">
+  <div id="mapbox">
+
+  </div>
+</div>
+
+
+
+<script src="{{ '/assets/js/carto/statecodes.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+<script src="{{ '/assets/js/carto/foocarto.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
+
+<script>
+  render()
+</script>

@@ -1,0 +1,1682 @@
+{
+  "states": [
+    {
+      "abbr": "AL",
+      "name": "Alabama",
+      "fips": "01",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 29,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-13",
+        "days_ago": 3,
+        "confirmed": 5,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 12,
+          "confirmed_count_change": 17,
+          "confirmed_pct_change": 141.7
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "AK",
+      "name": "Alaska",
+      "fips": "02",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-13",
+        "days_ago": 3,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 1,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "AZ",
+      "name": "Arizona",
+      "fips": "04",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 18,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-01-26",
+        "days_ago": 50,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 13,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 38.5
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 4,
+          "confirmed_count_change": 14,
+          "confirmed_pct_change": 350.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 1,
+          "confirmed_count_change": 17,
+          "confirmed_pct_change": 1700.0
+        }
+      }
+    },
+    {
+      "abbr": "AR",
+      "name": "Arkansas",
+      "fips": "05",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 22,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 16,
+          "confirmed_count_change": 6,
+          "confirmed_pct_change": 37.5
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "CA",
+      "name": "California",
+      "fips": "06",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 557,
+        "deaths": 7
+      },
+      "first": {
+        "date": "2020-01-26",
+        "days_ago": 50,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 426,
+          "confirmed_count_change": 131,
+          "confirmed_pct_change": 30.8
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 101,
+          "confirmed_count_change": 456,
+          "confirmed_pct_change": 451.5
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 21,
+          "confirmed_count_change": 536,
+          "confirmed_pct_change": 2552.4
+        }
+      }
+    },
+    {
+      "abbr": "CO",
+      "name": "Colorado",
+      "fips": "08",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 160,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 131,
+          "confirmed_count_change": 29,
+          "confirmed_pct_change": 22.1
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 7,
+          "confirmed_count_change": 153,
+          "confirmed_pct_change": 2185.7
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "CT",
+      "name": "Connecticut",
+      "fips": "09",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 30,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-10",
+        "days_ago": 6,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 24,
+          "confirmed_count_change": 6,
+          "confirmed_pct_change": 25.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "DE",
+      "name": "Delaware",
+      "fips": "10",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 8,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 7,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 14.3
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "DC",
+      "name": "District of Columbia",
+      "fips": "11",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 22,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-10",
+        "days_ago": 6,
+        "confirmed": 5,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 16,
+          "confirmed_count_change": 6,
+          "confirmed_pct_change": 37.5
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "FL",
+      "name": "Florida",
+      "fips": "12",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 155,
+        "deaths": 5
+      },
+      "first": {
+        "date": "2020-03-02",
+        "days_ago": 14,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 115,
+          "confirmed_count_change": 40,
+          "confirmed_pct_change": 34.8
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 13,
+          "confirmed_count_change": 142,
+          "confirmed_pct_change": 1092.3
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 1,
+          "confirmed_count_change": 154,
+          "confirmed_pct_change": 15400.0
+        }
+      }
+    },
+    {
+      "abbr": "GA",
+      "name": "Georgia",
+      "fips": "13",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 121,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-03",
+        "days_ago": 13,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 99,
+          "confirmed_count_change": 22,
+          "confirmed_pct_change": 22.2
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 10,
+          "confirmed_count_change": 111,
+          "confirmed_pct_change": 1110.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "HI",
+      "name": "Hawaii",
+      "fips": "15",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 7,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-07",
+        "days_ago": 9,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 6,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 16.7
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 6,
+          "confirmed_pct_change": 600.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "ID",
+      "name": "Idaho",
+      "fips": "16",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 5,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-13",
+        "days_ago": 3,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 5,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "IL",
+      "name": "Illinois",
+      "fips": "17",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 105,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-01-24",
+        "days_ago": 52,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 93,
+          "confirmed_count_change": 12,
+          "confirmed_pct_change": 12.9
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 7,
+          "confirmed_count_change": 98,
+          "confirmed_pct_change": 1400.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 4,
+          "confirmed_count_change": 101,
+          "confirmed_pct_change": 2525.0
+        }
+      }
+    },
+    {
+      "abbr": "IN",
+      "name": "Indiana",
+      "fips": "18",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 25,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 20,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 25.0
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 22,
+          "confirmed_pct_change": 733.3
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "IA",
+      "name": "Iowa",
+      "fips": "19",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 23,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-09",
+        "days_ago": 7,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 18,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 27.8
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 20,
+          "confirmed_pct_change": 666.7
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "KS",
+      "name": "Kansas",
+      "fips": "20",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 11,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-08",
+        "days_ago": 8,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 8,
+          "confirmed_count_change": 3,
+          "confirmed_pct_change": 37.5
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 10,
+          "confirmed_pct_change": 1000.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "KY",
+      "name": "Kentucky",
+      "fips": "21",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 21,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 20,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 5.0
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 4,
+          "confirmed_count_change": 17,
+          "confirmed_pct_change": 425.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "LA",
+      "name": "Louisiana",
+      "fips": "22",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 136,
+        "deaths": 3
+      },
+      "first": {
+        "date": "2020-03-09",
+        "days_ago": 7,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 91,
+          "confirmed_count_change": 45,
+          "confirmed_pct_change": 49.5
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 135,
+          "confirmed_pct_change": 13500.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "ME",
+      "name": "Maine",
+      "fips": "23",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 17,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-13",
+        "days_ago": 3,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 12,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 41.7
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MD",
+      "name": "Maryland",
+      "fips": "24",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 41,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 32,
+          "confirmed_count_change": 9,
+          "confirmed_pct_change": 28.1
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 5,
+          "confirmed_count_change": 36,
+          "confirmed_pct_change": 720.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MA",
+      "name": "Massachusetts",
+      "fips": "25",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 197,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-02-01",
+        "days_ago": 44,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 164,
+          "confirmed_count_change": 33,
+          "confirmed_pct_change": 20.1
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 22,
+          "confirmed_count_change": 175,
+          "confirmed_pct_change": 795.5
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 1,
+          "confirmed_count_change": 196,
+          "confirmed_pct_change": 19600.0
+        }
+      }
+    },
+    {
+      "abbr": "MI",
+      "name": "Michigan",
+      "fips": "26",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 53,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 33,
+          "confirmed_count_change": 20,
+          "confirmed_pct_change": 60.6
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MN",
+      "name": "Minnesota",
+      "fips": "27",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 54,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 35,
+          "confirmed_count_change": 19,
+          "confirmed_pct_change": 54.3
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 2,
+          "confirmed_count_change": 52,
+          "confirmed_pct_change": 2600.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MS",
+      "name": "Mississippi",
+      "fips": "28",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 13,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-12",
+        "days_ago": 4,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 10,
+          "confirmed_count_change": 3,
+          "confirmed_pct_change": 30.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MO",
+      "name": "Missouri",
+      "fips": "29",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 6,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-08",
+        "days_ago": 8,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 5,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 20.0
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 500.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "MT",
+      "name": "Montana",
+      "fips": "30",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 7,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 7,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "NE",
+      "name": "Nebraska",
+      "fips": "31",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 18,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 17,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 5.9
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 15,
+          "confirmed_pct_change": 500.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "NV",
+      "name": "Nevada",
+      "fips": "32",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 45,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-05",
+        "days_ago": 11,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 24,
+          "confirmed_count_change": 21,
+          "confirmed_pct_change": 87.5
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 4,
+          "confirmed_count_change": 41,
+          "confirmed_pct_change": 1025.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "NH",
+      "name": "New Hampshire",
+      "fips": "33",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 17,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-02",
+        "days_ago": 14,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 13,
+          "confirmed_count_change": 4,
+          "confirmed_pct_change": 30.8
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 4,
+          "confirmed_count_change": 13,
+          "confirmed_pct_change": 325.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 1,
+          "confirmed_count_change": 16,
+          "confirmed_pct_change": 1600.0
+        }
+      }
+    },
+    {
+      "abbr": "NJ",
+      "name": "New Jersey",
+      "fips": "34",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 178,
+        "deaths": 2
+      },
+      "first": {
+        "date": "2020-03-05",
+        "days_ago": 11,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 98,
+          "confirmed_count_change": 80,
+          "confirmed_pct_change": 81.6
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 5,
+          "confirmed_count_change": 173,
+          "confirmed_pct_change": 3460.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "NM",
+      "name": "New Mexico",
+      "fips": "35",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 17,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 13,
+          "confirmed_count_change": 4,
+          "confirmed_pct_change": 30.8
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "NY",
+      "name": "New York",
+      "fips": "36",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 967,
+        "deaths": 10
+      },
+      "first": {
+        "date": "2020-03-02",
+        "days_ago": 14,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 732,
+          "confirmed_count_change": 235,
+          "confirmed_pct_change": 32.1
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 142,
+          "confirmed_count_change": 825,
+          "confirmed_pct_change": 581.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 1,
+          "confirmed_count_change": 966,
+          "confirmed_pct_change": 96600.0
+        }
+      }
+    },
+    {
+      "abbr": "NC",
+      "name": "North Carolina",
+      "fips": "37",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 38,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-03",
+        "days_ago": 13,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 33,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 15.2
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 2,
+          "confirmed_count_change": 36,
+          "confirmed_pct_change": 1800.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "ND",
+      "name": "North Dakota",
+      "fips": "38",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-12",
+        "days_ago": 4,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 1,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "OH",
+      "name": "Ohio",
+      "fips": "39",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 50,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-10",
+        "days_ago": 6,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 37,
+          "confirmed_count_change": 13,
+          "confirmed_pct_change": 35.1
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "OK",
+      "name": "Oklahoma",
+      "fips": "40",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 10,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-07",
+        "days_ago": 9,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 7,
+          "confirmed_count_change": 3,
+          "confirmed_pct_change": 42.9
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 9,
+          "confirmed_pct_change": 900.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "OR",
+      "name": "Oregon",
+      "fips": "41",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 39,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-02-29",
+        "days_ago": 16,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 36,
+          "confirmed_count_change": 3,
+          "confirmed_pct_change": 8.3
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 12,
+          "confirmed_count_change": 27,
+          "confirmed_pct_change": 225.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 3,
+          "confirmed_count_change": 36,
+          "confirmed_pct_change": 1200.0
+        }
+      }
+    },
+    {
+      "abbr": "PA",
+      "name": "Pennsylvania",
+      "fips": "42",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 77,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-06",
+        "days_ago": 10,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 66,
+          "confirmed_count_change": 11,
+          "confirmed_pct_change": 16.7
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 7,
+          "confirmed_count_change": 70,
+          "confirmed_pct_change": 1000.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "PR",
+      "name": "Puerto Rico",
+      "fips": "72",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 5,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-14",
+        "days_ago": 2,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 5,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "RI",
+      "name": "Rhode Island",
+      "fips": "44",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 21,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-01",
+        "days_ago": 15,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 20,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 5.0
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 18,
+          "confirmed_pct_change": 600.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 2,
+          "confirmed_count_change": 19,
+          "confirmed_pct_change": 950.0
+        }
+      }
+    },
+    {
+      "abbr": "SC",
+      "name": "South Carolina",
+      "fips": "45",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 33,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-07",
+        "days_ago": 9,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 28,
+          "confirmed_count_change": 5,
+          "confirmed_pct_change": 17.9
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 30,
+          "confirmed_pct_change": 1000.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "SD",
+      "name": "South Dakota",
+      "fips": "46",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 10,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-11",
+        "days_ago": 5,
+        "confirmed": 8,
+        "deaths": 1
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 9,
+          "confirmed_count_change": 1,
+          "confirmed_pct_change": 11.1
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "TN",
+      "name": "Tennessee",
+      "fips": "47",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 52,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-05",
+        "days_ago": 11,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 39,
+          "confirmed_count_change": 13,
+          "confirmed_pct_change": 33.3
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 3,
+          "confirmed_count_change": 49,
+          "confirmed_pct_change": 1633.3
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "TX",
+      "name": "Texas",
+      "fips": "48",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 85,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-05",
+        "days_ago": 11,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 72,
+          "confirmed_count_change": 13,
+          "confirmed_pct_change": 18.1
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 13,
+          "confirmed_count_change": 72,
+          "confirmed_pct_change": 553.8
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "UT",
+      "name": "Utah",
+      "fips": "49",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 39,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-07",
+        "days_ago": 9,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 28,
+          "confirmed_count_change": 11,
+          "confirmed_pct_change": 39.3
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 38,
+          "confirmed_pct_change": 3800.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "VT",
+      "name": "Vermont",
+      "fips": "50",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 12,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-08",
+        "days_ago": 8,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 8,
+          "confirmed_count_change": 4,
+          "confirmed_pct_change": 50.0
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 1,
+          "confirmed_count_change": 11,
+          "confirmed_pct_change": 1100.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "VI",
+      "name": "Virgin Islands",
+      "fips": "78",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-14",
+        "days_ago": 2,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 1,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "VA",
+      "name": "Virginia",
+      "fips": "51",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 49,
+        "deaths": 1
+      },
+      "first": {
+        "date": "2020-03-08",
+        "days_ago": 8,
+        "confirmed": 2,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 45,
+          "confirmed_count_change": 4,
+          "confirmed_pct_change": 8.9
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 2,
+          "confirmed_count_change": 47,
+          "confirmed_pct_change": 2350.0
+        },
+        "14": {}
+      }
+    },
+    {
+      "abbr": "WA",
+      "name": "Washington",
+      "fips": "53",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 904,
+        "deaths": 48
+      },
+      "first": {
+        "date": "2020-01-22",
+        "days_ago": 54,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 643,
+          "confirmed_count_change": 261,
+          "confirmed_pct_change": 40.6
+        },
+        "7": {
+          "date": "2020-03-09",
+          "days_ago": 7,
+          "confirmed": 122,
+          "confirmed_count_change": 782,
+          "confirmed_pct_change": 641.0
+        },
+        "14": {
+          "date": "2020-03-02",
+          "days_ago": 14,
+          "confirmed": 18,
+          "confirmed_count_change": 886,
+          "confirmed_pct_change": 4922.2
+        }
+      }
+    },
+    {
+      "abbr": "WV",
+      "name": "West Virginia",
+      "fips": "54",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 0,
+        "deaths": 0
+      },
+      "first": {},
+      "days_ago": {
+        "1": {},
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "WI",
+      "name": "Wisconsin",
+      "fips": "55",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 47,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-10",
+        "days_ago": 6,
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 32,
+          "confirmed_count_change": 15,
+          "confirmed_pct_change": 46.9
+        },
+        "7": {},
+        "14": {}
+      }
+    },
+    {
+      "abbr": "WY",
+      "name": "Wyoming",
+      "fips": "56",
+      "latest": {
+        "date": "2020-03-16",
+        "confirmed": 3,
+        "deaths": 0
+      },
+      "first": {
+        "date": "2020-03-12",
+        "days_ago": 4,
+        "confirmed": 1,
+        "deaths": 0
+      },
+      "days_ago": {
+        "1": {
+          "date": "2020-03-15",
+          "days_ago": 1,
+          "confirmed": 3,
+          "confirmed_count_change": 0,
+          "confirmed_pct_change": 0.0
+        },
+        "7": {},
+        "14": {}
+      }
+    }
+  ]
+}

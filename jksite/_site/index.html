@@ -1,0 +1,3351 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>CovidUSA</title>
+
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>CovidUSA | A state-by-state tracker of Covid-19</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="CovidUSA" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A state-by-state tracker of Covid-19" />
+<meta property="og:description" content="A state-by-state tracker of Covid-19" />
+<link rel="canonical" href="https://dannguyen.github.io/covidusa/" />
+<meta property="og:url" content="https://dannguyen.github.io/covidusa/" />
+<meta property="og:site_name" content="CovidUSA" />
+<script type="application/ld+json">
+{"url":"https://dannguyen.github.io/covidusa/","headline":"CovidUSA","name":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebSite","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="/covidusa/assets/css/style.css?v=0.0.1a">
+<!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="/covidusa/assets/css/ie.css">
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+</head>
+<body>
+
+
+
+
+<section class="hero">
+
+    <div class="container">
+        <h1 class="site-title">
+            Covid USA
+        </h1>
+
+        <h3>testing testing</h3>
+        <p>
+
+            <strong>super awesome description goes here</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium asperiores illum alias inventore voluptas animi sed est nesciunt aspernatur. Tenetur natus autem dolor laudantium amet quisquam distinctio similique aperiam voluptatem?
+
+        </p>
+
+    </div>
+</section>
+
+<section class="tkmap">
+    <div class="container">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+
+<style>
+
+    .state {
+      fill: #ddf;
+      stroke: #ffd;
+      stroke-linejoin: round;
+    }
+
+    .state:hover{
+        fill: #ccf;
+        stroke: #520;
+        cursor: pointer;
+        z-index: 99999;
+    }
+
+    #mapbox{
+        height: 700px;
+        width: 980px;
+    }
+
+    #mapwrap{
+        border: thin solid #fef;
+    }
+</style>
+
+
+<h2>my american map</h2>
+
+<section id="mapwrap">
+
+
+        <svg id="mapbox"></svg>
+
+
+</section>
+
+<script src="/covidusa/assets/js/nationMap.js?v=0.0.1a"></script>
+
+    </div>
+
+</section>
+
+
+
+<div class="container">
+
+    <table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Days Since First Case</th>
+            <th>Cases</th>
+            <th>Pct Change Yesterday</th>
+            <th>Count Change Last Week</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/AL/">Alabama</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                3
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    29
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑17
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑142%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/AK/">Alaska</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                3
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    1
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/AZ/">Arizona</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                50
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    18
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑39%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑14
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑350.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/AR/">Arkansas</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    22
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑6
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑38%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/CA/">California</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                50
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    557
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑131
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑31%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑456
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑451.5%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    7
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/CO/">Colorado</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    160
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑29
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑22%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑153
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑2185.7%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/CT/">Connecticut</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                6
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    30
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑6
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑25%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/DE/">Delaware</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    8
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑14%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/DC/">District of Columbia</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                6
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    22
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑6
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑38%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/FL/">Florida</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                14
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    155
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑40
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑35%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑142
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1092.3%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    5
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/GA/">Georgia</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                13
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    121
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑22
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑22%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑111
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1110.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/HI/">Hawaii</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                9
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    7
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑17%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑6
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑600.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/ID/">Idaho</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                3
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    5
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/IL/">Illinois</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                52
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    105
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑12
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑13%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑98
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1400.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/IN/">Indiana</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    25
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑25%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑22
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑733.3%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/IA/">Iowa</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                7
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    23
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑28%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑20
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑666.7%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/KS/">Kansas</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                8
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    11
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑3
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑38%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑10
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1000.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/KY/">Kentucky</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    21
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑5%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑17
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑425.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/LA/">Louisiana</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                7
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    136
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑45
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑50%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑135
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑13500.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    3
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/ME/">Maine</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                3
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    17
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑42%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MD/">Maryland</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    41
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑9
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑28%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑36
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑720.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MA/">Massachusetts</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                44
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    197
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑33
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑20%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑175
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑795.5%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MI/">Michigan</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    53
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑20
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑61%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MN/">Minnesota</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    54
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑19
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑54%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑52
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑2600.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MS/">Mississippi</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                4
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    13
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑3
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑30%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MO/">Missouri</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                8
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    6
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑20%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑5
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑500.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/MT/">Montana</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    7
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NE/">Nebraska</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    18
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑6%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑15
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑500.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NV/">Nevada</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                11
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    45
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑21
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑88%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑41
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1025.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NH/">New Hampshire</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                14
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    17
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑4
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑31%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑13
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑325.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NJ/">New Jersey</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                11
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    178
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑80
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑82%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑173
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑3460.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    2
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NM/">New Mexico</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    17
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑4
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑31%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NY/">New York</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                14
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    967
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑235
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑32%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑825
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑581.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    10
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/NC/">North Carolina</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                13
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    38
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑15%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑36
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1800.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/ND/">North Dakota</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                4
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    1
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/OH/">Ohio</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                6
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    50
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑13
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑35%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/OK/">Oklahoma</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                9
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    10
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑3
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑43%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑9
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑900.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/OR/">Oregon</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                16
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    39
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑3
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑8%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑27
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑225.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/PA/">Pennsylvania</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                10
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    77
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑11
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑17%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑70
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1000.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/PR/">Puerto Rico</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                2
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    5
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/RI/">Rhode Island</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                15
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    21
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑5%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑18
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑600.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/SC/">South Carolina</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                9
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    33
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑5
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑18%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑30
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1000.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/SD/">South Dakota</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                5
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    10
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑1
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑11%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/TN/">Tennessee</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                11
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    52
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑13
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑33%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑49
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1633.3%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/TX/">Texas</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                11
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    85
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑13
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑18%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑72
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑553.8%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/UT/">Utah</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                9
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    39
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑11
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑39%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑38
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑3800.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/VT/">Vermont</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                8
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    12
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑4
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑50%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑11
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑1100.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/VI/">Virgin Islands</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                2
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    1
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/VA/">Virginia</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                8
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    49
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑4
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑9%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑47
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑2350.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    1
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/WA/">Washington</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                54
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    904
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑261
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑41%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+                    <span class="num positive">
+                        ↑782
+                    </span>
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+                    <span class="num positive">
+                        ↑641.0%
+                    </span>
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    48
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/WV/">West Virginia</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    0
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/WI/">Wisconsin</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                6
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    47
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                        <span class="num positive">
+                            ↑15
+                        </span>
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+                    <span class="num positive">
+                        ↑47%
+                    </span>
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+        <tr class="state">
+            <td class="name">
+                <a href="states/WY/">Wyoming</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                4
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    3
+                </span>
+                <span class="yesterday change">
+                    
+
+                    
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                
+                
+            </td>
+
+            <td class="confirmed weekly-change count">
+                
+                
+            </td>
+
+
+
+<!--
+            <td class="confirmed weekly-change pct">
+                
+                
+            </td>
+
+ -->
+             <td class="deaths">
+                <span class="today">
+                    0
+                </span>
+            </td>
+
+        </tr>
+
+    
+    </tbody>
+    </table>
+
+
+
+</div>
+
+
+
+<footer id="site-footer">
+    <div class="container">
+        <h2>This is where the fat footer goes</h2>
+
+
+        <div class="row">
+
+
+            <div class="col">
+                <h6>Site Nav</h6>
+                <ul>
+                    
+                </ul>
+
+            </div>
+            <div class="col">
+                <h6>Elsewhere</h6>
+                <ul>
+                    <li><span class="fa fa-github-alt"></span>Github</li>
+                    <li><span class="fa fa-twitter"></span>Twitter</li>
+                    <li><span class="fa fa-rss"></span>Blog</li>
+                </ul>
+            </div>
+
+
+            <div class="col">
+                <p class="site-info">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quod asperiores sunt, magni, dolore suscipit eveniet similique incidunt enim placeat hic veritatis. Eligendi earum nam exercitationem quibusdam facilis. Pariatur, eius!
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+
+</footer>
+
+
+
+</body>
+</html>
+
