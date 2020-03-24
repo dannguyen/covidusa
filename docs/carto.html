@@ -18,11 +18,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A state-by-state tracker of Covid-19" />
 <meta property="og:description" content="A state-by-state tracker of Covid-19" />
-<link rel="canonical" href="https://dannguyen.github.io/covidusa/map.html" />
-<meta property="og:url" content="https://dannguyen.github.io/covidusa/map.html" />
+<link rel="canonical" href="https://dannguyen.github.io/covidusa/carto.html" />
+<meta property="og:url" content="https://dannguyen.github.io/covidusa/carto.html" />
 <meta property="og:site_name" content="CovidUSA" />
 <script type="application/ld+json">
-{"url":"https://dannguyen.github.io/covidusa/map.html","headline":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"https://dannguyen.github.io/covidusa/carto.html","headline":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -54,21 +54,55 @@
     }
 
     #mapbox{
-        height: 700px;
-        width: 980px;
+        height: 560px;
+        width: 960px;
     }
 
     #mapwrap{
         border: 1px solid purple;
     }
+
+    .border:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+#state {
+        padding-left: 20px;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+    .border:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    .state-label {
+        fill: #fff;
+        fill-opacity: .9;
+        letter-spacing: 1px;
+        font-size: 18px;
+        font-weight: 600;
+        text-anchor: middle;
+        pointer-events: none;
+    }
+
 </style>
 
 
 
+<div id="mapwrap">
+  <div id="mapbox">
+
+  </div>
+</div>
+
+
+
+<script src="/covidusa/assets/js/carto/statecodes.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/carto/foocarto.js?v=0.0.1a"></script>
+
+
 <script>
-
-
-
+  render()
 </script>
 
 

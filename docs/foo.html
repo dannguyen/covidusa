@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        font-family: Consolas, monaco, monospace;
+        background: #130C0E;
+        font-weight: 400;
+        color: #fff;
+    }
+    .wrap {
+        width: 960px;
+        margin: 20px auto;
+        border: thin solid hotpink;
+    }
+    #state {
+        padding-left: 20px;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+    .border:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    .state-label {
+        fill: #fff;
+        fill-opacity: .9;
+        letter-spacing: 1px;
+        font-size: 18px;
+        font-weight: 600;
+        text-anchor: middle;
+        pointer-events: none;
+    }
+</style>
+
+<script type='text/javascript' src='//d3js.org/d3.v5.min.js'></script>
+<script type='text/javascript' src='//d3js.org/topojson.v1.min.js'></script>
+<script type='text/javascript' src='//cdn.jsdelivr.net/lodash/4.16.6/lodash.min.js'></script>
+<script src="/covidusa/assets/js/carto/statecodes.js?v=0.0.1a"></script>
+
+<body>
+
+
+<!-- START required DOM structure -->
+<section class="wrap">
+    <header>
+        <h2 id='state'>US states heatmap vis, rollover to see random data :)</h2>
+    </header>
+    <div id='vis'>
+        <svg></svg>
+    </div>
+</section>
+
+<!-- d3 code -->
+<script src="/covidusa/assets/js/carto/foocarto.js?v=0.0.1a"></script>
+
+<script>
+    render()
+
+    // setInterval(function() {
+    //     // make it dance
+    //     render()
+    // }, 5000)
+
+    d3.select(self.frameElement).style('height', '650px');
+</script>
