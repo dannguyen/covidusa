@@ -26,17 +26,23 @@ datacopy: wrangle
 
 
 
+wrangle: data/wrangled/state_summaries.json data/wrangled/timeseries.csv
+
+data/wrangled/state_summaries.json: data/fused/jhcsse_normalized.csv
+	./scripts/wrangle_summary.py
+
+data/wrangled/timeseries.csv: data/fused/jhcsse_normalized.csv
+	./scripts/wrangle_timeseries.py
+
+
+fuse: data/fused/jhcsse_normalized.csv
+
+data/fused/jhcsse_normalized.csv: data/collected/jhcsse/timeseries_confirmed.csv data/collected/jhcsse/timeseries_deaths.csv
+	./scripts/fuse_jhcsse_data.py
 
 collect:
 	./scripts/collect_jhcsse_data.py
+	./scripts/collect_covidtracking.py
 
-fuse:
-	./scripts/fuse_jhcsse_data.py
 
-wrangle: data/wrangled/state_summaries.json data/wrangled/timeseries.csv
 
-data/wrangled/state_summaries.json:
-	./scripts/wrangle_summary.py
-
-data/wrangled/timeseries.csv:
-	./scripts/wrangle_timeseries.py
