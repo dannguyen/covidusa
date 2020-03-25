@@ -1,5 +1,4 @@
 # Dan Nguyen's custom bashfoo
-*.egg-info
 
 # names for data stash folders that shouldn't be committed
 _drafts/
@@ -133,7 +132,8 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-
+# mkdocs documentation
+/site
 
 # mypy
 .mypy_cache/
@@ -142,3 +142,10 @@ venv.bak/
 # js/svelte stuff
 node_modules
 public/bundle.*
+
+# jekyll stuff
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor

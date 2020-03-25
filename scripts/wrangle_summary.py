@@ -12,6 +12,8 @@ SRC_PATH = Path('data/fused/jhcsse_normalized.csv')
 LOOKUPS_PATH = Path('data/lookups/fips.csv')
 DEST_PATH = Path('data/wrangled/state_summaries.json')
 
+MAX_DATE = '2020-03-22'
+
 
 def _date_daysago(dt, days):
     return (date.fromisoformat(dt) - timedelta(days=days)).isoformat()
@@ -26,11 +28,27 @@ def _load_src_data():
     with open(SRC_PATH) as ins:
         for d in csv.DictReader(ins):
             if d['country_region'] == 'US':
-                d['confirmed'] = int(d['confirmed'])
-                d['deaths'] = int(d['deaths'])
-                data.append(d)
+                try:
+                    d['confirmed'] = int(d['confirmed']) if d['confirmed'] else 0
+                    d['deaths'] = int(d['deaths']) if d['deaths'] else 0
+                except Exception as e:
+                    import pdb; pdb.set_trace()
+                    raise e
+                else:
+                    data.append(d)
+
     return data
 
+
+
+def extract_meta(statedata):
+    d = {}
+    d['earliest_date'] = min(s['first']['date'] for s in statedata)
+    d['latest_date'] = max(s['latest']['date'] for s in statedata)
+    d['total_confirmed'] = sum(s['latest']['confirmed'] for s in statedata)
+    d['total_deaths'] = sum(s['latest']['deaths'] for s in statedata)
+
+    return d
 
 def extract_states_metas():
     meta = []
@@ -46,7 +64,6 @@ def extract_states_metas():
 
 
 def extract_state_series(state_abbrev, state_name, indata):
-    data = {}
     series = [d for d in indata if d['province_state'] == state_name
                                       or re.search(f', *{state_abbrev}$', d['province_state'])
                                       and d['country_region'] == 'US']
@@ -61,8 +78,9 @@ def wrangle_state_series(series):
     dategroups = defaultdict(lambda: {'confirmed': 0, 'deaths': 0})
     for s in series:
         sdate = s['date']
-        dategroups[sdate]['confirmed'] += s['confirmed']
-        dategroups[sdate]['deaths'] += s['deaths']
+        if sdate <= MAX_DATE:
+            dategroups[sdate]['confirmed'] += s['confirmed']
+            dategroups[sdate]['deaths'] += s['deaths']
 
     dates = sorted(dategroups.keys())
 
@@ -114,7 +132,7 @@ def main():
         s_data = wrangle_state_series(_series)
         s.update(s_data)
 
-    outdata = {'states': states}
+    outdata = {'meta': extract_meta(states), 'states': states, }
 
     outtext = json.dumps(outdata, indent=2)
     DEST_PATH.write_text(outtext)

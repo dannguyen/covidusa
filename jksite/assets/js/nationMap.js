@@ -10,7 +10,7 @@ var svg = d3.select("#mapbox"),
 
 // var url = "https://d3js.org/us-10m.v1.json"
 
-var states_url = "{{ '/static/data/states.topo.json?v=' | append: site.github.build_revision | relative_url }}"
+var states_url = "{{ '/static/data/topo/states.topo.json?v=' | append: site.github.build_revision | relative_url }}"
 
 
 var us_states = d3.json(states_url);
