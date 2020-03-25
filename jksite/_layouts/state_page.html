@@ -12,8 +12,17 @@ layout: default
 <section class="bigolchart">
 
 
-    {% include charts/single-series.html abbr=pagedata.abbr %}
+    <h3>Daily confirmed count</h3>
 
+    {% include charts/daily-series.html abbr=pagedata.abbr %}
+
+
+</section>
+
+<section>
+    <h3>Daily change</h3>
+
+    {% include charts/daily-change.html abbr=pagedata.abbr %}
 
 </section>
 

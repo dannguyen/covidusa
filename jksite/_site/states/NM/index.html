@@ -34,6 +34,7 @@
 <link rel="stylesheet" href="/covidusa/assets/css/ie.css">
 <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/covidusa/favicon.ico">
 
 
 </head>
@@ -90,6 +91,8 @@
 <section class="bigolchart">
 
 
+    <h3>Daily confirmed count</h3>
+
     
 <!--
     http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
@@ -98,11 +101,10 @@
 
 
 
-<h3>Single Series chart</h3>
 
 <style>
 
-.chart.single-series{
+.chart{
     width: 100%;
     height: 100%;
 }
@@ -110,11 +112,19 @@
 .chart-wrap{
     width: 100%;
     height: 350px;
-    border: thin solid green;
+}
+
+.chart.daily-series{
+    border: thin solid #f9f9f9;
 
 }
 
-.line{
+.chart.daily-series .dot{
+    fill: green;
+    stroke: #eee;
+}
+
+.chart.daily-series .line{
     fill: none;
     stroke: hotpink;
     stroke-width: 2;
@@ -125,17 +135,76 @@
 
 
 <div class="chart-wrap">
-    <svg class="chart single-series" id="svg-single-series-chart-NM"></svg>
+    <svg class="chart daily-series" id="svg-daily-series-chart-NM"></svg>
 </div>
 
 
-<script src="/covidusa/assets/js/singleSeries.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
 
 
 <script>
-    renderSeriesChart('svg-single-series-chart-NM', 'NM')
+    renderSeriesChart('svg-daily-series-chart-NM', 'NM')
 </script>
 
+
+
+</section>
+
+<section>
+    <h3>Daily change</h3>
+
+    
+<!--
+https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
+ -->
+
+
+
+
+<style>
+
+.chart{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+
+}
+
+.chart.daily-change{
+    border: thin solid red;
+}
+
+
+.chart.daily-change .dot{
+    fill: orange;
+    stroke: #eee;
+}
+
+.chart.daily-change .line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="chart-wrap">
+    <svg class="chart daily-change" id="svg-daily-change-chart-NM"></svg>
+</div>
+
+
+<script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
+
+
+<script>
+    renderChangeChart('svg-daily-change-chart-NM', 'NM')
+</script>
 
 
 </section>

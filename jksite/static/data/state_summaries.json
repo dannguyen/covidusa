@@ -2,8 +2,8 @@
   "meta": {
     "earliest_date": "2020-01-22",
     "latest_date": "2020-03-22",
-    "total_cases": 33166,
-    "total_deaths": 415
+    "total_confirmed": 33140,
+    "total_deaths": 414
   },
   "states": [
     {
@@ -1432,39 +1432,6 @@
       }
     },
     {
-      "abbr": "PR",
-      "name": "Puerto Rico",
-      "fips": "72",
-      "latest": {
-        "date": "2020-03-22",
-        "confirmed": 23,
-        "deaths": 1
-      },
-      "first": {
-        "date": "2020-03-14",
-        "days_ago": 8,
-        "confirmed": 3,
-        "deaths": 0
-      },
-      "days_ago": {
-        "1": {
-          "date": "2020-03-21",
-          "days_ago": 1,
-          "confirmed": 21,
-          "confirmed_count_change": 2,
-          "confirmed_pct_change": 9.5
-        },
-        "7": {
-          "date": "2020-03-15",
-          "days_ago": 7,
-          "confirmed": 5,
-          "confirmed_count_change": 18,
-          "confirmed_pct_change": 360.0
-        },
-        "14": {}
-      }
-    },
-    {
       "abbr": "RI",
       "name": "Rhode Island",
       "fips": "44",
@@ -1729,39 +1696,6 @@
           "confirmed_count_change": 51,
           "confirmed_pct_change": 5100.0
         }
-      }
-    },
-    {
-      "abbr": "VI",
-      "name": "Virgin Islands",
-      "fips": "78",
-      "latest": {
-        "date": "2020-03-22",
-        "confirmed": 3,
-        "deaths": 0
-      },
-      "first": {
-        "date": "2020-03-14",
-        "days_ago": 8,
-        "confirmed": 1,
-        "deaths": 0
-      },
-      "days_ago": {
-        "1": {
-          "date": "2020-03-21",
-          "days_ago": 1,
-          "confirmed": 3,
-          "confirmed_count_change": 0,
-          "confirmed_pct_change": 0.0
-        },
-        "7": {
-          "date": "2020-03-15",
-          "days_ago": 7,
-          "confirmed": 1,
-          "confirmed_count_change": 2,
-          "confirmed_pct_change": 200.0
-        },
-        "14": {}
       }
     },
     {

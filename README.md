@@ -51,7 +51,12 @@ https://www.nytimes.com/interactive/2020/03/17/upshot/hospital-bed-shortages-cor
 
 ## TODO
 
-- rename lookups/us_states.csv to lookups/fips.csv
+- in wrangle_timeseries.py, calculate delta change and dayno (currently, it's done in d3.js)
+
+
+
+### older todos
+
 - wrangle places.csv
 - wrangle us_state_counts
 - wrangle country_counts for main countries: iran, china, south_korea, italy, canada, mexico, uk

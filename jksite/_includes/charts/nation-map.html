@@ -1,12 +1,7 @@
----
-layout: base
-notes: |
-    just a test
----
-
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
+
 <style>
 
     .state {
@@ -15,20 +10,32 @@ notes: |
       stroke-linejoin: round;
     }
 
+    .state:hover{
+        fill: #ccf;
+        stroke: #520;
+        cursor: pointer;
+        z-index: 99999;
+    }
+
     #mapbox{
         height: 700px;
         width: 980px;
     }
 
     #mapwrap{
-        border: 1px solid purple;
+        border: thin solid #fef;
     }
 </style>
 
 
+<h2>my american map</h2>
 
-<script>
+<section id="mapwrap">
 
 
+        <svg id="mapbox"></svg>
 
-</script>
+
+</section>
+
+<script src="{{ '/assets/js/charts/nationMap.js?v=' | append: site.github.build_revision | relative_url }}"></script>
