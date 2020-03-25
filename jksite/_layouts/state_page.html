@@ -7,6 +7,17 @@ layout: default
 
 <h1>{{pagedata.name}} {{pagedata.abbr}}</h1>
 
+
+
+<section class="bigolchart">
+
+
+    {% include charts/single-series.html abbr=pagedata.abbr %}
+
+
+</section>
+
+
 <code>
     {{pagedata}}
 </code>

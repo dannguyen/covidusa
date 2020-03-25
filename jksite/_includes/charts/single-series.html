@@ -1,0 +1,45 @@
+
+<!--
+    http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
+    https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
+ -->
+
+{% assign abbr = include.abbr %}
+
+<h3>Single Series chart</h3>
+
+<style>
+
+.chart.single-series{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+    border: thin solid green;
+
+}
+
+.line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="chart-wrap">
+    <svg class="chart single-series" id="svg-single-series-chart-{{abbr}}"></svg>
+</div>
+
+
+<script src="{{ '/assets/js/singleSeries.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
+
+<script>
+    renderSeriesChart('svg-single-series-chart-{{abbr}}', '{{abbr}}')
+</script>

@@ -85,8 +85,64 @@
 
 <h1>New York NY</h1>
 
+
+
+<section class="bigolchart">
+
+
+    
+<!--
+    http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
+    https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
+ -->
+
+
+
+<h3>Single Series chart</h3>
+
+<style>
+
+.chart.single-series{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+    border: thin solid green;
+
+}
+
+.line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="chart-wrap">
+    <svg class="chart single-series" id="svg-single-series-chart-NY"></svg>
+</div>
+
+
+<script src="/covidusa/assets/js/singleSeries.js?v=0.0.1a"></script>
+
+
+<script>
+    renderSeriesChart('svg-single-series-chart-NY', 'NY')
+</script>
+
+
+
+</section>
+
+
 <code>
-    {"abbr"=>"NY", "name"=>"New York", "fips"=>"36", "latest"=>{"date"=>"2020-03-16", "confirmed"=>967, "deaths"=>10}, "first"=>{"date"=>"2020-03-02", "days_ago"=>14, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-15", "days_ago"=>1, "confirmed"=>732, "confirmed_count_change"=>235, "confirmed_pct_change"=>32.1}, "7"=>{"date"=>"2020-03-09", "days_ago"=>7, "confirmed"=>142, "confirmed_count_change"=>825, "confirmed_pct_change"=>581.0}, "14"=>{"date"=>"2020-03-02", "days_ago"=>14, "confirmed"=>1, "confirmed_count_change"=>966, "confirmed_pct_change"=>96600.0}}}
+    {"abbr"=>"NY", "name"=>"New York", "fips"=>"36", "latest"=>{"date"=>"2020-03-22", "confirmed"=>15793, "deaths"=>117}, "first"=>{"date"=>"2020-03-02", "days_ago"=>20, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>11710, "confirmed_count_change"=>4083, "confirmed_pct_change"=>34.9}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>732, "confirmed_count_change"=>15061, "confirmed_pct_change"=>2057.5}, "14"=>{"date"=>"2020-03-08", "days_ago"=>14, "confirmed"=>106, "confirmed_count_change"=>15687, "confirmed_pct_change"=>14799.1}}}
 </code>
 
 

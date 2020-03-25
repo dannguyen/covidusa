@@ -85,8 +85,64 @@
 
 <h1>Alaska AK</h1>
 
+
+
+<section class="bigolchart">
+
+
+    
+<!--
+    http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
+    https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
+ -->
+
+
+
+<h3>Single Series chart</h3>
+
+<style>
+
+.chart.single-series{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+    border: thin solid green;
+
+}
+
+.line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="chart-wrap">
+    <svg class="chart single-series" id="svg-single-series-chart-AK"></svg>
+</div>
+
+
+<script src="/covidusa/assets/js/singleSeries.js?v=0.0.1a"></script>
+
+
+<script>
+    renderSeriesChart('svg-single-series-chart-AK', 'AK')
+</script>
+
+
+
+</section>
+
+
 <code>
-    {"abbr"=>"AK", "name"=>"Alaska", "fips"=>"02", "latest"=>{"date"=>"2020-03-16", "confirmed"=>1, "deaths"=>0}, "first"=>{"date"=>"2020-03-13", "days_ago"=>3, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-15", "days_ago"=>1, "confirmed"=>1, "confirmed_count_change"=>0, "confirmed_pct_change"=>0.0}, "7"=>{}, "14"=>{}}}
+    {"abbr"=>"AK", "name"=>"Alaska", "fips"=>"02", "latest"=>{"date"=>"2020-03-22", "confirmed"=>21, "deaths"=>0}, "first"=>{"date"=>"2020-03-13", "days_ago"=>9, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>15, "confirmed_count_change"=>6, "confirmed_pct_change"=>40.0}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>1, "confirmed_count_change"=>20, "confirmed_pct_change"=>2000.0}, "14"=>{}}}
 </code>
 
 

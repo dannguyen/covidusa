@@ -2,7 +2,6 @@
 
 import csv
 from collections import defaultdict
-from datetime import date, timedelta
 import json
 from pathlib import Path
 import re
@@ -52,6 +51,19 @@ def extract_timeseries_by_state(state_abbrev, state_name, indata):
 
 
 
+def sum_timeseries(series):
+    """groups multiple days in a state into single date summations"""
+    _id = series[0]['id']
+    dategroups = defaultdict(lambda: {'confirmed': 0, 'deaths': 0})
+    for s in series:
+        sdate = s['date']
+        if sdate <= MAX_DATE:
+            dategroups[sdate]['confirmed'] += s['confirmed']
+            dategroups[sdate]['deaths'] += s['deaths']
+
+    outdata = [{'id': _id, 'date': k, 'confirmed': v['confirmed'], 'deaths': v['deaths']} for k, v in dategroups.items()]
+    return sorted(outdata, key=lambda d: d['date'])
+
 def main():
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     srcdata = _load_src_data()
@@ -62,7 +74,8 @@ def main():
         outs.writeheader()
 
         for s in lookups:
-            _series = extract_timeseries_by_state(s['postal_code'], s['full_name'], srcdata)
+            _x = extract_timeseries_by_state(s['postal_code'], s['full_name'], srcdata)
+            _series = sum_timeseries(_x)
             outs.writerows(_series)
 
     stderr.write(f"Wrote {DEST_PATH.stat().st_size} chars to {DEST_PATH}\n")

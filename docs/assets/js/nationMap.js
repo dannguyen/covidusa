@@ -1,7 +1,11 @@
-var svg = d3.select("#mapbox"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+;
 
+
+var svg = d3.select("#mapbox"),
+    width = svg.node().getBoundingClientRect().width,
+    height = svg.node().getBoundingClientRect().height;
+
+console.log("width: ", width)
 
 // var url = "https://d3js.org/us-10m.v1.json"
 

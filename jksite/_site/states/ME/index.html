@@ -18,11 +18,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A state-by-state tracker of Covid-19" />
 <meta property="og:description" content="A state-by-state tracker of Covid-19" />
-<link rel="canonical" href="http://localhost:4000/covidusa/states/ME/" />
-<meta property="og:url" content="http://localhost:4000/covidusa/states/ME/" />
+<link rel="canonical" href="https://dannguyen.github.io/covidusa/states/ME/" />
+<meta property="og:url" content="https://dannguyen.github.io/covidusa/states/ME/" />
 <meta property="og:site_name" content="CovidUSA" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/covidusa/states/ME/","headline":"Maine","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"https://dannguyen.github.io/covidusa/states/ME/","headline":"Maine","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -49,7 +49,7 @@
   <div class="container">
 
 
-    <a class="navbar-brand" href="http://localhost:4000/covidusa/">CovidUSA</a>
+    <a class="navbar-brand" href="https://dannguyen.github.io/covidusa/">CovidUSA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,6 +84,62 @@
 
 
 <h1>Maine ME</h1>
+
+
+
+<section class="bigolchart">
+
+
+    
+<!--
+    http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
+    https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
+ -->
+
+
+
+<h3>Single Series chart</h3>
+
+<style>
+
+.chart.single-series{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+    border: thin solid green;
+
+}
+
+.line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="chart-wrap">
+    <svg class="chart single-series" id="svg-single-series-chart-ME"></svg>
+</div>
+
+
+<script src="/covidusa/assets/js/singleSeries.js?v=0.0.1a"></script>
+
+
+<script>
+    renderSeriesChart('svg-single-series-chart-ME', 'ME')
+</script>
+
+
+
+</section>
+
 
 <code>
     {"abbr"=>"ME", "name"=>"Maine", "fips"=>"23", "latest"=>{"date"=>"2020-03-22", "confirmed"=>89, "deaths"=>0}, "first"=>{"date"=>"2020-03-13", "days_ago"=>9, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>70, "confirmed_count_change"=>19, "confirmed_pct_change"=>27.1}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>12, "confirmed_count_change"=>77, "confirmed_pct_change"=>641.7}, "14"=>{}}}
