@@ -11,7 +11,8 @@ SRC_URLS = {
 
 
 def main():
-    print("Yo, wait till JH has USA data separated: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data")
+    print("DEPCRECATED AS OF 2020-03-27 for other datasets")
+#    print("Yo, wait till JH has USA data separated: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data")
 
     pass
     DEST_DIR.mkdir(exist_ok=True, parents=True)

@@ -135,6 +135,9 @@ def validate_timeseries_data(indata):
 
 
 def main():
+    print("Deprecated for now in favor of the NYTimes data")
+    pass
+
     tdata = load_timeseries_data()
     validate_timeseries_data(tdata)
     ndata = normalize_timeseries_data(tdata)

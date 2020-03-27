@@ -1,19 +1,21 @@
 #!/usr/bin/env python
 
 """
-https://covidtracking.com/api/
-states daily: https://covidtracking.com/api/states/daily.csv
-us daily: https://covidtracking.com/api/us/daily.csv
+https://github.com/nytimes/covid-19-data
+https://www.nytimes.com/article/coronavirus-county-data-us.html
+
+
+https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
 """
 
 from pathlib import Path
 import requests
 from sys import stderr
 
-DEST_DIR = Path('backend/data/collected/covidtracking')
+DEST_DIR = Path('backend/data/collected/nytimes')
 SRC_URLS = {
-    'states_daily': 'https://covidtracking.com/api/states/daily.csv',
-    'us_daily': 'https://covidtracking.com/api/us/daily.csv',
+    'us-counties': 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv',
+    'us-states': 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv',
 }
 
 def main():
