@@ -46,5 +46,7 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 
 <script>
-   dailyChange.renderConfirmed('{{entity_id}}', 'svg-daily-change-confirmed-chart-{{entity_id}}')
+    var seriesPath = "{{entity_id | single_series_json_path | relative_url }}";
+
+   dailyChange.renderConfirmed('{{entity_id}}', 'svg-daily-change-confirmed-chart-{{entity_id}}', seriesPath)
 </script>

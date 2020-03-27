@@ -1,4 +1,3 @@
-
 <!--
     http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
     https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
@@ -44,5 +43,7 @@
 
 
 <script>
-    dailySeries.renderConfirmed('{{entity_id}}', 'svg-daily-series-confirmed-chart-{{entity_id}}')
+    var seriesPath = "{{entity_id | single_series_json_path | relative_url }}";
+    var elId = 'svg-daily-series-confirmed-chart-{{entity_id}}';
+    dailySeries.renderConfirmed('{{entity_id}}', elId, seriesPath)
 </script>

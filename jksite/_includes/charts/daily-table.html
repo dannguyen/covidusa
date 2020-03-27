@@ -8,5 +8,7 @@
 
 
 <script>
-    dailyTable.render("{{entity_id}}", "daily-table-{{entity_id}}")
+    var seriesPath = "{{entity_id | single_series_json_path | relative_url }}";
+
+    dailyTable.render("{{entity_id}}", "daily-table-{{entity_id}}", seriesPath)
 </script>

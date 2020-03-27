@@ -1,51 +1,28 @@
 // window.datasets = Object.is(window.datasets, undefined) ? {} : window.datasets;
 
 const datautils = function(){
+    const getSeries = function(url){
+        let mypromise = d3.json(url)
+                    .then(function(data){
+                        let series = data.series;
+                        for(let i=0; i < series.length; i++){
+                            series[i].datestring = series[i].date
+                            series[i].date = new Date(series[i].date)
+                        }
 
-    let sets = {};
-    const urls = {
-        timeseries: "/covidusa/static/data/timeseries.csv?v=0.0.1a"
-    };
+                        console.log(series)
 
-
-    const foo = function(){
-        console.log('foo')
-    }
-
-    const getTimeSeries = function(eid){
-        return fetchall_timeseries().then(function(alldata){
-            let _edata = alldata.filter(function(d){ return d.id == eid && d.confirmed > 0})
-            return _edata;
-        })
-    }
-
-
-    const fetchall_timeseries = function(){
-        const url = urls.timeseries
-
-        let mypromise = d3.csv(url, function(d){
-                    return {id: d.id,
-                            datestring: d.date,
-                            date: new Date(d.date),
-                            confirmed: +d.confirmed,
-                            deaths: +d.deaths}
-                }).then(function(data){
-                    // console.log(`fetching: ${url}`)
-                    sets.timeseries = data;
-                    // console.log('fetched: ', data)
-                    return sets.timeseries;
+                        return data;
                 })
 
         return mypromise
     }
 
+
 console.log('datautils loaded')
 
     return {
-        foo: foo,
-        getTimeSeries: getTimeSeries,
-        // fetchTimeSeries: fetchTimeSeries,
-        sets: sets
+        getSeries: getSeries,
     }
 
 }()

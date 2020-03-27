@@ -2,20 +2,21 @@
 
 const dailyChange = function(){
 
-    const renderConfirmed = function(id, target_id){
+    const renderConfirmed = function(id, target_id, url){
         let svg = d3.select('#'+target_id),
             width = svg.node().getBoundingClientRect().width,
             height = svg.node().getBoundingClientRect().height;
 
 
-        let pfoo = datautils.getTimeSeries(id);
+        let pfoo = datautils.getSeries(url);
         Promise.resolve(pfoo)
             .then(function(resp){
                 console.log('TKTK: renderConfirmed change hides 0/negative values!')
                 let data = resp;
+                let series = data['series'].sort((x, y) => x.date - y.date )
 
-                data.forEach(function(d, i){
-                    var a = data[i-1]
+                series.forEach(function(d, i){
+                    var a = series[i-1]
                     if(i == 0){
                         d.delta = 10;
                     }else if(a.confirmed < 1){
@@ -29,18 +30,18 @@ const dailyChange = function(){
                 let xScale = d3.scaleBand()
                                 .rangeRound([0, width], 0.05)
                                 .padding(0.1)
-                                .domain(data.map(function(d){ return d.date }))
+                                .domain(series.map(function(d){ return d.date }))
 
 
                 // console.log("hey: ", xScale.bandwidth())
                 // console.log(data.map(function(d){ return d.date }))
 
                 let yScale = d3.scaleLog()
-                                .domain([10, d3.max(data, function(d){ return d.delta })])
+                                .domain([10, d3.max(series, function(d){ return d.delta })])
                                 .rangeRound([height, 0])
 
                 svg.selectAll("bar")
-                    .data(data)
+                    .data(series)
                     .enter()
                     .append("rect")
                     .style("fill", "steelblue")

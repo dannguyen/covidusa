@@ -1,0 +1,124 @@
+{
+  "id": "DC",
+  "name": "District of Columbia",
+  "fips": "11",
+  "series": [
+    {
+      "date": "2020-03-22",
+      "confirmed": 102,
+      "deaths": 2,
+      "confirmed_diff": 25,
+      "confirmed_diff_pct": 32.5,
+      "deaths_diff": 1,
+      "deaths_diff_pct": 100.0
+    },
+    {
+      "date": "2020-03-21",
+      "confirmed": 77,
+      "deaths": 1,
+      "confirmed_diff": 6,
+      "confirmed_diff_pct": 8.5,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-20",
+      "confirmed": 71,
+      "deaths": 1,
+      "confirmed_diff": 31,
+      "confirmed_diff_pct": 77.5,
+      "deaths_diff": 1,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-19",
+      "confirmed": 40,
+      "deaths": 0,
+      "confirmed_diff": 9,
+      "confirmed_diff_pct": 29.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-18",
+      "confirmed": 31,
+      "deaths": 0,
+      "confirmed_diff": 9,
+      "confirmed_diff_pct": 40.9,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-17",
+      "confirmed": 22,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-16",
+      "confirmed": 22,
+      "deaths": 0,
+      "confirmed_diff": 6,
+      "confirmed_diff_pct": 37.5,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-15",
+      "confirmed": 16,
+      "deaths": 0,
+      "confirmed_diff": 6,
+      "confirmed_diff_pct": 60.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-14",
+      "confirmed": 10,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-13",
+      "confirmed": 10,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-12",
+      "confirmed": 10,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-11",
+      "confirmed": 10,
+      "deaths": 0,
+      "confirmed_diff": 5,
+      "confirmed_diff_pct": 100.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-10",
+      "confirmed": 5,
+      "deaths": 0,
+      "confirmed_diff": 5,
+      "confirmed_diff_pct": null,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    }
+  ]
+}

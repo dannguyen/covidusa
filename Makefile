@@ -26,8 +26,14 @@ datacopy: wrangle
 	cp backend/data/wrangled/state_summaries.json jksite/_data/state_summaries.json
 	cp backend/data/wrangled/state_summaries.json jksite/static/data/state_summaries.json
 	# timeseries
-	cp backend/data/wrangled/timeseries.csv jksite/static/data/timeseries.csv
+	# cp backend/data/wrangled/timeseries.csv jksite/static/data/timeseries.csv
 
+	# individual series
+	cp -r backend/data/wrapped/series jksite/static/data/
+
+
+wrap:
+	./backend/scripts/wrap/wrap_series.py
 
 
 wrangle: backend/data/wrangled/state_summaries.json backend/data/wrangled/timeseries.csv
@@ -39,7 +45,7 @@ backend/data/wrangled/timeseries.csv: backend/data/fused/jhcsse_normalized.csv
 	./backend/scripts/wrangle_timeseries.py
 
 
-fuse: backend/data/fused/jhcsse_normalized.csv
+fuse: ./backend/data/fused/jhcsse_normalized.csv
 
 data/fused/jhcsse_normalized.csv: backend/data/collected/jhcsse/timeseries_confirmed.csv backend/data/collected/jhcsse/timeseries_deaths.csv
 	./backend/scripts/fuse_jhcsse_data.py

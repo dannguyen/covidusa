@@ -1,0 +1,142 @@
+{
+  "id": "VA",
+  "name": "Virginia",
+  "fips": "51",
+  "series": [
+    {
+      "date": "2020-03-22",
+      "confirmed": 221,
+      "deaths": 6,
+      "confirmed_diff": 65,
+      "confirmed_diff_pct": 41.7,
+      "deaths_diff": 4,
+      "deaths_diff_pct": 200.0
+    },
+    {
+      "date": "2020-03-21",
+      "confirmed": 156,
+      "deaths": 2,
+      "confirmed_diff": 34,
+      "confirmed_diff_pct": 27.9,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-20",
+      "confirmed": 122,
+      "deaths": 2,
+      "confirmed_diff": 23,
+      "confirmed_diff_pct": 23.2,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-19",
+      "confirmed": 99,
+      "deaths": 2,
+      "confirmed_diff": 22,
+      "confirmed_diff_pct": 28.6,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-18",
+      "confirmed": 77,
+      "deaths": 2,
+      "confirmed_diff": 10,
+      "confirmed_diff_pct": 14.9,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-17",
+      "confirmed": 67,
+      "deaths": 2,
+      "confirmed_diff": 18,
+      "confirmed_diff_pct": 36.7,
+      "deaths_diff": 1,
+      "deaths_diff_pct": 100.0
+    },
+    {
+      "date": "2020-03-16",
+      "confirmed": 49,
+      "deaths": 1,
+      "confirmed_diff": 4,
+      "confirmed_diff_pct": 8.9,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-15",
+      "confirmed": 45,
+      "deaths": 1,
+      "confirmed_diff": 4,
+      "confirmed_diff_pct": 9.8,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-14",
+      "confirmed": 41,
+      "deaths": 1,
+      "confirmed_diff": 11,
+      "confirmed_diff_pct": 36.7,
+      "deaths_diff": 1,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-13",
+      "confirmed": 30,
+      "deaths": 0,
+      "confirmed_diff": 13,
+      "confirmed_diff_pct": 76.5,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-12",
+      "confirmed": 17,
+      "deaths": 0,
+      "confirmed_diff": 8,
+      "confirmed_diff_pct": 88.9,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-11",
+      "confirmed": 9,
+      "deaths": 0,
+      "confirmed_diff": 2,
+      "confirmed_diff_pct": 28.6,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-10",
+      "confirmed": 7,
+      "deaths": 0,
+      "confirmed_diff": 5,
+      "confirmed_diff_pct": 250.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-09",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-08",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": 2,
+      "confirmed_diff_pct": null,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    }
+  ]
+}

@@ -119,8 +119,7 @@
         <div class="row">
             <div class="col-sm">
                 <h3>Confirmed</h3>
-                
-<!--
+                <!--
     http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
     https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
  -->
@@ -165,7 +164,9 @@
 
 
 <script>
-    dailySeries.renderConfirmed('MT', 'svg-daily-series-confirmed-chart-MT')
+    var seriesPath = "/covidusa/static/data/series/MT.json";
+    var elId = 'svg-daily-series-confirmed-chart-MT';
+    dailySeries.renderConfirmed('MT', elId, seriesPath)
 </script>
 
 
@@ -222,7 +223,9 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 
 <script>
-   dailyChange.renderConfirmed('MT', 'svg-daily-change-confirmed-chart-MT')
+    var seriesPath = "/covidusa/static/data/series/MT.json";
+
+   dailyChange.renderConfirmed('MT', 'svg-daily-change-confirmed-chart-MT', seriesPath)
 </script>
 
             </div>
@@ -244,7 +247,9 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 
 <script>
-    dailyTable.render("MT", "daily-table-MT")
+    var seriesPath = "/covidusa/static/data/series/MT.json";
+
+    dailyTable.render("MT", "daily-table-MT", seriesPath)
 </script>
 
 </section>

@@ -1,0 +1,124 @@
+{
+  "id": "OH",
+  "name": "Ohio",
+  "fips": "39",
+  "series": [
+    {
+      "date": "2020-03-22",
+      "confirmed": 355,
+      "deaths": 3,
+      "confirmed_diff": 107,
+      "confirmed_diff_pct": 43.1,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-21",
+      "confirmed": 248,
+      "deaths": 3,
+      "confirmed_diff": 75,
+      "confirmed_diff_pct": 43.4,
+      "deaths_diff": 1,
+      "deaths_diff_pct": 50.0
+    },
+    {
+      "date": "2020-03-20",
+      "confirmed": 173,
+      "deaths": 2,
+      "confirmed_diff": 54,
+      "confirmed_diff_pct": 45.4,
+      "deaths_diff": 2,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-19",
+      "confirmed": 119,
+      "deaths": 0,
+      "confirmed_diff": 33,
+      "confirmed_diff_pct": 38.4,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-18",
+      "confirmed": 86,
+      "deaths": 0,
+      "confirmed_diff": 19,
+      "confirmed_diff_pct": 28.4,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-17",
+      "confirmed": 67,
+      "deaths": 0,
+      "confirmed_diff": 17,
+      "confirmed_diff_pct": 34.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-16",
+      "confirmed": 50,
+      "deaths": 0,
+      "confirmed_diff": 13,
+      "confirmed_diff_pct": 35.1,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-15",
+      "confirmed": 37,
+      "deaths": 0,
+      "confirmed_diff": 11,
+      "confirmed_diff_pct": 42.3,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-14",
+      "confirmed": 26,
+      "deaths": 0,
+      "confirmed_diff": 13,
+      "confirmed_diff_pct": 100.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-13",
+      "confirmed": 13,
+      "deaths": 0,
+      "confirmed_diff": 8,
+      "confirmed_diff_pct": 160.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-12",
+      "confirmed": 5,
+      "deaths": 0,
+      "confirmed_diff": 1,
+      "confirmed_diff_pct": 25.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-11",
+      "confirmed": 4,
+      "deaths": 0,
+      "confirmed_diff": 1,
+      "confirmed_diff_pct": 33.3,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-10",
+      "confirmed": 3,
+      "deaths": 0,
+      "confirmed_diff": 3,
+      "confirmed_diff_pct": null,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    }
+  ]
+}
