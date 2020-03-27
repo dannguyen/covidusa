@@ -10,7 +10,7 @@ from pathlib import Path
 import requests
 from sys import stderr
 
-DEST_DIR = Path('data/collected/covidtracking')
+DEST_DIR = Path('backend/data/collected/covidtracking')
 SRC_URLS = {
     'states_daily': 'https://covidtracking.com/api/states/daily.csv',
     'us_daily': 'https://covidtracking.com/api/us/daily.csv',

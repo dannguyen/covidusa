@@ -7,9 +7,9 @@ from pathlib import Path
 import re
 from sys import stderr
 
-SRC_PATH = Path('data/fused/jhcsse_normalized.csv')
-LOOKUPS_PATH = Path('data/lookups/fips.csv')
-DEST_PATH = Path('data/wrangled/timeseries.csv')
+SRC_PATH = Path('backend/data/fused/jhcsse_normalized.csv')
+LOOKUPS_PATH = Path('backend/data/lookups/fips.csv')
+DEST_PATH = Path('backend/data/wrangled/timeseries.csv')
 
 MAX_DATE = '2020-03-22'
 

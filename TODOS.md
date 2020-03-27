@@ -3,6 +3,8 @@
 
 ## Viz
 
+
+- move nationMap to modular style
 - add axes to charts
 - add hovertips
 
@@ -10,11 +12,13 @@
 
 
 - Publish task
+    - published/states/summaries.json
     - published/states/IA.json
     - published/us.json
     - published/global.json
 
-- in wrangle_timeseries.py, calculate delta change and dayno (currently, it's done in d3.js)
+- wrangling
+    - in wrangle_timeseries.py, calculate delta change and dayno (currently, it's done in d3.js)
 
 
 

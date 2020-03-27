@@ -3,7 +3,7 @@ from pathlib import Path
 import requests
 from sys import stderr
 
-DEST_DIR = Path('data/collected/jhcsse')
+DEST_DIR = Path('backend/data/collected/jhcsse')
 SRC_URLS = {
     'timeseries_confirmed': 'https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
     'timeseries_deaths': 'https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv',
@@ -11,7 +11,9 @@ SRC_URLS = {
 
 
 def main():
-    raise Exception("Yo, wait till JH has USA data separated: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data")
+    print("Yo, wait till JH has USA data separated: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data")
+
+    pass
     DEST_DIR.mkdir(exist_ok=True, parents=True)
     for key, url in SRC_URLS.items():
         resp = requests.get(url)

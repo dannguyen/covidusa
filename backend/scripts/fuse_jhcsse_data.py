@@ -5,8 +5,8 @@ from pathlib import Path
 import re
 from sys import stderr
 
-DEST_PATH = Path('data/fused/jhcsse_normalized.csv')
-SRC_DIR = Path('data/collected/jhcsse/')
+DEST_PATH = Path('backend/data/fused/jhcsse_normalized.csv')
+SRC_DIR = Path('backend/data/collected/jhcsse/')
 SRC_FILES = {
     'confirmed': SRC_DIR.joinpath('timeseries_confirmed.csv'),
     'deaths': SRC_DIR.joinpath('timeseries_deaths.csv')
