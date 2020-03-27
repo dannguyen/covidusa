@@ -8,6 +8,12 @@
 
 ## Data backend
 
+
+- Publish task
+    - published/states/IA.json
+    - published/us.json
+    - published/global.json
+
 - in wrangle_timeseries.py, calculate delta change and dayno (currently, it's done in d3.js)
 
 
