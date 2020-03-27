@@ -34,6 +34,22 @@
 <link rel="stylesheet" href="/covidusa/assets/css/ie.css">
 <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/covidusa/favicon.ico">
+
+<!-- vendor -->
+<script src="/covidusa/assets/js/vendor/d3.v5.min.js"></script>
+<script src="/covidusa/assets/js/vendor/d3-geo.v1.min.js"></script>
+<script src="/covidusa/assets/js/vendor/topojson.v2.min.js"></script>
+
+<!-- chart code -->
+<script src="/covidusa/assets/js/dataUtils.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailyTable.js?v=0.0.1a"></script>
+
+
+
+
 
 
 </head>
@@ -83,26 +99,37 @@
       
 
 
-<h1>Puerto Rico PR</h1>
 
 
+<section class="latest sec">
+    <h2>Latest as of 2020-03-23</h2>
+    <div>
+        Confirmed: 23
+    </div>
+    <div>
+        Deaths: 1
+    </div>
+</section>
 
-<section class="bigolchart">
 
+<section class="bigolcharts sec">
+    <h2>CHARTS CHARTS</h2>
 
-    
-<!--
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Confirmed</h3>
+                <!--
     http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
     https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
  -->
 
 
 
-<h3>Single Series chart</h3>
 
 <style>
 
-.chart.single-series{
+.chart{
     width: 100%;
     height: 100%;
 }
@@ -110,39 +137,218 @@
 .chart-wrap{
     width: 100%;
     height: 350px;
-    border: thin solid green;
+}
+
+.chart.daily-series.confirmed{
+    border: thin solid #f9f9f9;
 
 }
 
-.line{
+.chart.daily-series.confirmed .dot{
+    fill: green;
+    stroke: #eee;
+}
+
+.chart.daily-series.confirmed .line{
     fill: none;
     stroke: hotpink;
     stroke-width: 2;
 }
 
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-
 
 <div class="chart-wrap">
-    <svg class="chart single-series" id="svg-single-series-chart-PR"></svg>
+    <svg class="chart daily-series confirmed" id="svg-daily-series-confirmed-chart-PR"></svg>
 </div>
 
 
-<script src="/covidusa/assets/js/singleSeries.js?v=0.0.1a"></script>
-
 
 <script>
-    renderSeriesChart('svg-single-series-chart-PR', 'PR')
+    var seriesPath = "/covidusa/jdata/series/PR.json";
+    var elId = 'svg-daily-series-confirmed-chart-PR';
+    dailySeries.renderConfirmed('PR', elId, seriesPath)
 </script>
 
 
+            </div>
+
+
+            <div class="col-sm">
+                <h3>Change</h3>
+                    
+<!--
+https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
+ -->
+
+
+
+
+<style>
+
+.chart{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+
+}
+
+.chart.daily-change{
+    border: thin solid red;
+}
+
+
+.chart.daily-change .dot{
+    fill: orange;
+    stroke: #eee;
+}
+
+.chart.daily-change .line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+
+
+<div class="chart-wrap">
+    <svg class="chart daily-change" id="svg-daily-change-confirmed-chart-PR"></svg>
+</div>
+
+
+
+
+<script>
+    var seriesPath = "/covidusa/jdata/series/PR.json";
+
+   dailyChange.renderConfirmed('PR', 'svg-daily-change-confirmed-chart-PR', seriesPath)
+</script>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="daily sec">
+    <h2>Daily Table</h2>
+
+    
+
+
+<table class="table table-sm table-striped" id="daily-table-PR">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    
+        <tr>
+            <td>March 25</td>
+            <td>51</td>
+            <td>2</td>
+        </tr>
+    
+        <tr>
+            <td>March 24</td>
+            <td>52</td>
+            <td>2</td>
+        </tr>
+    
+        <tr>
+            <td>March 23</td>
+            <td>31</td>
+            <td>2</td>
+        </tr>
+    
+        <tr>
+            <td>March 22</td>
+            <td>23</td>
+            <td>1</td>
+        </tr>
+    
+        <tr>
+            <td>March 21</td>
+            <td>21</td>
+            <td>1</td>
+        </tr>
+    
+        <tr>
+            <td>March 20</td>
+            <td>14</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 19</td>
+            <td>6</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 18</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 17</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 16</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 15</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 14</td>
+            <td>4</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 13</td>
+            <td>3</td>
+            <td>0</td>
+        </tr>
+    
+    </tbody>
+
+</table>
+
+
+<script>
+//    var seriesPath = "/covidusa/jdata/series/PR.json";
+
+//    dailyTable.render("PR", "daily-table-PR", seriesPath)
+</script>
 
 </section>
 
 
+
+
+<hr>
+
 <code>
-    {"abbr"=>"PR", "name"=>"Puerto Rico", "fips"=>"72", "latest"=>{"date"=>"2020-03-22", "confirmed"=>23, "deaths"=>1}, "first"=>{"date"=>"2020-03-14", "days_ago"=>8, "confirmed"=>3, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>21, "confirmed_count_change"=>2, "confirmed_pct_change"=>9.5}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>5, "confirmed_count_change"=>18, "confirmed_pct_change"=>360.0}, "14"=>{}}}
+    {"abbr"=>"PR", "name"=>"Puerto Rico", "fips"=>"72", "latest"=>{"date"=>"2020-03-23", "confirmed"=>23, "deaths"=>1}, "first"=>{"date"=>"2020-03-14", "days_ago"=>9, "confirmed"=>3, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-22", "days_ago"=>1, "confirmed"=>23, "confirmed_count_change"=>0, "confirmed_pct_change"=>0.0}, "7"=>{"date"=>"2020-03-16", "days_ago"=>7, "confirmed"=>5, "confirmed_count_change"=>18, "confirmed_pct_change"=>360.0}, "14"=>{}}}
 </code>
 
 

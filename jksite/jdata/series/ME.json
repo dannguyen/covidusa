@@ -1,8 +1,37 @@
 {
-  "id": "ME",
-  "name": "Maine",
+  "id": "WY",
+  "name": "Wyoming",
   "fips": "23",
+  "abbr": "WY",
+  "geolevel": "state",
   "series": [
+    {
+      "date": "2020-03-25",
+      "confirmed": 142,
+      "deaths": 0,
+      "confirmed_diff": 24,
+      "confirmed_diff_pct": 20.3,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-24",
+      "confirmed": 118,
+      "deaths": 0,
+      "confirmed_diff": 11,
+      "confirmed_diff_pct": 10.3,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-23",
+      "confirmed": 107,
+      "deaths": 0,
+      "confirmed_diff": 18,
+      "confirmed_diff_pct": 20.2,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
     {
       "date": "2020-03-22",
       "confirmed": 89,
@@ -16,17 +45,17 @@
       "date": "2020-03-21",
       "confirmed": 70,
       "deaths": 0,
-      "confirmed_diff": 14,
-      "confirmed_diff_pct": 25.0,
+      "confirmed_diff": 13,
+      "confirmed_diff_pct": 22.8,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
     {
       "date": "2020-03-20",
-      "confirmed": 56,
+      "confirmed": 57,
       "deaths": 0,
-      "confirmed_diff": 4,
-      "confirmed_diff_pct": 7.7,
+      "confirmed_diff": 5,
+      "confirmed_diff_pct": 9.6,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
@@ -34,17 +63,17 @@
       "date": "2020-03-19",
       "confirmed": 52,
       "deaths": 0,
-      "confirmed_diff": 10,
-      "confirmed_diff_pct": 23.8,
+      "confirmed_diff": 9,
+      "confirmed_diff_pct": 20.9,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
     {
       "date": "2020-03-18",
-      "confirmed": 42,
+      "confirmed": 43,
       "deaths": 0,
-      "confirmed_diff": 10,
-      "confirmed_diff_pct": 31.2,
+      "confirmed_diff": 11,
+      "confirmed_diff_pct": 34.4,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
@@ -79,18 +108,27 @@
       "date": "2020-03-14",
       "confirmed": 3,
       "deaths": 0,
-      "confirmed_diff": 2,
-      "confirmed_diff_pct": 200.0,
+      "confirmed_diff": 1,
+      "confirmed_diff_pct": 50.0,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
     {
       "date": "2020-03-13",
-      "confirmed": 1,
+      "confirmed": 2,
       "deaths": 0,
       "confirmed_diff": 1,
-      "confirmed_diff_pct": null,
+      "confirmed_diff_pct": 100.0,
       "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-12",
+      "confirmed": 1,
+      "deaths": 0,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
       "deaths_diff_pct": null
     }
   ]

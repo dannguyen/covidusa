@@ -18,11 +18,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A state-by-state tracker of Covid-19" />
 <meta property="og:description" content="A state-by-state tracker of Covid-19" />
-<link rel="canonical" href="https://dannguyen.github.io/covidusa/states/NY/" />
-<meta property="og:url" content="https://dannguyen.github.io/covidusa/states/NY/" />
+<link rel="canonical" href="http://localhost:4000/covidusa/states/NY/" />
+<meta property="og:url" content="http://localhost:4000/covidusa/states/NY/" />
 <meta property="og:site_name" content="CovidUSA" />
 <script type="application/ld+json">
-{"url":"https://dannguyen.github.io/covidusa/states/NY/","headline":"New York","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/covidusa/states/NY/","headline":"New York","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -65,7 +65,7 @@
   <div class="container">
 
 
-    <a class="navbar-brand" href="https://dannguyen.github.io/covidusa/">CovidUSA</a>
+    <a class="navbar-brand" href="http://localhost:4000/covidusa/">CovidUSA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -102,7 +102,7 @@
 
 
 <section class="latest sec">
-    <h2>Latest as of 2020-03-22</h2>
+    <h2>Latest as of 2020-03-23</h2>
     <div>
         Confirmed: 15793
     </div>
@@ -240,16 +240,176 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
     
 
 
-<table class="table" id="daily-table-NY">
+<table class="table table-sm table-striped" id="daily-table-NY">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
 
+    <tbody>
+    
+        <tr>
+            <td>March 25</td>
+            <td>33066</td>
+            <td>325</td>
+        </tr>
+    
+        <tr>
+            <td>March 24</td>
+            <td>25665</td>
+            <td>218</td>
+        </tr>
+    
+        <tr>
+            <td>March 23</td>
+            <td>20875</td>
+            <td>159</td>
+        </tr>
+    
+        <tr>
+            <td>March 22</td>
+            <td>15168</td>
+            <td>122</td>
+        </tr>
+    
+        <tr>
+            <td>March 21</td>
+            <td>10356</td>
+            <td>80</td>
+        </tr>
+    
+        <tr>
+            <td>March 20</td>
+            <td>7102</td>
+            <td>57</td>
+        </tr>
+    
+        <tr>
+            <td>March 19</td>
+            <td>4152</td>
+            <td>30</td>
+        </tr>
+    
+        <tr>
+            <td>March 18</td>
+            <td>2382</td>
+            <td>27</td>
+        </tr>
+    
+        <tr>
+            <td>March 17</td>
+            <td>1374</td>
+            <td>17</td>
+        </tr>
+    
+        <tr>
+            <td>March 16</td>
+            <td>950</td>
+            <td>10</td>
+        </tr>
+    
+        <tr>
+            <td>March 15</td>
+            <td>732</td>
+            <td>6</td>
+        </tr>
+    
+        <tr>
+            <td>March 14</td>
+            <td>610</td>
+            <td>2</td>
+        </tr>
+    
+        <tr>
+            <td>March 13</td>
+            <td>421</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 12</td>
+            <td>326</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 11</td>
+            <td>217</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 10</td>
+            <td>173</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 9</td>
+            <td>142</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 8</td>
+            <td>106</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 7</td>
+            <td>89</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 6</td>
+            <td>44</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 5</td>
+            <td>22</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 4</td>
+            <td>11</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 3</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 2</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+    
+    </tbody>
 
 </table>
 
 
 <script>
-    var seriesPath = "/covidusa/jdata/series/NY.json";
+//    var seriesPath = "/covidusa/jdata/series/NY.json";
 
-    dailyTable.render("NY", "daily-table-NY", seriesPath)
+//    dailyTable.render("NY", "daily-table-NY", seriesPath)
 </script>
 
 </section>
@@ -260,7 +420,7 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 <hr>
 
 <code>
-    {"abbr"=>"NY", "name"=>"New York", "fips"=>"36", "latest"=>{"date"=>"2020-03-22", "confirmed"=>15793, "deaths"=>117}, "first"=>{"date"=>"2020-03-02", "days_ago"=>20, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>11710, "confirmed_count_change"=>4083, "confirmed_pct_change"=>34.9}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>732, "confirmed_count_change"=>15061, "confirmed_pct_change"=>2057.5}, "14"=>{"date"=>"2020-03-08", "days_ago"=>14, "confirmed"=>106, "confirmed_count_change"=>15687, "confirmed_pct_change"=>14799.1}}}
+    {"abbr"=>"NY", "name"=>"New York", "fips"=>"36", "latest"=>{"date"=>"2020-03-23", "confirmed"=>15793, "deaths"=>117}, "first"=>{"date"=>"2020-03-02", "days_ago"=>21, "confirmed"=>1, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-22", "days_ago"=>1, "confirmed"=>15793, "confirmed_count_change"=>0, "confirmed_pct_change"=>0.0}, "7"=>{"date"=>"2020-03-16", "days_ago"=>7, "confirmed"=>967, "confirmed_count_change"=>14826, "confirmed_pct_change"=>1533.2}, "14"=>{"date"=>"2020-03-09", "days_ago"=>14, "confirmed"=>142, "confirmed_count_change"=>15651, "confirmed_pct_change"=>11021.8}}}
 </code>
 
 

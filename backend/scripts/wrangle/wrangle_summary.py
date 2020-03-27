@@ -12,7 +12,7 @@ SRC_PATH = Path('backend/data/fused/jhcsse_normalized.csv')
 LOOKUPS_PATH = Path('backend/data/lookups/fips.csv')
 DEST_PATH = Path('backend/data/wrangled/state_summaries.json')
 
-MAX_DATE = '2020-03-22'
+MAX_DATE = '9999-03-22'
 
 
 def _date_daysago(dt, days):

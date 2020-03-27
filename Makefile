@@ -32,16 +32,16 @@ datacopy: wrangle
 
 
 wrap:
-	./backend/scripts/wrap/wrap_series.py
+	./backend/scripts/wrap/wrap_state_series.py
 
 
 wrangle: backend/data/wrangled/state_summaries.json backend/data/wrangled/timeseries.csv
+	./backend/scripts/wrangle/wrangle_summary.py
+	./backend/scripts/wrangle/wrangle_series.py
 
-backend/data/wrangled/state_summaries.json: backend/data/fused/jhcsse_normalized.csv
-	./backend/scripts/wrangle_summary.py
+# backend/data/wrangled/state_summaries.json: backend/data/fused/jhcsse_normalized.csv
 
-backend/data/wrangled/timeseries.csv: backend/data/fused/jhcsse_normalized.csv
-	./backend/scripts/wrangle_timeseries.py
+# backend/data/wrangled/timeseries.csv: backend/data/fused/jhcsse_normalized.csv
 
 
 fuse: ./backend/data/fused/jhcsse_normalized.csv
@@ -49,9 +49,11 @@ fuse: ./backend/data/fused/jhcsse_normalized.csv
 data/fused/jhcsse_normalized.csv: backend/data/collected/jhcsse/timeseries_confirmed.csv backend/data/collected/jhcsse/timeseries_deaths.csv
 	./backend/scripts/fuse_jhcsse_data.py
 
+# ./backend/scripts/collect/collect_jhcsse_data.py
+
 collect:
-	./backend/scripts/collect_jhcsse_data.py
-	./backend/scripts/collect_covidtracking.py
+	./backend/scripts/collect/collect_covidtracking.py
+	./backend/scripts/collect/collect_nytimes.py
 
 
 

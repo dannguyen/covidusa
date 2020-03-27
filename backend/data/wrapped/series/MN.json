@@ -1,14 +1,43 @@
 {
-  "id": "MN",
-  "name": "Minnesota",
+  "id": "WY",
+  "name": "Wyoming",
   "fips": "27",
+  "abbr": "WY",
+  "geolevel": "state",
   "series": [
     {
-      "date": "2020-03-22",
-      "confirmed": 169,
+      "date": "2020-03-25",
+      "confirmed": 287,
       "deaths": 1,
-      "confirmed_diff": 31,
-      "confirmed_diff_pct": 22.5,
+      "confirmed_diff": 25,
+      "confirmed_diff_pct": 9.5,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-24",
+      "confirmed": 262,
+      "deaths": 1,
+      "confirmed_diff": 27,
+      "confirmed_diff_pct": 11.5,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-23",
+      "confirmed": 235,
+      "deaths": 1,
+      "confirmed_diff": 64,
+      "confirmed_diff_pct": 37.4,
+      "deaths_diff": 0,
+      "deaths_diff_pct": 0.0
+    },
+    {
+      "date": "2020-03-22",
+      "confirmed": 171,
+      "deaths": 1,
+      "confirmed_diff": 33,
+      "confirmed_diff_pct": 23.9,
       "deaths_diff": 0,
       "deaths_diff_pct": 0.0
     },
@@ -124,17 +153,17 @@
       "date": "2020-03-09",
       "confirmed": 2,
       "deaths": 0,
-      "confirmed_diff": 1,
-      "confirmed_diff_pct": 100.0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
     {
       "date": "2020-03-08",
-      "confirmed": 1,
+      "confirmed": 2,
       "deaths": 0,
-      "confirmed_diff": 0,
-      "confirmed_diff_pct": 0.0,
+      "confirmed_diff": 1,
+      "confirmed_diff_pct": 100.0,
       "deaths_diff": 0,
       "deaths_diff_pct": null
     },
@@ -151,9 +180,9 @@
       "date": "2020-03-06",
       "confirmed": 1,
       "deaths": 0,
-      "confirmed_diff": 1,
+      "confirmed_diff": null,
       "confirmed_diff_pct": null,
-      "deaths_diff": 0,
+      "deaths_diff": null,
       "deaths_diff_pct": null
     }
   ]
