@@ -129,8 +129,13 @@ def main():
 
     for s in states:
         _series = extract_state_series(s['abbr'], s['name'], srcdata)
-        s_data = wrangle_state_series(_series)
-        s.update(s_data)
+        try:
+            s_data = wrangle_state_series(_series)
+        except Exception as err:
+            import pdb; pdb.set_trace()
+            raise err
+        else:
+            s.update(s_data)
 
     outdata = {'meta': extract_meta(states), 'states': states, }
 

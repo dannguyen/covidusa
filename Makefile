@@ -1,10 +1,14 @@
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := build
 .PHONY : clean help ALL wrangle build
 
 help:
 	@echo 'Run `make ALL` to see how things run from scratch'
 
-ALL: collect fuse wrangle site
+
+
+ALL: collect build
+
+build: fuse wrangle site
 
 
 clean:

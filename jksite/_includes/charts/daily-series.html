@@ -4,7 +4,7 @@
     https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
  -->
 
-{% assign abbr = include.abbr %}
+{% assign entity_id = include.entity_id %}
 
 
 <style>
@@ -19,34 +19,30 @@
     height: 350px;
 }
 
-.chart.daily-series{
+.chart.daily-series.confirmed{
     border: thin solid #f9f9f9;
 
 }
 
-.chart.daily-series .dot{
+.chart.daily-series.confirmed .dot{
     fill: green;
     stroke: #eee;
 }
 
-.chart.daily-series .line{
+.chart.daily-series.confirmed .line{
     fill: none;
     stroke: hotpink;
     stroke-width: 2;
 }
 
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-
 
 <div class="chart-wrap">
-    <svg class="chart daily-series" id="svg-daily-series-chart-{{abbr}}"></svg>
+    <svg class="chart daily-series confirmed" id="svg-daily-series-confirmed-chart-{{entity_id}}"></svg>
 </div>
 
 
-<script src="{{ '/assets/js/charts/dailySeries.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-
 
 <script>
-    renderSeriesChart('svg-daily-series-chart-{{abbr}}', '{{abbr}}')
+    dailySeries.renderConfirmed('{{entity_id}}', 'svg-daily-series-confirmed-chart-{{entity_id}}')
 </script>

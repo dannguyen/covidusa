@@ -3,7 +3,7 @@
 https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
  -->
 
-{% assign abbr = include.abbr %}
+{% assign entity_id = include.entity_id %}
 
 
 <style>
@@ -36,17 +36,15 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 }
 
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
 
 
 <div class="chart-wrap">
-    <svg class="chart daily-change" id="svg-daily-change-chart-{{abbr}}"></svg>
+    <svg class="chart daily-change" id="svg-daily-change-confirmed-chart-{{entity_id}}"></svg>
 </div>
 
 
-<script src="{{ '/assets/js/charts/dailyChange.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
 
 <script>
-    renderChangeChart('svg-daily-change-chart-{{abbr}}', '{{abbr}}')
+   dailyChange.renderConfirmed('{{entity_id}}', 'svg-daily-change-confirmed-chart-{{entity_id}}')
 </script>

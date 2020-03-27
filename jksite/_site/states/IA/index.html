@@ -37,6 +37,20 @@
 <link rel="shortcut icon" type="image/x-icon" href="/covidusa/favicon.ico">
 
 
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="/covidusa/assets/js/dataUtils.js?v=0.0.1a"></script>
+
+<script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
+
+<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
+
+<script src="/covidusa/assets/js/charts/dailyTable.js?v=0.0.1a"></script>
+
+
+
+
+
+
 </head>
 <body>
 
@@ -84,16 +98,27 @@
       
 
 
-<h1>Iowa IA</h1>
 
 
+<section class="latest sec">
+    <h2>Latest as of 2020-03-22</h2>
+    <div>
+        Confirmed: 90
+    </div>
+    <div>
+        Deaths: 0
+    </div>
+</section>
 
-<section class="bigolchart">
 
+<section class="bigolcharts sec">
+    <h2>CHARTS CHARTS</h2>
 
-    <h3>Daily confirmed count</h3>
-
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Confirmed</h3>
+                
 <!--
     http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
     https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
@@ -114,46 +139,41 @@
     height: 350px;
 }
 
-.chart.daily-series{
+.chart.daily-series.confirmed{
     border: thin solid #f9f9f9;
 
 }
 
-.chart.daily-series .dot{
+.chart.daily-series.confirmed .dot{
     fill: green;
     stroke: #eee;
 }
 
-.chart.daily-series .line{
+.chart.daily-series.confirmed .line{
     fill: none;
     stroke: hotpink;
     stroke-width: 2;
 }
 
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-
 
 <div class="chart-wrap">
-    <svg class="chart daily-series" id="svg-daily-series-chart-IA"></svg>
+    <svg class="chart daily-series confirmed" id="svg-daily-series-confirmed-chart-IA"></svg>
 </div>
 
 
-<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
-
 
 <script>
-    renderSeriesChart('svg-daily-series-chart-IA', 'IA')
+    dailySeries.renderConfirmed('IA', 'svg-daily-series-confirmed-chart-IA')
 </script>
 
 
+            </div>
 
-</section>
 
-<section>
-    <h3>Daily change</h3>
-
-    
+            <div class="col-sm">
+                <h3>Change</h3>
+                    
 <!--
 https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
  -->
@@ -191,24 +211,47 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 }
 
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
 
 
 <div class="chart-wrap">
-    <svg class="chart daily-change" id="svg-daily-change-chart-IA"></svg>
+    <svg class="chart daily-change" id="svg-daily-change-confirmed-chart-IA"></svg>
 </div>
 
 
-<script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
 
 
 <script>
-    renderChangeChart('svg-daily-change-chart-IA', 'IA')
+   dailyChange.renderConfirmed('IA', 'svg-daily-change-confirmed-chart-IA')
 </script>
 
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="daily sec">
+    <h2>Daily Table</h2>
+
+    
+
+
+<table class="table" id="daily-table-IA">
+
+
+</table>
+
+
+<script>
+    dailyTable.render("IA", "daily-table-IA")
+</script>
 
 </section>
 
+
+
+
+<hr>
 
 <code>
     {"abbr"=>"IA", "name"=>"Iowa", "fips"=>"19", "latest"=>{"date"=>"2020-03-22", "confirmed"=>90, "deaths"=>0}, "first"=>{"date"=>"2020-03-09", "days_ago"=>13, "confirmed"=>3, "deaths"=>0}, "days_ago"=>{"1"=>{"date"=>"2020-03-21", "days_ago"=>1, "confirmed"=>68, "confirmed_count_change"=>22, "confirmed_pct_change"=>32.4}, "7"=>{"date"=>"2020-03-15", "days_ago"=>7, "confirmed"=>18, "confirmed_count_change"=>72, "confirmed_pct_change"=>400.0}, "14"=>{}}}

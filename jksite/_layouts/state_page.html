@@ -3,29 +3,52 @@ layout: default
 ---
 
 {% assign pagedata = page._gen %}
-
-
-<h1>{{pagedata.name}} {{pagedata.abbr}}</h1>
+{% assign latest = pagedata.latest %}
 
 
 
-<section class="bigolchart">
-
-
-    <h3>Daily confirmed count</h3>
-
-    {% include charts/daily-series.html abbr=pagedata.abbr %}
-
-
+<section class="latest sec">
+    <h2>Latest as of {{latest.date}}</h2>
+    <div>
+        Confirmed: {{latest.confirmed}}
+    </div>
+    <div>
+        Deaths: {{latest.deaths}}
+    </div>
 </section>
 
-<section>
-    <h3>Daily change</h3>
 
-    {% include charts/daily-change.html abbr=pagedata.abbr %}
+<section class="bigolcharts sec">
+    <h2>CHARTS CHARTS</h2>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Confirmed</h3>
+                {% include charts/daily-series.html entity_id=pagedata.abbr %}
+
+            </div>
+
+
+            <div class="col-sm">
+                <h3>Change</h3>
+                    {% include charts/daily-change.html entity_id=pagedata.abbr %}
+            </div>
+
+        </div>
+    </div>
 </section>
 
+<section class="daily sec">
+    <h2>Daily Table</h2>
+
+    {% include charts/daily-table.html entity_id=pagedata.abbr %}
+</section>
+
+
+
+
+<hr>
 
 <code>
     {{pagedata}}
