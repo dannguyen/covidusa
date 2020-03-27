@@ -23,13 +23,12 @@ site: datacopy
 datacopy: wrangle
 
 	# summaries
-	cp backend/data/wrangled/state_summaries.json jksite/_data/state_summaries.json
-	cp backend/data/wrangled/state_summaries.json jksite/static/data/state_summaries.json
+	cp backend/data/wrangled/state_summaries.json jksite/jdata/state_summaries.json
 	# timeseries
 	# cp backend/data/wrangled/timeseries.csv jksite/static/data/timeseries.csv
 
 	# individual series
-	cp -r backend/data/wrapped/series jksite/static/data/
+	cp -r backend/data/wrapped/series jksite/jdata/
 
 
 wrap:

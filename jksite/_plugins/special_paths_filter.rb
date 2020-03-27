@@ -1,7 +1,7 @@
 module Jekyll
   module SpecialPathsFilter
     def single_series_json_path(id)
-      "static/data/series/#{id}.json"
+      "jdata/series/#{id}.json"
     end
   end
 end

@@ -2,7 +2,7 @@ var svg = d3.select("#mapbox"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var states_url = "/covidusa/static/data/usa.tilegram.topo.json?v=0.0.1a"
+var states_url = "/covidusa/jdata/usa.tilegram.topo.json?v=0.0.1a"
 
 
 

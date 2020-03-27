@@ -9,7 +9,7 @@ console.log("width: ", width)
 
 // var url = "https://d3js.org/us-10m.v1.json"
 
-var states_url = "/covidusa/static/data/topo/states.topo.json?v=0.0.1a"
+var states_url = "/covidusa/jdata/topo/states.topo.json?v=0.0.1a"
 
 
 var us_states = d3.json(states_url);

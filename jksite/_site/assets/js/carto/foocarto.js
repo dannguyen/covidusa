@@ -6,7 +6,7 @@ var qd = 1;
 
 function render() {
 
-    var states_url = "/covidusa/static/data/topo/usa.tilegram.topo.json?v=0.0.1a"
+    var states_url = "/covidusa/jdata/topo/usa.tilegram.topo.json?v=0.0.1a"
 
     var w = 960;
     var h = 560;

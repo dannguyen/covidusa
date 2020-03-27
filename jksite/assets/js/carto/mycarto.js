@@ -7,7 +7,7 @@ var svg = d3.select("#mapbox"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var states_url = "{{ '/static/data/usa.tilegram.topo.json?v=' | append: site.github.build_revision | relative_url }}"
+var states_url = "{{ '/jdata/usa.tilegram.topo.json?v=' | append: site.github.build_revision | relative_url }}"
 
 
 

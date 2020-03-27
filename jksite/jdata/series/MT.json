@@ -1,0 +1,115 @@
+{
+  "id": "MT",
+  "name": "Montana",
+  "fips": "30",
+  "series": [
+    {
+      "date": "2020-03-22",
+      "confirmed": 31,
+      "deaths": 0,
+      "confirmed_diff": 10,
+      "confirmed_diff_pct": 47.6,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-21",
+      "confirmed": 21,
+      "deaths": 0,
+      "confirmed_diff": 6,
+      "confirmed_diff_pct": 40.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-20",
+      "confirmed": 15,
+      "deaths": 0,
+      "confirmed_diff": 4,
+      "confirmed_diff_pct": 36.4,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-19",
+      "confirmed": 11,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-18",
+      "confirmed": 11,
+      "deaths": 0,
+      "confirmed_diff": 2,
+      "confirmed_diff_pct": 22.2,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-17",
+      "confirmed": 9,
+      "deaths": 0,
+      "confirmed_diff": 2,
+      "confirmed_diff_pct": 28.6,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-16",
+      "confirmed": 7,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-15",
+      "confirmed": 7,
+      "deaths": 0,
+      "confirmed_diff": 2,
+      "confirmed_diff_pct": 40.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-14",
+      "confirmed": 5,
+      "deaths": 0,
+      "confirmed_diff": 4,
+      "confirmed_diff_pct": 400.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-13",
+      "confirmed": 1,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-12",
+      "confirmed": 1,
+      "deaths": 0,
+      "confirmed_diff": 0,
+      "confirmed_diff_pct": 0.0,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-11",
+      "confirmed": 1,
+      "deaths": 0,
+      "confirmed_diff": 1,
+      "confirmed_diff_pct": null,
+      "deaths_diff": 0,
+      "deaths_diff_pct": null
+    }
+  ]
+}

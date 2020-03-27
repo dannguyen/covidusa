@@ -27,6 +27,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/covidusa" # the subpath of your site, e.g. /blog
 url: "https://dannguyen.github.io" # the base hostname & protocol for your site,
 
+data_dir: jdata
+
+
+# social media stuff
+
 twitter_username: dancow
 github_username:  dannguyen
 repository: dannguyen/covidusa

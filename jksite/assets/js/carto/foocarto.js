@@ -10,7 +10,7 @@ var qd = 1;
 
 function render() {
 
-    var states_url = "{{ '/static/data/topo/usa.tilegram.topo.json?v=' | append: site.github.build_revision | relative_url }}"
+    var states_url = "{{ '/jdata/topo/usa.tilegram.topo.json?v=' | append: site.github.build_revision | relative_url }}"
 
     var w = 960;
     var h = 560;

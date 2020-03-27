@@ -17,7 +17,6 @@ const dailyTable = function(){
                 let series = resp['series']
                 let target = d3.select("#"+target_id);
 
-
                 target.append("thead")
                     .append("tr")
                     .selectAll('th')
@@ -25,7 +24,6 @@ const dailyTable = function(){
                     .enter()
                     .append('th')
                     .text(d => d);
-
 
                 let rows = target.selectAll('tr')
                     .data(series)
@@ -38,8 +36,6 @@ const dailyTable = function(){
                     .append('td')
                     .attr("class", d => d[0])
                     .text(d => d[1])
-
-
         })
 
     }
