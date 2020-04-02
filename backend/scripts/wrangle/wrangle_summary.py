@@ -84,6 +84,7 @@ def wrangle_state_series(series):
 
     dates = sorted(dategroups.keys())
 
+
     # get current date
     zdate = dates[-1]
     z = dategroups[zdate]
@@ -123,6 +124,7 @@ def wrangle_state_series(series):
 
 
 def main():
+    raise "Reminder to self: this function needs to use nytdata"
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     srcdata = _load_src_data()
     states = extract_states_metas()
