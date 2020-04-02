@@ -83,7 +83,7 @@ defaults:
 page_gen-dirs: true
 page_gen:
   - index_files: true
-    data: 'state_summaries.states'
+    data: 'summary.states'
     name: 'abbr'
     template: 'state_page'
     dir: 'states'

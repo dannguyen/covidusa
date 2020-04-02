@@ -47,7 +47,7 @@ permalink: /
     </thead>
 
     <tbody>
-    {% for state in site.data.state_summaries.states %}
+    {% for state in site.data.summary.states %}
         <tr class="state">
             <td class="name">
                 <a href="{{ state.abbr | datapage_url: 'states' }}">{{state.name}}</a>
@@ -55,14 +55,14 @@ permalink: /
             </td>
 
             <td class="first-confirmed days-ago">
-                {{ state.first.days_ago }}
+                {{ state.firsts.confirmed.days_ago }}
             </td>
             <td class="confirmed daily">
                 <span class="today">
                     {{state.latest.confirmed}}
                 </span>
                 <span class="yesterday change">
-                    {% assign ctchange = state.days_ago['1']['confirmed_count_change']  %}
+                    {% assign ctchange = state.latest.confirmed_daily_diff %}
 
                     {% if ctchange > 0 %}
                         <span class="num positive">
@@ -77,28 +77,34 @@ permalink: /
             </td>
 
             <td class="confirmed daily percent-change">
-                {% assign _cval = state.days_ago['1']['confirmed_pct_change']  %}
-                {% if _cval > 0 %}
-                    <span class="num positive">
-                        ↑{{ _cval | round }}%
-                    </span>
-                {% elsif ctchange < 0 %}
-                    <span class="num negative">
-                        ↓{{ _cval | round}}%
-                    </span>
+                {% assign _cval = state.latest.confirmed_daily_diff_pct  %}
+                {% if _cval != "" %}
+                    {% if _cval > 0 %}
+                        <span class="num positive">
+                            ↑{{ _cval | round }}%
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ _cval | round}}%
+                        </span>
+                    {% endif %}
+
                 {% endif %}
             </td>
 
             <td class="confirmed weekly-change count">
-                {% assign _cval = state.days_ago['7']['confirmed_count_change']  %}
-                {% if _cval > 0 %}
-                    <span class="num positive">
-                        ↑{{ _cval  }}
-                    </span>
-                {% elsif ctchange < 0 %}
-                    <span class="num negative">
-                        ↓{{ _cval  }}
-                    </span>
+                {% assign _cval = state.latest.confirmed_weekly_diff %}
+                {% if _cval != "" %}
+                    {% if _cval > 0 %}
+                        <span class="num positive">
+                            ↑{{ _cval  }}
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ _cval  }}
+                        </span>
+                    {% endif %}
+
                 {% endif %}
             </td>
 

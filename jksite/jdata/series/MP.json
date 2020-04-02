@@ -1,0 +1,54 @@
+{
+  "id": "WY",
+  "name": "Wyoming",
+  "fips": "69",
+  "abbr": "WY",
+  "geolevel": "state",
+  "series": [
+    {
+      "date": "2020-04-01",
+      "confirmed": 6,
+      "deaths": 1,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-31",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-30",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-29",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
+      "deaths_diff_pct": null
+    },
+    {
+      "date": "2020-03-28",
+      "confirmed": 2,
+      "deaths": 0,
+      "confirmed_diff": null,
+      "confirmed_diff_pct": null,
+      "deaths_diff": null,
+      "deaths_diff_pct": null
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>CovidUSA</title>
+
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Northern Mariana Islands | CovidUSA</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Northern Mariana Islands" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A state-by-state tracker of Covid-19" />
+<meta property="og:description" content="A state-by-state tracker of Covid-19" />
+<link rel="canonical" href="https://dannguyen.github.io/covidusa/states/MP/" />
+<meta property="og:url" content="https://dannguyen.github.io/covidusa/states/MP/" />
+<meta property="og:site_name" content="CovidUSA" />
+<script type="application/ld+json">
+{"url":"https://dannguyen.github.io/covidusa/states/MP/","headline":"Northern Mariana Islands","description":"A state-by-state tracker of Covid-19","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="/covidusa/assets/css/style.css?v=0.0.1a">
+<!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="/covidusa/assets/css/ie.css">
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/covidusa/favicon.ico">
+
+<!-- vendor -->
+<script src="/covidusa/assets/js/vendor/d3.v5.min.js"></script>
+<script src="/covidusa/assets/js/vendor/d3-geo.v1.min.js"></script>
+<script src="/covidusa/assets/js/vendor/topojson.v2.min.js"></script>
+
+<!-- chart code -->
+<script src="/covidusa/assets/js/dataUtils.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailyTable.js?v=0.0.1a"></script>
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+<header id="site-header" class="header">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+
+
+    <a class="navbar-brand" href="https://dannguyen.github.io/covidusa/">CovidUSA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="https://github.com/dannguyen/covidusa">Github</a>
+      </div>
+    </div>
+  </div>
+
+</nav>
+
+
+    </header><!-- end header -->
+
+
+
+
+
+<section id="page-meta">
+  <div class="container">
+    <h1 class="page-title title">
+      Northern Mariana Islands
+    </h1>
+  </div>
+</section>
+
+<section id="page-body">
+  <article id="page-content">
+    <div class="container">
+      
+
+
+
+
+<section class="latest sec">
+    <h2>Latest as of 2020-04-01</h2>
+    <div>
+        Confirmed: 6
+    </div>
+    <div>
+        Deaths: 1
+    </div>
+</section>
+
+
+<section class="bigolcharts sec">
+    <h2>CHARTS CHARTS</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Confirmed</h3>
+                <!--
+    http://bl.ocks.org/d3netxer/10a28b7aee406f4e7fce
+    https://bl.ocks.org/GerardoFurtado/71a700b656a69b45fd2037e38180254a
+ -->
+
+
+
+
+<style>
+
+.chart{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+}
+
+.chart.daily-series.confirmed{
+    border: thin solid #f9f9f9;
+
+}
+
+.chart.daily-series.confirmed .dot{
+    fill: green;
+    stroke: #eee;
+}
+
+.chart.daily-series.confirmed .line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+
+<div class="chart-wrap">
+    <svg class="chart daily-series confirmed" id="svg-daily-series-confirmed-chart-MP"></svg>
+</div>
+
+
+
+<script>
+    var seriesPath = "/covidusa/jdata/series/MP.json";
+    var elId = 'svg-daily-series-confirmed-chart-MP';
+    dailySeries.renderConfirmed('MP', elId, seriesPath)
+</script>
+
+
+            </div>
+
+
+            <div class="col-sm">
+                <h3>Change</h3>
+                    
+<!--
+https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
+ -->
+
+
+
+
+<style>
+
+.chart{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 350px;
+
+}
+
+.chart.daily-change{
+    border: thin solid red;
+}
+
+
+.chart.daily-change .dot{
+    fill: orange;
+    stroke: #eee;
+}
+
+.chart.daily-change .line{
+    fill: none;
+    stroke: hotpink;
+    stroke-width: 2;
+}
+
+</style>
+
+
+<div class="chart-wrap">
+    <svg class="chart daily-change" id="svg-daily-change-confirmed-chart-MP"></svg>
+</div>
+
+
+
+
+<script>
+    var seriesPath = "/covidusa/jdata/series/MP.json";
+
+   dailyChange.renderConfirmed('MP', 'svg-daily-change-confirmed-chart-MP', seriesPath)
+</script>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="daily sec">
+    <h2>Daily Table</h2>
+
+    
+
+
+<table class="table table-sm table-striped" id="daily-table-MP">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    
+        <tr>
+            <td>April 1</td>
+            <td>6</td>
+            <td>1</td>
+        </tr>
+    
+        <tr>
+            <td>March 31</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 30</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 29</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    
+        <tr>
+            <td>March 28</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    
+    </tbody>
+
+</table>
+
+
+<script>
+//    var seriesPath = "/covidusa/jdata/series/MP.json";
+
+//    dailyTable.render("MP", "daily-table-MP", seriesPath)
+</script>
+
+</section>
+
+
+
+
+<hr>
+
+<code>
+    {"id"=>"MP", "abbr"=>"MP", "name"=>"Northern Mariana Islands", "fips"=>"69", "firsts"=>{"confirmed"=>{"date"=>"2020-03-28", "days_ago"=>4}, "death"=>{"date"=>"2020-04-01", "days_ago"=>0}}, "latest"=>{"date"=>"2020-04-01", "confirmed"=>6, "deaths"=>1, "confirmed_daily_diff"=>4, "confirmed_daily_diff_pct"=>200.0, "deaths_daily_diff"=>1, "deaths_daily_diff_pct"=>"", "confirmed_weekly_diff"=>"", "confirmed_weekly_diff_pct"=>"", "deaths_weekly_diff"=>"", "deaths_weekly_diff_pct"=>""}}
+</code>
+
+
+    </div>
+  </article>
+</section>
+
+
+
+
+
+
+<footer id="site-footer">
+    <div class="container">
+        <h2>This is where the fat footer goes</h2>
+
+
+        <div class="row">
+
+
+            <div class="col">
+                <h6>Site Nav</h6>
+                <ul>
+                    
+                </ul>
+
+            </div>
+            <div class="col">
+                <h6>Elsewhere</h6>
+                <ul>
+                    <li><span class="fa fa-github-alt"></span>Github</li>
+                    <li><span class="fa fa-twitter"></span>Twitter</li>
+                    <li><span class="fa fa-rss"></span>Blog</li>
+                </ul>
+            </div>
+
+
+            <div class="col">
+                <p class="site-info">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quod asperiores sunt, magni, dolore suscipit eveniet similique incidunt enim placeat hic veritatis. Eligendi earum nam exercitationem quibusdam facilis. Pariatur, eius!
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+
+</footer>
+
+
+
+</body>
+</html>
+

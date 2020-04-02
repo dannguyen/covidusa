@@ -20,40 +20,53 @@ site: datacopy
 	rsync -arv --checksum jksite/_site/ docs
 
 
-datacopy: wrangle
+datacopy:
 
 	# summaries
-	cp backend/data/wrangled/state_summaries.json jksite/jdata/state_summaries.json
-	# timeseries
-	# cp backend/data/wrangled/timeseries.csv jksite/static/data/timeseries.csv
-
+	cp backend/data/wrapped/summary.json jksite/jdata/summary.json
 	# individual series
 	cp -r backend/data/wrapped/series jksite/jdata/
 
 
-wrap:
+wrap: wrangle
 	./backend/scripts/wrap/wrap_state_series.py
+	./backend/scripts/wrap/wrap_summary.py
 
 
-wrangle: backend/data/wrangled/state_summaries.json backend/data/wrangled/timeseries.csv
-	./backend/scripts/wrangle/wrangle_summary.py
+
+wrangle: ./backend/data/wrangled/us-series.csv
+
+./backend/data/wrangled/us-series.csv: ./backend/data/fused/nytimes-us.csv
+
 	./backend/scripts/wrangle/wrangle_series.py
 
-# backend/data/wrangled/state_summaries.json: backend/data/fused/jhcsse_normalized.csv
-
-# backend/data/wrangled/timeseries.csv: backend/data/fused/jhcsse_normalized.csv
 
 
-fuse: ./backend/data/fused/jhcsse_normalized.csv
+fuse: ./backend/data/fused/nytimes-us.csv
 
-data/fused/jhcsse_normalized.csv: backend/data/collected/jhcsse/timeseries_confirmed.csv backend/data/collected/jhcsse/timeseries_deaths.csv
-	./backend/scripts/fuse_jhcsse_data.py
+./backend/data/fused/nytimes-us.csv: data/collected/nytimes/us-counties.csv data/collected/nytimes/us-states.csv
 
-# ./backend/scripts/collect/collect_jhcsse_data.py
+	./backend/scripts/fuse/fuse_nytimes.py
 
-collect:
-	./backend/scripts/collect/collect_covidtracking.py
+
+collect: collect_nyt data/collected/covidtracking
+
+collect_nyt: data/collected/nytimes/us-counties.csv data/collected/nytimes/us-states.csv
+
+
+data/collected/nytimes/us-counties.csv:
+
 	./backend/scripts/collect/collect_nytimes.py
+
+data/collected/nytimes/us-states.csv: data/collected/nytimes/us-counties.csv
+
+    $(NOECHO) $(NOOP)
+
+
+data/collected/covidtracking/:
+
+	./backend/scripts/collect/collect_covidtracking.py
+
 
 
 
