@@ -16,22 +16,30 @@ SRC_PATH= Path('backend/data/wrangled/us-series.csv')
 DEST_DIR = Path('backend/data/wrapped/series/')
 
 STATE_META_HEADERS = {'id', 'name', 'fips', 'state_abbr', 'geolevel'}
-SERIES_HEADERS = ('date', 'confirmed', 'deaths',
-        'confirmed_diff', 'confirmed_diff_pct', 'deaths_diff', 'deaths_diff_pct',)
+SERIES_META = ('id', 'abbr', 'fips', 'geolevel', 'state_name', 'county_name', 'state_abbr')
+
 
 
 def load_fips():
     with FIPS_PATH.open() as i:
         return list(csv.DictReader(i))
 
-def load_states_series():
-    """returns a list of rows belonging to state-level calculations"""
+
+
+def load_us_data():
     data = []
     with open(SRC_PATH) as src:
-        for row in csv.DictReader(src):
-            if row['geolevel'] == 'state':
-                data.append(type_record(row))
-    return data
+        for d in csv.DictReader(src):
+            if d['geolevel'] == 'state':
+                for key in d.keys():
+                    if any(_h in key for _h in ('confirmed', 'deaths')):
+                        if d[key]:
+                            d[key] = float(d[key]) if 'pct' in key else int(d[key])
+
+                data.append(d)
+    return sorted(data, key=lambda d: d['date'])
+
+
 
 def type_record(row):
     d = row.copy()
@@ -50,21 +58,22 @@ def type_record(row):
 def main():
     DEST_DIR.mkdir(exist_ok=True, parents=True)
     fipsmap = load_fips()
-    allseries = load_states_series()
+    allseries = load_us_data()
 
     for f in fipsmap:
         abbr = f['postal_code']
-        fseries = []
-        for row in allseries:
-            if abbr == row['id'] and row['confirmed'] > 0:
-                d = {h: row[h] for h in SERIES_HEADERS}
-                fseries.append(d)
+        fseries = [row for row in allseries if row['id'] == abbr]
+        fx = fseries[0]
+        # for row in allseries:
+        #     if abbr == row['id'] and row['confirmed'] > 0:
+        #         d = {h: row[h] for h in SERIES_HEADERS}
+        #         fseries.append(d)
 
 
-        outdata = {'id': row['id'], 'name': row['state_name'], 'fips': f['fips'],
-                    'abbr': row['state_abbr'], 'geolevel': row['geolevel']}
-        # let's sort in reverse-chrono order
-        outdata['series'] = sorted(fseries, key=lambda x: x['date'], reverse=True)
+        outdata = {'id': fx['id'], 'name': fx['state_name'], 'fips': fx['fips'],
+                    'abbr': fx['state_abbr'], 'geolevel': fx['geolevel']}
+        # let's NOT sort in reverse-chrono order
+        outdata['series'] = sorted(fseries, key=lambda x: x['date'], reverse=False)
 
         destpath = DEST_DIR.joinpath(f'{abbr}.json')
         stderr.write(f'{abbr}: writing {len(fseries)} rows to: {destpath}\n')

@@ -21,6 +21,9 @@ HEADERS = ('id', 'date', 'confirmed', 'deaths',
             )
 
 
+# def _date_daysago(dt, days):
+#     return (date.fromisoformat(dt) - timedelta(days=days)).isoformat()
+
 def _date_daysahead(dt, days):
     return (date.fromisoformat(dt) + timedelta(days=days)).isoformat()
 

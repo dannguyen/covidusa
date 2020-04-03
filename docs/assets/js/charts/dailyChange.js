@@ -3,28 +3,19 @@
 const dailyChange = function(){
 
     const renderConfirmed = function(id, target_id, url){
-        let svg = d3.select('#'+target_id),
-            width = svg.node().getBoundingClientRect().width,
-            height = svg.node().getBoundingClientRect().height;
-
 
         let pfoo = datautils.getSeries(url);
         Promise.resolve(pfoo)
             .then(function(resp){
-                console.log('TKTK: renderConfirmed change hides 0/negative values!')
                 let data = resp;
-                let series = data['series'].sort((x, y) => x.date - y.date )
+                let series = data['series']; //.sort((x, y) => x.date - y.date )
 
-                series.forEach(function(d, i){
-                    var a = series[i-1]
-                    if(i == 0){
-                        d.delta = 10;
-                    }else if(a.confirmed < 1){
-                        d.delta = 10;
-                    }else{
-                        d.delta = 100 * (d.confirmed - a.confirmed)/a.confirmed
-                    }
-                })
+
+                let svg = d3.select('#'+target_id),
+                    width = svg.node().getBoundingClientRect().width,
+                    height = svg.node().getBoundingClientRect().height,
+                    margin = {top: 20, right: 35, bottom: 20, left: 10};
+
 
 
                 let xScale = d3.scaleBand()
@@ -33,12 +24,28 @@ const dailyChange = function(){
                                 .domain(series.map(function(d){ return d.date }))
 
 
-                // console.log("hey: ", xScale.bandwidth())
-                // console.log(data.map(function(d){ return d.date }))
+                let xAxis = d3.axisBottom()
+                                .scale(xScale);
+
+
+                svg.append("g")
+                    .attr("transform", `translate(0,${height - margin.bottom})`)
+                    .call(xAxis);
+
 
                 let yScale = d3.scaleLog()
-                                .domain([10, d3.max(series, function(d){ return d.delta })])
-                                .rangeRound([height, 0])
+                                .domain([1, d3.max(series, function(d){ return d.confirmed_daily_diff_pct })])
+                                .rangeRound([height-margin.bottom, 0])
+
+
+                let yAxis = d3.axisRight()
+                                .scale(yScale);
+
+                svg.append("g")
+                    .attr("transform", `translate(${width - margin.right},0)`)
+                    .call(yAxis);
+
+
 
                 svg.selectAll("bar")
                     .data(series)
@@ -47,9 +54,25 @@ const dailyChange = function(){
                     .style("fill", "steelblue")
                     .attr("x", function(d){ return xScale(d.date)})
                     .attr("width", xScale.bandwidth())
-                    .attr("y", function(d){ return yScale(d.delta)})
-                    .attr("height", function(d){ return height - yScale(d.delta)})
-                    .on("mouseover", function(d){ console.log(d) })
+                    .attr("y", function(d){
+                        let pct = d.confirmed_daily_diff_pct;
+                        if(pct > 0){
+                            return yScale(pct);
+                        }else{
+                            return 0
+                        }
+                    })
+                    .attr("height", function(d){
+                        let pct = d.confirmed_daily_diff_pct;
+                        if(pct > 0){
+                            return height - yScale(pct);
+                        }else{
+                            return 0
+                        }
+                    })
+                    .on("mouseover", function(d){
+                        console.log(`${d.date}: diff: ${d.confirmed_daily_diff} pct: ${d.confirmed_daily_diff_pct}%`)
+                    })
 
             });
 

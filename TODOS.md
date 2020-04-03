@@ -10,15 +10,7 @@
 
 ## Data backend
 
-
-- Publish task
-    - published/states/summaries.json
-    - published/states/IA.json
-    - published/us.json
-    - published/global.json
-
-- wrangling
-    - in wrangle_timeseries.py, calculate delta change and dayno (currently, it's done in d3.js)
+- get census population data per state/county
 
 
 

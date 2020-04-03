@@ -45,7 +45,6 @@
 <script src="/covidusa/assets/js/dataUtils.js?v=0.0.1a"></script>
 <script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
 <script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
-<script src="/covidusa/assets/js/charts/dailyTable.js?v=0.0.1a"></script>
 
 
 
@@ -196,21 +195,13 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 }
 
-.chart.daily-change{
-    border: thin solid red;
-}
-
 
 .chart.daily-change .dot{
     fill: orange;
     stroke: #eee;
 }
 
-.chart.daily-change .line{
-    fill: none;
-    stroke: hotpink;
-    stroke-width: 2;
-}
+
 
 </style>
 
@@ -240,6 +231,9 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
     
 
 
+
+
+
 <table class="table table-sm table-striped" id="daily-table-NE">
     <thead>
         <tr>
@@ -250,6 +244,12 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
     </thead>
 
     <tbody>
+    
+        <tr>
+            <td>April 2</td>
+            <td>273</td>
+            <td>6</td>
+        </tr>
     
         <tr>
             <td>April 1</td>
@@ -525,12 +525,6 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 </table>
 
-
-<script>
-//    var seriesPath = "/covidusa/jdata/series/NE.json";
-
-//    dailyTable.render("NE", "daily-table-NE", seriesPath)
-</script>
 
 </section>
 

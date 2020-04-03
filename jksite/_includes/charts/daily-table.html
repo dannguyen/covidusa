@@ -1,6 +1,8 @@
 {% assign entity_id = include.entity_id %}
-{% assign edata = site.data.series[entity_id]}
-{% assign series = edata.series %}
+{% assign edata = site.data.series[entity_id] %}
+{% assign rseries = edata.series | reverse %}
+
+
 
 <table class="table table-sm table-striped" id="daily-table-{{entity_id}}">
     <thead>
@@ -12,7 +14,7 @@
     </thead>
 
     <tbody>
-    {% for row in edata.series  %}
+    {% for row in rseries  %}
         <tr>
             <td>{{ row.date | short_date }}</td>
             <td>{{ row.confirmed }}</td>
@@ -23,9 +25,3 @@
 
 </table>
 
-
-<script>
-//    var seriesPath = "{{entity_id | single_series_json_path | relative_url }}";
-
-//    dailyTable.render("{{entity_id}}", "daily-table-{{entity_id}}", seriesPath)
-</script>

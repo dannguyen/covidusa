@@ -10,7 +10,6 @@ const datautils = function(){
                             series[i].date = new Date(series[i].date)
                         }
 
-                        console.log(series)
 
                         return data;
                 })
