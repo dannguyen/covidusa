@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 from sys import stderr
 
-FIPS_PATH = Path('backend/data/lookups/fips.csv')
+FIPS_PATH = Path('backend/data/archived/lookups/fips.csv')
 SRC_PATH = Path('backend/data/wrangled/us-series.csv')
 DEST_PATH = Path('backend/data/wrapped/summary.json')
 

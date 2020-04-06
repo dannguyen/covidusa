@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from sys import stdout, stderr
 
-FIPS_PATH = Path('backend/data/lookups/fips.csv')
+FIPS_PATH = Path('backend/data/archived/lookups/fips.csv')
 SRC_PATH= Path('backend/data/wrangled/us-series.csv')
 
 DEST_DIR = Path('backend/data/wrapped/series/')
