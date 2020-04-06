@@ -1,6 +1,3 @@
-{% assign entity_id = include.entity_id %}
-{% assign edata = site.data.series[entity_id] %}
-{% assign rseries = edata.series | reverse %}
 
 
 
@@ -14,7 +11,7 @@
     </thead>
 
     <tbody>
-    {% for row in rseries  %}
+    {% for row in include.series  %}
         <tr>
             <td>{{ row.date | short_date }}</td>
             <td>{{ row.confirmed }}</td>

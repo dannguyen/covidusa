@@ -3,6 +3,11 @@
 ---
 ;
 
+var qz = 9;
+
+
+
+
 const dailyChange = function(){
 
     const renderConfirmed = function(id, target_id, url){
@@ -11,42 +16,49 @@ const dailyChange = function(){
         Promise.resolve(pfoo)
             .then(function(resp){
                 let data = resp;
-                let series = data['series']; //.sort((x, y) => x.date - y.date )
+                // we truncate series to the first day of >= 100 cases
+                let series = data['series'];
+                series = series.slice(series.findIndex(d => d.confirmed >= 100))
 
 
                 let svg = d3.select('#'+target_id),
-                    width = svg.node().getBoundingClientRect().width,
-                    height = svg.node().getBoundingClientRect().height,
+                    sWidth = svg.node().getBoundingClientRect().width,
+                    sHeight = svg.node().getBoundingClientRect().height,
                     margin = {top: 20, right: 35, bottom: 20, left: 10};
 
 
+                let width = sWidth - (margin.left + margin.right),
+                    height = sHeight - (margin.top + margin.bottom)
 
-                let xScale = d3.scaleBand()
-                                .rangeRound([0, width], 0.05)
-                                .padding(0.1)
-                                .domain(series.map(function(d){ return d.date }))
+                let xScale = qz = d3.scaleUtc()
+                                .domain(d3.extent(series, d => d.date))
+                                .rangeRound([0, width])
+
+                                // .padding(0.1)
 
 
                 let xAxis = d3.axisBottom()
-                                .scale(xScale);
+                                .scale(xScale)
+                                .ticks(d3.utcWeek.every(1))
 
 
-                svg.append("g")
-                    .attr("transform", `translate(0,${height - margin.bottom})`)
-                    .call(xAxis);
+                let yMin = Math.min(0, d3.min(series, d=>d.confirmed_daily_diff_pct)),
+                    yMax = Math.max(100, d3.max(series, d => d.confirmed_daily_diff_pct));
+                // let yMaxLog = Math.ceil(Math.log10(yMax));
+                // let yMaxAx = Math.pow(10, yMaxLog)
+                // console.log(yMax, yMaxAx)
+                // let yTicks = yMaxLog + 1;
 
 
-                let yScale = d3.scaleLog()
-                                .domain([1, d3.max(series, function(d){ return d.confirmed_daily_diff_pct })])
-                                .rangeRound([height-margin.bottom, 0])
+                let yScale = d3.scaleLinear()
+                                .domain([yMin, yMax])
+                                .rangeRound([height, 0])
 
 
                 let yAxis = d3.axisRight()
-                                .scale(yScale);
-
-                svg.append("g")
-                    .attr("transform", `translate(${width - margin.right},0)`)
-                    .call(yAxis);
+                                .scale(yScale)
+                                // .ticks(yTicks)
+                                // .tickFormat((y, i) => Math.pow(10, i))
 
 
 
@@ -56,7 +68,7 @@ const dailyChange = function(){
                     .append("rect")
                     .style("fill", "steelblue")
                     .attr("x", function(d){ return xScale(d.date)})
-                    .attr("width", xScale.bandwidth())
+                    .attr("width", Math.floor(width / series.length))
                     .attr("y", function(d){
                         let pct = d.confirmed_daily_diff_pct;
                         if(pct > 0){
@@ -75,6 +87,39 @@ const dailyChange = function(){
                     })
                     .on("mouseover", function(d){
                         console.log(`${d.date}: diff: ${d.confirmed_daily_diff} pct: ${d.confirmed_daily_diff_pct}%`)
+                    })
+
+                svg.append("g")
+                    .attr("class", "axis x-axis")
+                    .attr("transform", `translate(0,${height})`)
+                    .call(xAxis)
+
+                let xTicks =   svg.selectAll(".x-axis g.tick text");
+                console.log("xticks: ", xTicks.size())
+
+                xTicks.attr("transform", function(d, i){
+                        if(i == 0){
+                            let tw = this.getBoundingClientRect().width;
+                            // console.log("x-axis transform:", i, tw)
+                            return `translate(${Math.round(tw / 2)}, 0)`
+                        }else if(i == xTicks.size()-1){
+                            let tw = this.getBoundingClientRect().width;
+                            return `translate(${0-Math.round(tw / 2)},0)`
+                        }
+                    })
+
+                /// format yticks
+                svg.append("g")
+                    .attr("class", "axis y-axis")
+                    .attr("transform", `translate(${width},0)`)
+                    .call(yAxis);
+
+                let yTicks =   svg.selectAll(".y-axis g.tick text");
+                yTicks.attr("transform", function(d, i){
+                        let t = this.getBoundingClientRect().height;
+                        // console.log("x-axis transform:", i, tw)
+                        return `translate(0,${Math.round(t / 3)})`
+
                     })
 
             });

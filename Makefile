@@ -8,7 +8,7 @@ help:
 
 ALL: collect build
 
-build: fuse wrangle site
+build: fuse wrap site
 
 
 clean:
