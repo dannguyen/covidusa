@@ -84,6 +84,6 @@ page_gen-dirs: true
 page_gen:
   - index_files: true
     data: 'summary.states'
-    name: 'abbr'
+    name: 'id'
     template: 'state_page'
     dir: 'states'

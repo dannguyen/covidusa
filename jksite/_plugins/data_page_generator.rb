@@ -80,6 +80,7 @@ module Jekyll
       # current page (so that we can access it with liquid tags)
 
       self.data['_gen'] = data
+      self.data['page_id'] = data['id']
       # DTK
       # if data.key?('name')
       #   data['_name'] = data['name']

@@ -10,16 +10,16 @@ var qz = 9;
 
 const dailyChange = function(){
 
-    const renderConfirmed = function(id, target_id, url){
+    const renderConfirmed = function(id, target_id){
 
-        let pfoo = datautils.getSeries(url);
+        let pfoo = datautils.getEntity(id);
         Promise.resolve(pfoo)
             .then(function(resp){
                 let data = resp;
-                // we truncate series to the first day of >= 100 cases
-                let series = data['series'];
+                // we truncate records to the first day of >= 100 cases
+                let records = data['records'];
                 // todo: pull date of confirmed_100 from summary
-                series = series.slice(series.findIndex(d => d.confirmed >= 100))
+                records = records.slice(records.findIndex(d => d.confirmed >= 100))
 
 
                 let svg = d3.select('#'+target_id),
@@ -32,7 +32,7 @@ const dailyChange = function(){
                     height = sHeight - (margin.top + margin.bottom)
 
                 let xScale = qz = d3.scaleUtc()
-                                .domain(d3.extent(series, d => d.date))
+                                .domain(d3.extent(records, d => d.date))
                                 .rangeRound([0, width])
 
                                 // .padding(0.1)
@@ -43,8 +43,8 @@ const dailyChange = function(){
                                 .ticks(d3.utcWeek.every(1))
 
 
-                let yMin = Math.min(0, d3.min(series, d=>d.confirmed_daily_diff_pct)),
-                    yMax = Math.max(100, d3.max(series, d => d.confirmed_daily_diff_pct));
+                let yMin = Math.min(0, d3.min(records, d=>d.confirmed_daily_diff_pct)),
+                    yMax = Math.max(100, d3.max(records, d => d.confirmed_daily_diff_pct));
                 // let yMaxLog = Math.ceil(Math.log10(yMax));
                 // let yMaxAx = Math.pow(10, yMaxLog)
                 // console.log(yMax, yMaxAx)
@@ -64,12 +64,12 @@ const dailyChange = function(){
 
 
                 svg.selectAll("bar")
-                    .data(series)
+                    .data(records)
                     .enter()
                     .append("rect")
                     .style("fill", "steelblue")
                     .attr("x", function(d){ return xScale(d.date)})
-                    .attr("width", Math.floor(width / series.length))
+                    .attr("width", Math.floor(width / records.length))
                     .attr("y", function(d){
                         let pct = d.confirmed_daily_diff_pct;
                         if(pct > 0){

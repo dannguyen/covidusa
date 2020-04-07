@@ -3,13 +3,16 @@
 // window.datasets = Object.is(window.datasets, undefined) ? {} : window.datasets;
 
 const datautils = function(){
-    const getSeries = function(url){
+    const entitiesDir = "/covidusa/jdata/entities";
+    const getEntity = function(eid){
+        let url = `${entitiesDir}/${eid}.json`;
+        console.log('getEntity url:', url)
         let mypromise = d3.json(url)
                     .then(function(data){
-                        let series = data.series;
-                        for(let i=0; i < series.length; i++){
-                            series[i].datestring = series[i].date
-                            series[i].date = new Date(series[i].date)
+                        let records = data.records;
+                        for(let i=0; i < records.length; i++){
+                            records[i].datestring = records[i].date
+                            records[i].date = new Date(records[i].date)
                         }
 
 
@@ -32,28 +35,8 @@ const datautils = function(){
     }
 
     return {
-        getSeries: getSeries,
+        getEntity: getEntity,
         getSummary: getSummary,
     }
 
 }();
-
-
-
-
-    //     if(Object.is(window.datasets.timeseries, undefined)){
-    //         // window.datasets.timeseries = await d3.csv(DATA_URL, function(d){
-    //         //     return {id: d.id, date: new Date(d.date), confirmed: +d.confirmed, deaths: +d.deaths}
-    //         // })
-    //         d3.csv(DATA_URL, function(d){
-    //             return {id: d.id, date: new Date(d.date), confirmed: +d.confirmed, deaths: +d.deaths}
-    //         }).then(function(data){
-    //             window.datasets.timeseries = data;
-    //             return window.datasets.timeseries;
-    //         })
-
-
-    //     }else{
-    //         return window.datasets.timeseries;
-    //     }
-    // }

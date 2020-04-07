@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 """
-Usage:
+This script produces two kinds of wrapped output:
 
-$ python backend/scripts/wrap/wrap_data.py series   # writes to backend/data/wrapped/series/[id].json
-$ python backend/scripts/wrap/wrap_data.py summary  # writes to backend/data/wrapped/summary.json
+    outputs into wrapped/summary.json
+    outputs into wrapped/entities/
+
 """
 
 

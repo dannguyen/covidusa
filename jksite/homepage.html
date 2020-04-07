@@ -3,6 +3,10 @@ layout: base
 permalink: /
 ---
 
+{ assign table_entities = "" | split: ',' %}
+{ assign entities = entities | push: site.data.summary.nation %}
+{ assign entities = entities | concat: site.data.summary.states %}
+{% assign table_entities = site.data.summary.states %}
 
 
 <section class="hero">
@@ -34,7 +38,9 @@ permalink: /
 
 <div class="container">
 
-    {% include homepage/home_table.html %}
+
+    {% include homepage/home_table.html entities=table_entities %}
+
 
 
 </div>

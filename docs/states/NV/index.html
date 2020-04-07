@@ -44,7 +44,7 @@
 <!-- chart code -->
 <script src="/covidusa/assets/js/dataUtils.js?v=0.0.1a"></script>
 <script src="/covidusa/assets/js/charts/dailyChange.js?v=0.0.1a"></script>
-<script src="/covidusa/assets/js/charts/dailySeries.js?v=0.0.1a"></script>
+<script src="/covidusa/assets/js/charts/dailyCounts.js?v=0.0.1a"></script>
 
 
 
@@ -100,7 +100,9 @@
 
 
 
-
+<div>
+    NV Records count: 0
+</div>
 
 <section class="latest sec">
     <h2>Latest as of 2020-04-06</h2>
@@ -140,17 +142,17 @@
     height: 350px;
 }
 
-.chart.daily-series.confirmed{
+.chart.daily-counts.confirmed{
     border: thin solid #f9f9f9;
 
 }
 
-.chart.daily-series.confirmed .dot{
+.chart.daily-counts.confirmed .dot{
     fill: green;
     stroke: #eee;
 }
 
-.chart.daily-series.confirmed .line{
+.chart.daily-counts.confirmed .line{
     fill: none;
     stroke: hotpink;
     stroke-width: 2;
@@ -159,15 +161,16 @@
 </style>
 
 <div class="chart-wrap">
-    <svg class="chart daily-series confirmed" id="svg-daily-series-confirmed-chart-NV"></svg>
+    <svg class="chart daily-counts confirmed" id="svg-daily-counts-confirmed-chart-NV"></svg>
 </div>
 
 
 
 <script>
-    var seriesPath = "/covidusa/jdata/series/NV.json";
-    var elId = 'svg-daily-series-confirmed-chart-NV';
-    dailySeries.renderConfirmed('NV', elId, seriesPath)
+    console.log("Daily entity_id: ", "NV")
+
+    var elId = 'svg-daily-counts-confirmed-chart-NV';
+    dailyCounts.renderConfirmed('NV', elId)
 </script>
 
 
@@ -176,7 +179,7 @@
 
             <div class="col-sm">
                 <h3>Change</h3>
-                    
+                
 <!--
 https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
  -->
@@ -216,9 +219,8 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
 
 
 <script>
-    var seriesPath = "/covidusa/jdata/series/NV.json";
 
-   dailyChange.renderConfirmed('NV', 'svg-daily-change-confirmed-chart-NV', seriesPath)
+   dailyChange.renderConfirmed('NV', 'svg-daily-change-confirmed-chart-NV')
 </script>
 
             </div>
@@ -231,7 +233,6 @@ https://bl.ocks.org/mbostock/c69f5960c6b1a95b6f78
     <h2>Daily Table</h2>
 
     
-
 
 <table class="table table-sm table-striped" id="daily-table-NV">
     <thead>

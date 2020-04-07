@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
+{% assign entity_id = page.page_id %}
+{% assign entity = site.data.entities[entity_id] %}
+{% assign latest = entity.latest  %}
 
-{% assign summary = page._gen %}
-{% assign latest = summary.latest %}
-{% assign entity_id = summary.id %}
-{% assign edata = site.data.series[entity_id] %}
-{% assign rseries = edata.series | reverse %}
 
+<div>
+    {{entity_id}} Records count: {{ edata.records | size}}
+</div>
 
 <section class="latest sec">
     <h2>Latest as of {{latest.date}}</h2>
@@ -27,14 +28,14 @@ layout: default
         <div class="row">
             <div class="col-sm">
                 <h3>Confirmed</h3>
-                {% include charts/daily-series.html entity_id=summary.abbr %}
+                {% include charts/daily-counts.html entity_id=entity_id%}
 
             </div>
 
 
             <div class="col-sm">
                 <h3>Change</h3>
-                    {% include charts/daily-change.html entity_id=summary.abbr %}
+                {% include charts/daily-change.html entity_id=entity_id %}
             </div>
 
         </div>
@@ -44,7 +45,7 @@ layout: default
 <section class="daily sec">
     <h2>Daily Table</h2>
 
-    {% include charts/daily-table.html series=rseries %}
+    {% include charts/daily-table.html records=entity.records %}
 </section>
 
 

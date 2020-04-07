@@ -1,5 +1,4 @@
-
-
+{% assign records = include.records | reverse  %}
 
 <table class="table table-sm table-striped" id="daily-table-{{entity_id}}">
     <thead>
@@ -11,7 +10,7 @@
     </thead>
 
     <tbody>
-    {% for row in include.series  %}
+    {% for row in records  %}
         <tr>
             <td>{{ row.date | short_date }}</td>
             <td>{{ row.confirmed }}</td>

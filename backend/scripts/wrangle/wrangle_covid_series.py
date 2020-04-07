@@ -15,9 +15,9 @@ SRC_PATH = Path('backend/data/fused/nytimes-us.csv')
 
 
 # should bring in utils.covid DAILY_STAT_FIELDS?
-HEADERS = ('id', 'date', 'confirmed', 'deaths',
-        'geolevel', 'state_abbr', 'fips', 'state_name', 'county_name',
-        'confirmed_per_100k',
+HEADERS = ('id', 'fips', 'geolevel', 'date',
+        'state_abbr', 'state_name', 'county_name',
+        'confirmed', 'deaths', 'confirmed_per_100k',
         'confirmed_daily_diff', 'confirmed_daily_diff_pct', 'deaths_daily_diff', 'deaths_daily_diff_pct',
         'confirmed_weekly_diff', 'confirmed_weekly_diff_pct', 'deaths_weekly_diff', 'deaths_weekly_diff_pct',
             )

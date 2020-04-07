@@ -14,14 +14,10 @@
     </thead>
 
     <tbody>
-    {% assign entities = "" | split: ',' %}
-    {% assign entities = entities | push: site.data.summary.nation %}
-    {% assign entities = entities | concat: site.data.summary.states %}
-
-    {% for row in entities%}
-        <tr class="entity {{row['geolevel']}}">
+    {% for row in include.entities %}
+        <tr class="entity {{ row.geolevel }}">
             <td class="name">
-                <a href="{{ row.abbr | datapage_url: 'states' }}">{{row.name}}</a>
+                <a href="{{ row.id | datapage_url: 'states' }}">{{row.name}}</a>
 
             </td>
 

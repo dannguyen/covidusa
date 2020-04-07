@@ -43,6 +43,9 @@ def derive_geolevel(gid):
 
 
 
+def get_entity_census_by_fips(fips, censusdata):
+    return next((row for row in censusdata if row['fips'] == fips), {})
+
 def get_nation_census(censusdata):
     return next((c for c in censusdata if c['geolevel'] == 'nation'))
 
