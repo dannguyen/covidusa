@@ -18,6 +18,7 @@ const dailyChange = function(){
                 let data = resp;
                 // we truncate series to the first day of >= 100 cases
                 let series = data['series'];
+                // todo: pull date of confirmed_100 from summary
                 series = series.slice(series.findIndex(d => d.confirmed >= 100))
 
 

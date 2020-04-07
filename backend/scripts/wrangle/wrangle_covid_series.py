@@ -128,26 +128,61 @@ def wrangle_series(series):
     return outseries
 
 
+
+def munge_nation_series(otherdata):
+    """a special method that takes the wrangled states/county data, group sums it by day, and does
+        a national total"""
+    us_series = {}
+    states_data = [o for o in otherdata if o['geolevel'] == 'state']
+    for row in states_data:
+        if row['state']:
+            dt = row['date']
+            if not us_series.get(dt):
+                daydata = us_series[dt] = defaultdict(int)
+                daydata['id'] = 'USA'
+                daydata['date'] = dt
+                daydata['state_name'] = 'United States'
+                daydata['state_abbr'] = daydata['county_name'] = daydata['fips'] = None
+                daydata['geolevel'] = 'nation'
+            else:
+                daydata = us_series[dt]
+
+            daydata['day_state_count'] += 1
+            for h in ('confirmed', 'deaths'):
+                daydata[h] += row[h]
+
+
+    outdata = sorted(us_series.values(), key=lambda x: x['date'])
+
+    for o in outdata:
+        print(f"{o['date']}: {o['day_state_count']} count, {o['confirmed']} confirmed")
+
+    return outdata
+
+
 def main():
-    DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
-    outdata = []
     srcdata = loaddata()
+    DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
+    xdata = []
+
     # get unique ids
     uids = set(d['id'] for d in srcdata)
     for uid in uids:
         series = sorted([d for d in srcdata if uid == d['id']], key=lambda d: d['date'])
         series = fill_series(series)
         series = wrangle_series(series)
-        outdata.extend(series)
+        xdata.extend(series)
 
 
-    outdata = sorted(outdata, key=lambda d: (d['id'], d['date']))
+    xdata = sorted(xdata, key=lambda d: (d['id'], d['date']))
+    nation_data = wrangle_series(munge_nation_series(xdata))
 
     with open(DEST_PATH, 'w') as dest:
         outs = csv.DictWriter(dest, fieldnames=HEADERS, extrasaction='ignore')
         outs.writeheader()
-        outs.writerows(outdata)
-        stderr.write(f"Wrote {len(outdata)} rows to {DEST_PATH}\n")
+        outs.writerows(nation_data)
+        outs.writerows(xdata)
+        stderr.write(f"Wrote {len(nation_data) + len(xdata)} rows to {DEST_PATH}\n")
 
 
 if __name__ == '__main__':

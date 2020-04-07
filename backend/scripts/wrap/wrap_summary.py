@@ -31,7 +31,7 @@ def load_census():
     data = []
     with open(CENSUS_SRC_PATH) as src:
         for d in csv.DictReader(src):
-            if d['geolevel'] == 'state':
+            if d['geolevel'] == 'state' or d['geolevel'] == 'nation':
                 for key in d.keys():
                     if any(_h in key for _h in ('pct', 'total', 'median', 'ratio')) and d[key]:
                         if any(_h in key for _h in ('pct', 'ratio')):
@@ -45,7 +45,7 @@ def load_covid():
     data = []
     with open(COVID_SRC_PATH) as src:
         for d in csv.DictReader(src):
-            if d['geolevel'] == 'state':
+            if d['geolevel'] == 'state' or d['geolevel'] == 'nation':
                 for key in d.keys():
                     if any(_h in key for _h in ('confirmed', 'deaths')) and d[key]:
                         d[key] = float(d[key]) if 'pct' in key else int(d[key])
@@ -72,14 +72,6 @@ def summarize_covid_overall(data):
         data[-1]['date']
     ]
     dty = meta['date_range'][1]
-
-    meta['latest'] = {
-        'date': dty,
-        'confirmed': sum(d['confirmed'] for d in data if d['date'] == dty),
-        'deaths': sum(d['deaths'] for d in data if d['date'] == dty)
-
-    }
-
     return meta
 
 def summarize_covid_state(abbr, alldata):
@@ -103,12 +95,32 @@ def summarize_covid_state(abbr, alldata):
     out['firsts']['confirmed'] = {
         'date': fd, 'days_ago': _daysdiff(latest['date'], fd)
     }
+
+    fd = next((s['date'] for s in sdata if s['confirmed'] > 100), None)
+    out['firsts']['confirmed_100'] = {
+        'date': fd, 'days_ago': _daysdiff(latest['date'], fd)
+    } if fd else {}
+
+
     fd = next((s['date'] for s in sdata if s['deaths'] > 0), None)
     out['firsts']['death'] = {
         'date': fd, 'days_ago': _daysdiff(latest['date'], fd)
-    }
+    } if fd else {}
+
     # get latest day numbers
     out['latest'] = {h: latest[h] for h in latest.keys() if h not in SERIES_META}
+
+
+    # get last 14 days
+    dlast = out['last_14_days'] = {}
+    for h in ('confirmed', 'confirmed_daily_diff', 'confirmed_daily_diff_pct', 'deaths', 'deaths_daily_diff', 'deaths_daily_diff_pct'):
+        dlast[h] = []
+        for i in range(1, 14):
+            if i+1 > len(sdata):
+                break
+            else:
+                j = 0 - (i+1)
+                dlast[h].append(sdata[j][h])
 
 
     return out
@@ -116,23 +128,31 @@ def summarize_covid_state(abbr, alldata):
 
 def main():
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
-    fipsmap = load_fipsmap()
     covid_data = load_covid()
     census_data = load_census()
 
     outdata = {}
     outdata['overall'] = summarize_covid_overall(covid_data)
+    outdata['nation'] = {}
     outdata['states'] = []
 
-    for fd in fipsmap:
-        abbr = fd['postal_code']
-        d = summarize_covid_state(abbr, covid_data)
-        try:
+    fids = set([d['id'] for d in covid_data])
+
+    for fid in fids:
+        d = summarize_covid_state(fid, covid_data)
+        if fid == 'USA':
+            d['census'] = next((c for c in census_data if c['geolevel'] == 'nation'))
+            outdata['nation'] = d
+        else:
             # territories do not have census info other than DC and PR
             d['census'] = next((row for row in census_data if row['fips'] == d['fips']), {})
-        except Exception as err:
-            import pdb; pdb.set_trace(); raise err
-        outdata['states'].append(d)
+            outdata['states'].append(d)
+
+    outdata['states'].sort(key=lambda x: x['id'])
+        # try:
+        #
+        # except Exception as err:
+        #     import pdb; pdb.set_trace(); raise err
 
 
     outtext = json.dumps(outdata, indent=2)
