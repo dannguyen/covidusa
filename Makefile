@@ -26,12 +26,11 @@ datacopy:
 	# summaries
 	cp backend/data/wrapped/summary.json jksite/jdata/summary.json
 	# individual series
-	cp -r backend/data/wrapped/series jksite/jdata/
+	cp -r backend/data/wrapped/entities jksite/jdata/
 
 
 wrap: wrangle
-	./backend/scripts/wrap/wrap_state_series.py
-	./backend/scripts/wrap/wrap_summary.py
+	./backend/scripts/wrap/wrap_data.py
 
 
 
