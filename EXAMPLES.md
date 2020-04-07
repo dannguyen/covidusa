@@ -43,8 +43,21 @@ https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
 
 ## WaPo
 
+https://www.washingtonpost.com/graphics/2020/national/coronavirus-us-cases-deaths/
+
+### Above fold stat
+
+<img src="repo_assets/images/wapo-above-fold-stat.png" alt="wapo-above-fold-stat.png">
+
 
 ### Raw cases table and minicharts
 
 
 <img src="repo_assets/images/wapo-raw-cases-table.png" alt="wapo-raw-cases-table.png">
+
+
+### Worldly small multiples
+
+https://www.washingtonpost.com/graphics/2020/world/mapping-spread-new-coronavirus/
+
+<img src="repo_assets/images/wapo-world-small-multiples.png" alt="wapo-world-small-multiples.png">
