@@ -38,7 +38,7 @@ wrangle: ./backend/data/wrangled/us-series.csv
 
 ./backend/data/wrangled/us-series.csv: ./backend/data/fused/nytimes-us.csv
 
-	./backend/scripts/wrangle/wrangle_series.py
+	./backend/scripts/wrangle/wrangle_covid_series.py
 
 
 

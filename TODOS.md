@@ -11,7 +11,7 @@
 ## Data backend
 
 - get census population data per state/county
-
+- move all summarization to wrangle step, including by nation
 
 
 ### older todos
