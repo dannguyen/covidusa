@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 """note that this script filters columns"""
+from sys import path as syspath; syspath.append('./backend/scripts')
+from utils.utils import loggy
+
+
 from collections import defaultdict
 import csv
 from pathlib import Path
 import re
-from sys import stderr
 
 SRC_DIR = Path('./backend/data/archives/census/originals/')
 SRC_NAMES = {
@@ -17,7 +20,7 @@ DEST_PATH = Path('./backend/data/fused/census-acs5-2018.csv')
 HEADERMAPS_DIR = Path('./backend/data/archives/census/lookups')
 
 
-def load_data(slug):
+def load_original_data(slug):
     # returns dict of dicts, for which the census_geo_id is key
     outdata = {}
     headermap = list(csv.DictReader(HEADERMAPS_DIR.joinpath(f'headers-{slug}.csv').open()))
@@ -28,14 +31,14 @@ def load_data(slug):
                 d = {h['myname']: row[h['original']] for h in headermap}
                 outdata[d['census_geo_id']] = d
 
-    stderr.write(f"Read {len(outdata)} rows from: {srcpath}\n")
+    loggy(f"Read {len(outdata)} rows from: {srcpath}", __file__)
     return outdata
 
 def fuse_data():
     """returns a list of dicts"""
     outdata = defaultdict(dict)
     for slug in SRC_NAMES.keys():
-        data = load_data(slug)
+        data = load_original_data(slug)
         for key, val in data.items():
             try:
                 outdata[key].update(val)
@@ -53,7 +56,7 @@ def main():
         outs = csv.DictWriter(dest, fieldnames=outdata[0].keys())
         outs.writeheader()
         outs.writerows(outdata)
-        stderr.write(f"Fused {len(outdata)} rows: {DEST_PATH}\n")
+        loggy(f"Fused {len(outdata)} rows: {DEST_PATH}", __file__)
 
 
 

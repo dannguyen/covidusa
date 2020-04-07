@@ -12,16 +12,17 @@ build: fuse wrap site
 
 
 clean:
-	@echo --- Cleaning derivations
+	# this seems bad...
+	rm -rf jksite/_site
+	mkdir -p jksite/_site
 
-site: datacopy
-
+site: 	datacopy
 	cd jksite && bundle exec jekyll build --incremental
 	rsync -arv --checksum jksite/_site/ docs
 
 
 datacopy:
-
+	@echo "Copying data from backend/data/wrapped to jksite/jdata"
 	# summaries
 	cp backend/data/wrapped/summary.json jksite/jdata/summary.json
 	# individual series
@@ -70,3 +71,9 @@ data/collected/covidtracking/:
 
 
 
+### archive stuff that shouldn't be part of regular build process
+
+archive_wrangle_census:
+
+	./backend/scripts/fuse/fuse_census_acs5.py
+	./backend/scripts/wrangle/wrangle_census.py

@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+"""this is not used"""
+raise ValueError("don't use this, this is an old deprecated script")
+
 import csv
 from pathlib import Path
 import re

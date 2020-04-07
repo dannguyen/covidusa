@@ -1,11 +1,12 @@
 #!/usr/bin/env python
+from sys import path as syspath; syspath.append('./backend/scripts')
+from utils.fips import load_fipsmap
+from utils.utils import loggy
 
 import csv
 from pathlib import Path
 import re
-from sys import stderr
 
-FIPS_PATH = Path('backend/data/archives/lookups/fips.csv')
 DEST_PATH = Path('backend/data/fused/nytimes-us.csv')
 SRC_DIR = Path('backend/data/collected/nytimes')
 
@@ -17,16 +18,17 @@ OUT_HEADERS = ('id', 'state_abbr', 'geolevel', 'date', 'state', 'county','fips',
 
 def derive_geolevel(row):
     fips = row['fips']
-    if len(fips) == 2 and re.match(r'[A-Z]{2}\b', row['id']):
+    if len(fips) == 2 and re.match(r'[A-Z]{2}\b', row['id']): # fips is '01' and row['id'] is 'AL'
         geo = 'state'
-    elif re.match(r'\d{5}', fips):
+    elif re.match(r'\d{5}', fips): # fips is '01002'
         geo = 'county'
-    elif not fips:
+    elif not fips: # there is no fips
         if row['county'] == 'Unknown':
             geo = 'substate-unknown'
         else:
             geo = 'substate'
-    else:
+    else: # this shouldn't happen
+        loggy("the 'row' contains values that do not make for a valid geolevel!")
         import pdb; pdb.set_trace(); raise
     return geo
 
@@ -88,20 +90,13 @@ def load_data(slug):
     return outdata
 
 
-
-def load_fipsmap():
-    with FIPS_PATH.open() as i:
-        return list(csv.DictReader(i))
-
-
-
 def main():
     fipsmap = load_fipsmap()
     outdata = []
     for slug in SRC_SLUGS:
         data = load_data(slug)
         fdata = fuse_data(data, fipsmap)
-        stderr.write(f"{slug}: loaded {len(fdata)} rows\n")
+        loggy(f"{slug}: loaded {len(fdata)} rows", __file__)
         outdata.extend(fdata)
 
     outdata.sort(key=lambda d: (d['id'], d['date']))
@@ -110,9 +105,7 @@ def main():
         outs = csv.DictWriter(dest, fieldnames=OUT_HEADERS)
         outs.writeheader()
         outs.writerows(outdata)
-        stderr.write(f"Fused {len(outdata)} rows: {DEST_PATH}\n")
-
-
+        loggy(f"Fused {len(outdata)} rows: {DEST_PATH}", __file__)
 
 
 if __name__ == '__main__':

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+from sys import path as syspath; syspath.append('./backend/scripts')
+from utils.utils import loggy, fetch_and_save
+
 from pathlib import Path
-import requests
-from sys import stderr
 
 DEST_DIR = Path('backend/data/collected/jhcsse')
 SRC_URLS = {

@@ -7,10 +7,10 @@ https://www.nytimes.com/article/coronavirus-county-data-us.html
 
 https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
 """
+from sys import path as syspath; syspath.append('./backend/scripts')
+from utils.utils import loggy, fetch_and_save
 
 from pathlib import Path
-import requests
-from sys import stderr
 
 DEST_DIR = Path('backend/data/collected/nytimes')
 SRC_URLS = {
@@ -19,15 +19,11 @@ SRC_URLS = {
 }
 
 def main():
+    loggy("Collecting nytimes data", __file__)
     DEST_DIR.mkdir(exist_ok=True, parents=True)
-    for key, url in SRC_URLS.items():
-        resp = requests.get(url)
-        if resp.status_code == 200:
-            stderr.write(f"{key}: Downloaded {len(resp.content)} bytes\n")
-            dest_name = DEST_DIR.joinpath(f'{key}.csv')
-            with open(dest_name, 'wb') as outs:
-                stderr.write(f"\tWrote {len(resp.content)} bytes to: {dest_name}\n\n")
-                outs.write(resp.content)
+    for slug, url in SRC_URLS.items():
+        destpath = DEST_DIR.joinpath(f'{slug}.csv')
+        fetch_and_save(url, destpath)
 
 
 if __name__ == '__main__':
