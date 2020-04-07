@@ -8,12 +8,13 @@ from pathlib import Path
 import re
 from sys import stderr
 
-FIPS_PATH = Path('backend/data/archived/lookups/fips.csv')
-SRC_PATH = Path('backend/data/wrangled/us-series.csv')
 DEST_PATH = Path('backend/data/wrapped/summary.json')
 
-SERIES_META = ('id', 'abbr', 'fips', 'geolevel', 'state_name', 'county_name', 'state_abbr')
+CENSUS_SRC_PATH = Path('backend/data/wrangled/census-acs5-2018.csv')
+COVID_SRC_PATH = Path('backend/data/wrangled/us-series.csv')
+FIPS_PATH = Path('backend/data/archives/lookups/fips.csv')
 
+SERIES_META = ('id', 'abbr', 'fips', 'geolevel', 'state_name', 'county_name', 'state_abbr')
 
 def _daysdiff(dy, dx):
     if dx:
@@ -25,15 +26,29 @@ def load_fipsmap():
     with FIPS_PATH.open() as i:
         return list(csv.DictReader(i))
 
-def load_us_data():
+def load_census():
+    """ just the states"""
     data = []
-    with open(SRC_PATH) as src:
+    with open(CENSUS_SRC_PATH) as src:
         for d in csv.DictReader(src):
             if d['geolevel'] == 'state':
                 for key in d.keys():
-                    if any(_h in key for _h in ('confirmed', 'deaths')):
-                        if d[key]:
-                            d[key] = float(d[key]) if 'pct' in key else int(d[key])
+                    if any(_h in key for _h in ('pct', 'total', 'median', 'ratio')) and d[key]:
+                        if any(_h in key for _h in ('pct', 'ratio')):
+                            d[key] = float(d[key])
+                        else:
+                            d[key] = int(d[key])
+                data.append(d)
+    return data
+
+def load_covid():
+    data = []
+    with open(COVID_SRC_PATH) as src:
+        for d in csv.DictReader(src):
+            if d['geolevel'] == 'state':
+                for key in d.keys():
+                    if any(_h in key for _h in ('confirmed', 'deaths')) and d[key]:
+                        d[key] = float(d[key]) if 'pct' in key else int(d[key])
 
                 data.append(d)
     return sorted(data, key=lambda d: d['date'])
@@ -48,7 +63,7 @@ def load_us_data():
 
 
 
-def summarize_overall(data):
+def summarize_covid_overall(data):
     """data is assumed to be sorted by date"""
     meta = {}
 #    data = sorted(data, key=lambda d: d['date'])
@@ -67,7 +82,7 @@ def summarize_overall(data):
 
     return meta
 
-def summarize_state(abbr, alldata):
+def summarize_covid_state(abbr, alldata):
     """alldata is assumed to be sorted by date"""
 
     out = {}
@@ -102,17 +117,22 @@ def summarize_state(abbr, alldata):
 def main():
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     fipsmap = load_fipsmap()
-    srcdata = load_us_data()
+    covid_data = load_covid()
+    census_data = load_census()
 
     outdata = {}
-    outdata['overall'] = summarize_overall(srcdata)
+    outdata['overall'] = summarize_covid_overall(covid_data)
     outdata['states'] = []
 
     for fd in fipsmap:
         abbr = fd['postal_code']
-        outdata['states'].append(summarize_state(abbr, srcdata))
-
-
+        d = summarize_covid_state(abbr, covid_data)
+        try:
+            # territories do not have census info other than DC and PR
+            d['census'] = next((row for row in census_data if row['fips'] == d['fips']), {})
+        except Exception as err:
+            import pdb; pdb.set_trace(); raise err
+        outdata['states'].append(d)
 
 
     outtext = json.dumps(outdata, indent=2)

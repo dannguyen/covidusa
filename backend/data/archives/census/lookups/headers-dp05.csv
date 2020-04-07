@@ -1,0 +1,17 @@
+original,myname,notes
+GEO_ID,census_geo_id,
+NAME,census_geo_name,
+DP05_0001E,total_population,Estimate!!SEX AND AGE!!Total population
+DP05_0002PE,male_pct,Percent Estimate!!SEX AND AGE!!Total population!!Male
+DP05_0004E,sex_ratio,Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)
+DP05_0019PE,under_18_pct,Percent Estimate!!SEX AND AGE!!Total population!!Under 18 years
+DP05_0024PE,65_and_over_pct,Percent Estimate!!SEX AND AGE!!Total population!!65 years and over
+DP05_0071PE,hispanic_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)
+DP05_0077PE,white_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone
+DP05_0078PE,black_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone
+DP05_0079PE,american_native_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone
+DP05_0080PE,asian_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone
+DP05_0081PE,pacific_islander_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone
+DP05_0082PE,other_race_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some other race alone
+DP05_0083PE,multi_race_pct,Percent Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or more races
+DP05_0086E,total_housing_units,Estimate!!Total housing units

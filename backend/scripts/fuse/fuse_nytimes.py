@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 from sys import stderr
 
-FIPS_PATH = Path('backend/data/archived/lookups/fips.csv')
+FIPS_PATH = Path('backend/data/archives/lookups/fips.csv')
 DEST_PATH = Path('backend/data/fused/nytimes-us.csv')
 SRC_DIR = Path('backend/data/collected/nytimes')
 
