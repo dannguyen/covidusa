@@ -9,13 +9,14 @@ import re
 from sys import stderr
 
 # FIPS_PATH = Path('backend/data/archives/lookups/fips.csv')
+CENSUS_SRC_PATH = Path('backend/data/wrangled/census-acs5-2018.csv')
 SRC_PATH = Path('backend/data/fused/nytimes-us.csv')
 DEST_PATH = Path('backend/data/wrangled/us-series.csv')
 
 
 HEADERS = ('id', 'date', 'confirmed', 'deaths',
         'geolevel', 'state_abbr', 'fips', 'state_name', 'county_name',
-
+        'confirmed_per_100k',
         'confirmed_daily_diff', 'confirmed_daily_diff_pct', 'deaths_daily_diff', 'deaths_daily_diff_pct',
         'confirmed_weekly_diff', 'confirmed_weekly_diff_pct', 'deaths_weekly_diff', 'deaths_weekly_diff_pct',
             )
@@ -40,7 +41,20 @@ def _days_between(dx, dy):
         return [_date_daysahead(dx, i) for i in range(1, diff)]
 
 
-
+def load_census():
+    """ just the states"""
+    data = []
+    with open(CENSUS_SRC_PATH) as src:
+        for d in csv.DictReader(src):
+            if d['geolevel'] == 'state' or d['geolevel'] == 'nation':
+                for key in d.keys():
+                    if any(_h in key for _h in ('pct', 'total', 'median', 'ratio')) and d[key]:
+                        if any(_h in key for _h in ('pct', 'ratio')):
+                            d[key] = float(d[key])
+                        else:
+                            d[key] = int(d[key])
+                data.append(d)
+    return data
 
 # def load_fipsmap():
 #     with FIPS_PATH.open() as i:
@@ -87,11 +101,15 @@ def fill_series(series):
 
     return outseries
 
-def wrangle_series(series):
+def wrangle_series(series, census):
     """this copies the series list and returns a new one, with new fields
     """
     outseries = []
+    total_pop = census['total_population'] if census else None
     for i, row in enumerate(series):
+        if total_pop:
+            row['confirmed_per_100k_rate'] = round(100000 * row['confirmed'] / total_pop)
+
         # the very first row represents the first day of confirmations, ostensibly, and no diffs can be calculated
         if i < 1:
             pass
@@ -154,14 +172,15 @@ def munge_nation_series(otherdata):
 
     outdata = sorted(us_series.values(), key=lambda x: x['date'])
 
-    for o in outdata:
-        print(f"{o['date']}: {o['day_state_count']} count, {o['confirmed']} confirmed")
+    # for o in outdata:
+    #     print(f"{o['date']}: {o['day_state_count']} count, {o['confirmed']} confirmed")
 
     return outdata
 
 
 def main():
     srcdata = loaddata()
+    censusdata = load_census()
     DEST_PATH.parent.mkdir(exist_ok=True, parents=True)
     xdata = []
 
@@ -170,12 +189,18 @@ def main():
     for uid in uids:
         series = sorted([d for d in srcdata if uid == d['id']], key=lambda d: d['date'])
         series = fill_series(series)
-        series = wrangle_series(series)
+
+        ufips = series[0]['fips']
+        census = next((c for c in censusdata if c['fips'] == ufips), None)
+
+        series = wrangle_series(series, census)
         xdata.extend(series)
 
 
     xdata = sorted(xdata, key=lambda d: (d['id'], d['date']))
-    nation_data = wrangle_series(munge_nation_series(xdata))
+
+    ncensus = next((c for c in censusdata if c['geolevel'] == 'nation'), None)
+    nation_data = wrangle_series(munge_nation_series(xdata), ncensus)
 
     with open(DEST_PATH, 'w') as dest:
         outs = csv.DictWriter(dest, fieldnames=HEADERS, extrasaction='ignore')

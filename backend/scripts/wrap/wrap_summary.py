@@ -48,7 +48,8 @@ def load_covid():
             if d['geolevel'] == 'state' or d['geolevel'] == 'nation':
                 for key in d.keys():
                     if any(_h in key for _h in ('confirmed', 'deaths')) and d[key]:
-                        d[key] = float(d[key]) if 'pct' in key else int(d[key])
+                        # d[key] = float(d[key]) if 'pct' in key else int(d[key])
+                        d[key] = float(d[key]) if any(_k in key  for _k in ('_rate', '_pct')) else int(d[key])
 
                 data.append(d)
     return sorted(data, key=lambda d: d['date'])
@@ -86,6 +87,7 @@ def summarize_covid_state(abbr, alldata):
     #     raise err
     # else:
     latest = sdata[-1]
+    ldate = latest['date']
     out['id'] = out['abbr'] = latest['id']
     out['name'] = latest['state_name'] # rename state_name to name
     out['fips'] = latest['fips']
@@ -113,6 +115,13 @@ def summarize_covid_state(abbr, alldata):
 
     # get last 14 days
     dlast = out['last_14_days'] = {}
+    maxdays = min(14, len(sdata) - 1)
+
+    dlast['dates'] = [(date.fromisoformat(ldate) - timedelta(days=i)).isoformat() for i in range(1, maxdays)]
+
+
+
+
     for h in ('confirmed', 'confirmed_daily_diff', 'confirmed_daily_diff_pct', 'deaths', 'deaths_daily_diff', 'deaths_daily_diff_pct'):
         dlast[h] = []
         for i in range(1, 14):
@@ -141,11 +150,13 @@ def main():
     for fid in fids:
         d = summarize_covid_state(fid, covid_data)
         if fid == 'USA':
-            d['census'] = next((c for c in census_data if c['geolevel'] == 'nation'))
+            _census = next((c for c in census_data if c['geolevel'] == 'nation'))
+            d['census'] = _census
             outdata['nation'] = d
         else:
             # territories do not have census info other than DC and PR
-            d['census'] = next((row for row in census_data if row['fips'] == d['fips']), {})
+            _census = next((row for row in census_data if row['fips'] == d['fips']), {})
+            d['census'] = _census
             outdata['states'].append(d)
 
     outdata['states'].sort(key=lambda x: x['id'])

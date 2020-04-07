@@ -34,7 +34,7 @@ def load_us_data():
                 for key in d.keys():
                     if any(_h in key for _h in ('confirmed', 'deaths')):
                         if d[key]:
-                            d[key] = float(d[key]) if 'pct' in key else int(d[key])
+                            d[key] = float(d[key]) if any(_k in key  for _k in ('_rate', '_pct')) else int(d[key])
 
                 data.append(d)
     return sorted(data, key=lambda d: d['date'])
