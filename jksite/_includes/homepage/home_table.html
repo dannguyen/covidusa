@@ -1,0 +1,93 @@
+
+
+
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Days Since First Case</th>
+            <th>Cases</th>
+            <th>Pct Change Yesterday</th>
+            <th>Count Change Last Week</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% assign entities = "" | split: ',' %}
+    {% assign entities = entities | push: site.data.summary.nation %}
+    {% assign entities = entities | concat: site.data.summary.states %}
+
+    {% for row in entities%}
+        <tr class="entity {{row['geolevel']}}">
+            <td class="name">
+                <a href="{{ row.abbr | datapage_url: 'states' }}">{{row.name}}</a>
+
+            </td>
+
+            <td class="first-confirmed days-ago">
+                {{ row.firsts.confirmed.days_ago }}
+            </td>
+            <td class="confirmed daily">
+                <span class="today">
+                    {{row.latest.confirmed}}
+                </span>
+                <span class="yesterday change">
+                    {% assign ctchange = row.latest.confirmed_daily_diff %}
+
+                    {% if ctchange > 0 %}
+                        <span class="num positive">
+                            ↑{{ ctchange }}
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ ctchange }}
+                        </span>
+                    {% endif %}
+                </span>
+            </td>
+
+            <td class="confirmed daily percent-change">
+                {% assign _cval = row.latest.confirmed_daily_diff_pct  %}
+                {% if _cval != "" %}
+                    {% if _cval > 0 %}
+                        <span class="num positive">
+                            ↑{{ _cval | round }}%
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ _cval | round}}%
+                        </span>
+                    {% endif %}
+
+                {% endif %}
+            </td>
+
+            <td class="confirmed weekly-change count">
+                {% assign _cval = row.latest.confirmed_weekly_diff %}
+                {% if _cval != "" %}
+                    {% if _cval > 0 %}
+                        <span class="num positive">
+                            ↑{{ _cval  }}
+                        </span>
+                    {% elsif ctchange < 0 %}
+                        <span class="num negative">
+                            ↓{{ _cval  }}
+                        </span>
+                    {% endif %}
+
+                {% endif %}
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    {{row.latest.deaths}}
+                </span>
+            </td>
+
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

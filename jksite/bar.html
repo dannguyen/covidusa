@@ -10,16 +10,9 @@ notes: |
     }
 
     #mywrap svg{
-        background-color: #dfe;
-        width: 940px;
-        height: 520px;
+        /*background-color: #dfe;*/
+        width: 300px;
     }
-
-    #mywrap rect{
-        /*fill: #6a9;*/
-        fill: none;
-    }
-
 
 
 </style>
@@ -29,26 +22,77 @@ notes: |
 
     <h2>mywrap chart</h2>
 
-    <div id="mywrap">
+    <section id="mywrap">
+
+    {% assign entities = "" | split: ',' %}
+    <!-- {assign entities = entities | push: site.data.summary.nation } -->
+    {% assign entities = entities | concat: site.data.summary.states %}
+
+    {% for row in entities %}
 
 
-    </div>
+        <div class="row">
+            <div class="col">
+                {{row.name}}
+            </div>
+            <div class="col">
+                <div>
+                    {{row.last_14_days.confirmed_daily_diff_pct | push: row.latest.confirmed_daily_diff_pct | reverse |  join: ', ' }}
+                </div>
+                <br>
+
+                <div class="heatbox" data-id="{{row['id']}}">
+
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+    </section>
 
 </div>
 
-
-<script src="{{ 'charts/foobar.js?v=' | prepend: '/assets/js/' | relative_url }}"></script>
-
 <script>
 
+    let qd = 9;
+    let pfoo = datautils.getSummary()
 
+    Promise.resolve(pfoo)
+        .then(function(resp){
+            console.log('summary promise loaded')
+            let data = qd = resp;
 
+            let colorScale = d3.scaleSequential(d3.interpolatePiYG)
+                                .domain([0, 100])
 
-           // let xScale = d3.scaleTime()
-           //                      .domain(d3.extent(series, d => d.date ))
-           //                      .range([0, width - margin.right]);
+            let boxes = d3.selectAll('.heatbox');
 
-    // let width = svg.node().getBoundingClientRect().width,
-    //     height = svg.node().getBoundingClientRect().height;
+            boxes.each(function(d, i){
+
+                let el = d3.select(this);
+                let eid = el.attr("data-id");
+                let edata = data.states.find(d => d['id'] == eid);
+                let ddays = edata.last_14_days['confirmed_daily_diff_pct'].reverse();
+                // push the latest value
+                ddays.push(edata.latest.confirmed_daily_diff_pct)
+                console.log(eid, ddays)
+
+                let svg = el.append('svg')
+                svg.selectAll("rect")
+                    .data(ddays)
+                    .enter()
+                    .append("rect")
+                    .style("fill", (d, i) => colorScale(d))
+                    .attr("x", (d, i) => i * 15)
+                    .attr("width", (d, i) => 13)
+                    .attr("height", 15)
+                    .on("mouseover", function(d, i){
+                        console.log(`${i}: diff_pct: ${d}%`)
+                    })
+
+            })
+
+        })
+
 
 </script>

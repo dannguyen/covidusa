@@ -1,3 +1,5 @@
+;
+
 // window.datasets = Object.is(window.datasets, undefined) ? {} : window.datasets;
 
 const datautils = function(){
@@ -17,14 +19,24 @@ const datautils = function(){
         return mypromise
     }
 
+    const summaryUrl = "/covidusa/jdata/summary.json";
 
-console.log('datautils loaded')
+
+
+    const getSummary = function(){
+        return d3.json(summaryUrl)
+                    .then(function(data){
+                        return data;
+                    })
+
+    }
 
     return {
         getSeries: getSeries,
+        getSummary: getSummary,
     }
 
-}()
+}();
 
 
 

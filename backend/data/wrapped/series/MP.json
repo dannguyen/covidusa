@@ -184,6 +184,26 @@
       "confirmed_weekly_diff_pct": 300.0,
       "deaths_weekly_diff": 1,
       "deaths_weekly_diff_pct": ""
+    },
+    {
+      "id": "MP",
+      "date": "2020-04-06",
+      "confirmed": 8,
+      "deaths": 1,
+      "geolevel": "state",
+      "state_abbr": "MP",
+      "fips": "69",
+      "state_name": "Northern Mariana Islands",
+      "county_name": "",
+      "confirmed_per_100k": "",
+      "confirmed_daily_diff": 0,
+      "confirmed_daily_diff_pct": 0.0,
+      "deaths_daily_diff": 0,
+      "deaths_daily_diff_pct": 0.0,
+      "confirmed_weekly_diff": 6,
+      "confirmed_weekly_diff_pct": 300.0,
+      "deaths_weekly_diff": 1,
+      "deaths_weekly_diff_pct": ""
     }
   ]
 }
