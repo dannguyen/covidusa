@@ -245,6 +245,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (~> 6.0)
   github-pages
   tzinfo (~> 1.2)
   tzinfo-data

@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://dannguyen.github.io/covidusa/" />
 <meta property="og:site_name" content="CovidUSA" />
 <script type="application/ld+json">
-{"url":"https://dannguyen.github.io/covidusa/","name":"CovidUSA","headline":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebSite","@context":"https://schema.org"}</script>
+{"headline":"CovidUSA","url":"https://dannguyen.github.io/covidusa/","name":"CovidUSA","description":"A state-by-state tracker of Covid-19","@type":"WebSite","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -57,32 +57,145 @@
 
 
 
-{ assign table_entities = "" | split: ',' %}
-{ assign entities = entities | push: site.data.summary.nation %}
-{ assign entities = entities | concat: site.data.summary.states %}
 
 
 
-<section class="hero">
 
-    <div class="container">
-        <h1 class="site-title">
-            Covid USA
-        </h1>
 
-        <h3>testing testing</h3>
-        <p>
 
-            <strong>super awesome description goes here</strong>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium asperiores illum alias inventore voluptas animi sed est nesciunt aspernatur. Tenetur natus autem dolor laudantium amet quisquam distinctio similique aperiam voluptatem?
 
-        </p>
+<div class="homepage">
+
+
+
+
+    <section class="above-fold sec">
+        <div class="container">
+            <style>
+
+    .data-values .main-value{
+        font-size: 3.5em;
+    }
+
+    .delta.positive{
+        color:red;
+    }
+    .delta.positive:before{
+        content: "+";
+    }
+
+    .delta.negative{
+        color: purple;
+    }
+    .delta.negative:before{
+        content: "-";
+    }
+
+
+
+</style>
+
+
+<div class="row">
+    <div class="col">
+
+        <section class="stats">
+
+            <div class="stat confirmed">
+                <div class="label">
+                    Confirmed cases
+                </div>
+
+                <section class="data-values">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="count main-value">
+                                    366,238
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <div class="count diff">
+                                    <span class="delta positive" data-value="29464">
+        29,464
+        </span>
+                                </div>
+
+                                <div class="diff pct">
+                                    <span class="delta positive" data-value="8.7">
+        8.7%
+        </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="stat deaths">
+                <div class="label">
+                    Deaths
+                </div>
+                <section class="data-values">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="count main-value">
+                                    10,959
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <div class="count diff">
+                                    <span class="delta positive" data-value="1304">
+        1,304
+        </span>
+                                </div>
+
+                                <div class="diff pct">
+                                    <span class="delta positive" data-value="13.5">
+        13.5%
+        </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+
+        </section>
 
     </div>
-</section>
+</div>
 
-<section class="tkmap">
-    <div class="container">
+        </div>
+    </section>
+
+
+    <section class="hero sec">
+        
+<div class="container">
+    <h1 class="site-title">
+        Covid USA
+    </h1>
+
+</div>
+
+
+    </section>
+
+    <section class="nation-map sec">
         <style>
 
     .state {
@@ -109,39 +222,43 @@
 </style>
 
 
-<h2>my american map</h2>
+<div class="container">
 
-<section id="mapwrap">
-
-
-        <svg id="mapbox"></svg>
+    <section id="mapwrap">
 
 
-</section>
+            <svg id="mapbox"></svg>
+
+
+    </section>
+
+</div>
 
 <script src="/covidusa/assets/js/charts/nationMap.js?v=0.0.1a"></script>
 
-    </div>
 
-</section>
-
+    </section>
 
 
-<div class="container">
 
 
-    
+
+    <section class="states-table sec">
+        <div class="container">
+            
 
 
 <table class="table table-sm table-striped">
     <thead>
         <tr>
             <th>State</th>
-            <th>Days Since First Case</th>
             <th>Cases</th>
+            <th>Deaths</th>
             <th>Pct Change Yesterday</th>
             <th>Count Change Last Week</th>
-            <th>Deaths</th>
+
+            <th>Days Since First Case</th>
+
         </tr>
     </thead>
 
@@ -153,9 +270,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                24
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2006
@@ -168,6 +282,13 @@
                             ↑165
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    53
                 </span>
             </td>
 
@@ -196,10 +317,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    53
-                </span>
+
+            <td class="first-confirmed days-ago">
+                24
             </td>
 
         </tr>
@@ -211,9 +331,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                25
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     189
@@ -226,6 +343,13 @@
                             ↑4
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    4
                 </span>
             </td>
 
@@ -254,10 +378,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    4
-                </span>
+
+            <td class="first-confirmed days-ago">
+                25
             </td>
 
         </tr>
@@ -269,9 +392,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                71
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2465
@@ -284,6 +404,13 @@
                             ↑196
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    67
                 </span>
             </td>
 
@@ -312,10 +439,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    67
-                </span>
+
+            <td class="first-confirmed days-ago">
+                71
             </td>
 
         </tr>
@@ -327,9 +453,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     927
@@ -342,6 +465,13 @@
                             ↑74
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    16
                 </span>
             </td>
 
@@ -370,10 +500,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    16
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -385,9 +514,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                72
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     16284
@@ -400,6 +526,13 @@
                             ↑1208
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    386
                 </span>
             </td>
 
@@ -428,10 +561,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    386
-                </span>
+
+            <td class="first-confirmed days-ago">
+                72
             </td>
 
         </tr>
@@ -443,9 +575,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                32
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     5172
@@ -458,6 +587,13 @@
                             ↑222
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    150
                 </span>
             </td>
 
@@ -486,10 +622,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    150
-                </span>
+
+            <td class="first-confirmed days-ago">
+                32
             </td>
 
         </tr>
@@ -501,9 +636,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                29
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     6906
@@ -516,6 +648,13 @@
                             ↑1231
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    206
                 </span>
             </td>
 
@@ -544,10 +683,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    206
-                </span>
+
+            <td class="first-confirmed days-ago">
+                29
             </td>
 
         </tr>
@@ -559,9 +697,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     783
@@ -574,6 +709,13 @@
                             ↑110
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    15
                 </span>
             </td>
 
@@ -602,10 +744,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    15
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -617,9 +758,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                30
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1097
@@ -632,6 +770,13 @@
                             ↑99
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    24
                 </span>
             </td>
 
@@ -660,10 +805,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    24
-                </span>
+
+            <td class="first-confirmed days-ago">
+                30
             </td>
 
         </tr>
@@ -675,9 +819,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                36
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     13621
@@ -690,6 +831,13 @@
                             ↑1279
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    253
                 </span>
             </td>
 
@@ -718,10 +866,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    253
-                </span>
+
+            <td class="first-confirmed days-ago">
+                36
             </td>
 
         </tr>
@@ -733,9 +880,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                35
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     7558
@@ -748,6 +892,13 @@
                             ↑816
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    294
                 </span>
             </td>
 
@@ -776,10 +927,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    294
-                </span>
+
+            <td class="first-confirmed days-ago">
+                35
             </td>
 
         </tr>
@@ -791,9 +941,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                22
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     266
@@ -806,6 +953,13 @@
                             ↑1
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    4
                 </span>
             </td>
 
@@ -834,10 +988,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    4
-                </span>
+
+            <td class="first-confirmed days-ago">
+                22
             </td>
 
         </tr>
@@ -849,9 +1002,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     385
@@ -864,6 +1014,13 @@
                             ↑16
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    5
                 </span>
             </td>
 
@@ -892,10 +1049,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    5
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -907,9 +1063,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                24
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1170
@@ -922,6 +1075,13 @@
                             ↑69
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    13
                 </span>
             </td>
 
@@ -950,10 +1110,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    13
-                </span>
+
+            <td class="first-confirmed days-ago">
+                24
             </td>
 
         </tr>
@@ -965,9 +1124,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                73
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     12262
@@ -980,6 +1136,13 @@
                             ↑986
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    309
                 </span>
             </td>
 
@@ -1008,10 +1171,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    309
-                </span>
+
+            <td class="first-confirmed days-ago">
+                73
             </td>
 
         </tr>
@@ -1023,9 +1185,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     4956
@@ -1038,6 +1197,13 @@
                             ↑545
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    141
                 </span>
             </td>
 
@@ -1066,10 +1232,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    141
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -1081,9 +1246,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                29
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     946
@@ -1096,6 +1258,13 @@
                             ↑78
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    25
                 </span>
             </td>
 
@@ -1124,10 +1293,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    25
-                </span>
+
+            <td class="first-confirmed days-ago">
+                29
             </td>
 
         </tr>
@@ -1139,9 +1307,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                30
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     853
@@ -1154,6 +1319,13 @@
                             ↑90
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    25
                 </span>
             </td>
 
@@ -1182,10 +1354,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    25
-                </span>
+
+            <td class="first-confirmed days-ago">
+                30
             </td>
 
         </tr>
@@ -1197,9 +1368,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1057
@@ -1212,6 +1380,13 @@
                             ↑9
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    52
                 </span>
             </td>
 
@@ -1240,10 +1415,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    52
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -1255,9 +1429,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                28
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     14867
@@ -1270,6 +1441,13 @@
                             ↑1857
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    512
                 </span>
             </td>
 
@@ -1298,10 +1476,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    512
-                </span>
+
+            <td class="first-confirmed days-ago">
+                28
             </td>
 
         </tr>
@@ -1313,9 +1490,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                25
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     499
@@ -1328,6 +1502,13 @@
                             ↑29
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    10
                 </span>
             </td>
 
@@ -1356,10 +1537,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    10
-                </span>
+
+            <td class="first-confirmed days-ago">
+                25
             </td>
 
         </tr>
@@ -1371,9 +1551,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                32
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     4045
@@ -1386,6 +1563,13 @@
                             ↑436
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    92
                 </span>
             </td>
 
@@ -1414,10 +1598,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    92
-                </span>
+
+            <td class="first-confirmed days-ago">
+                32
             </td>
 
         </tr>
@@ -1429,9 +1612,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                65
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     13837
@@ -1444,6 +1624,13 @@
                             ↑1337
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    260
                 </span>
             </td>
 
@@ -1472,10 +1659,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    260
-                </span>
+
+            <td class="first-confirmed days-ago">
+                65
             </td>
 
         </tr>
@@ -1487,9 +1673,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                27
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     17130
@@ -1502,6 +1685,13 @@
                             ↑1495
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    727
                 </span>
             </td>
 
@@ -1530,10 +1720,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    727
-                </span>
+
+            <td class="first-confirmed days-ago">
+                27
             </td>
 
         </tr>
@@ -1545,9 +1734,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     986
@@ -1560,6 +1746,13 @@
                             ↑51
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    30
                 </span>
             </td>
 
@@ -1588,10 +1781,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    30
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -1603,9 +1795,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1738
@@ -1618,6 +1807,13 @@
                             ↑100
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    51
                 </span>
             </td>
 
@@ -1646,10 +1842,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    51
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -1661,9 +1856,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                30
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2722
@@ -1676,6 +1868,13 @@
                             ↑355
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    56
                 </span>
             </td>
 
@@ -1704,10 +1903,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    56
-                </span>
+
+            <td class="first-confirmed days-ago">
+                30
             </td>
 
         </tr>
@@ -1719,9 +1917,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                24
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     319
@@ -1734,6 +1929,13 @@
                             ↑21
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    6
                 </span>
             </td>
 
@@ -1762,10 +1964,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    6
-                </span>
+
+            <td class="first-confirmed days-ago">
+                24
             </td>
 
         </tr>
@@ -1777,9 +1978,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                49
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     438
@@ -1792,6 +1990,13 @@
                             ↑61
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    10
                 </span>
             </td>
 
@@ -1820,10 +2025,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    10
-                </span>
+
+            <td class="first-confirmed days-ago">
+                49
             </td>
 
         </tr>
@@ -1835,9 +2039,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                32
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1971
@@ -1850,6 +2051,13 @@
                             ↑91
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    58
                 </span>
             </td>
 
@@ -1878,10 +2086,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    58
-                </span>
+
+            <td class="first-confirmed days-ago">
+                32
             </td>
 
         </tr>
@@ -1893,9 +2100,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                35
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     715
@@ -1908,6 +2112,13 @@
                             ↑46
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    9
                 </span>
             </td>
 
@@ -1936,10 +2147,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    9
-                </span>
+
+            <td class="first-confirmed days-ago">
+                35
             </td>
 
         </tr>
@@ -1951,9 +2161,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                33
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     41090
@@ -1966,6 +2173,13 @@
                             ↑3585
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    1005
                 </span>
             </td>
 
@@ -1994,10 +2208,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    1005
-                </span>
+
+            <td class="first-confirmed days-ago">
+                33
             </td>
 
         </tr>
@@ -2009,9 +2222,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     686
@@ -2024,6 +2234,13 @@
                             ↑62
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    12
                 </span>
             </td>
 
@@ -2052,10 +2269,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    12
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -2067,9 +2283,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                36
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     130703
@@ -2082,6 +2295,13 @@
                             ↑7792
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    4758
                 </span>
             </td>
 
@@ -2110,10 +2330,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    4758
-                </span>
+
+            <td class="first-confirmed days-ago">
+                36
             </td>
 
         </tr>
@@ -2125,9 +2344,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                34
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2870
@@ -2140,6 +2356,13 @@
                             ↑285
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    40
                 </span>
             </td>
 
@@ -2168,10 +2391,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    40
-                </span>
+
+            <td class="first-confirmed days-ago">
+                34
             </td>
 
         </tr>
@@ -2183,9 +2405,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     225
@@ -2198,6 +2417,13 @@
                             ↑18
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    3
                 </span>
             </td>
 
@@ -2226,10 +2452,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    3
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -2241,9 +2466,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                9
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     8
@@ -2252,6 +2474,13 @@
                     
 
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    1
                 </span>
             </td>
 
@@ -2276,10 +2505,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    1
-                </span>
+
+            <td class="first-confirmed days-ago">
+                9
             </td>
 
         </tr>
@@ -2291,9 +2519,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                28
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     4450
@@ -2306,6 +2531,13 @@
                             ↑407
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    142
                 </span>
             </td>
 
@@ -2334,10 +2566,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    142
-                </span>
+
+            <td class="first-confirmed days-ago">
+                28
             </td>
 
         </tr>
@@ -2349,9 +2580,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1327
@@ -2364,6 +2592,13 @@
                             ↑75
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    51
                 </span>
             </td>
 
@@ -2392,10 +2627,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    51
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -2407,9 +2641,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                38
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1132
@@ -2422,6 +2653,13 @@
                             ↑64
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    29
                 </span>
             </td>
 
@@ -2450,10 +2688,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    29
-                </span>
+
+            <td class="first-confirmed days-ago">
+                38
             </td>
 
         </tr>
@@ -2465,9 +2702,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     13074
@@ -2480,6 +2714,13 @@
                             ↑1485
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    169
                 </span>
             </td>
 
@@ -2508,10 +2749,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    169
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -2523,9 +2763,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                24
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     513
@@ -2538,6 +2775,13 @@
                             ↑38
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    21
                 </span>
             </td>
 
@@ -2566,10 +2810,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    21
-                </span>
+
+            <td class="first-confirmed days-ago">
+                24
             </td>
 
         </tr>
@@ -2581,9 +2824,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                36
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1082
@@ -2596,6 +2836,13 @@
                             ↑160
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    27
                 </span>
             </td>
 
@@ -2624,10 +2871,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    27
-                </span>
+
+            <td class="first-confirmed days-ago">
+                36
             </td>
 
         </tr>
@@ -2639,9 +2885,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                31
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2232
@@ -2654,6 +2897,13 @@
                             ↑183
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    48
                 </span>
             </td>
 
@@ -2682,10 +2932,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    48
-                </span>
+
+            <td class="first-confirmed days-ago">
+                31
             </td>
 
         </tr>
@@ -2697,9 +2946,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                27
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     288
@@ -2712,6 +2958,13 @@
                             ↑48
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    4
                 </span>
             </td>
 
@@ -2740,10 +2993,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    4
-                </span>
+
+            <td class="first-confirmed days-ago">
+                27
             </td>
 
         </tr>
@@ -2755,9 +3007,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                32
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     3753
@@ -2770,6 +3019,13 @@
                             ↑215
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    65
                 </span>
             </td>
 
@@ -2798,10 +3054,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    65
-                </span>
+
+            <td class="first-confirmed days-ago">
+                32
             </td>
 
         </tr>
@@ -2813,9 +3068,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                54
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     8115
@@ -2828,6 +3080,13 @@
                             ↑1021
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    160
                 </span>
             </td>
 
@@ -2856,10 +3115,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    160
-                </span>
+
+            <td class="first-confirmed days-ago">
+                54
             </td>
 
         </tr>
@@ -2871,9 +3129,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                41
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     1675
@@ -2886,6 +3141,13 @@
                             ↑70
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    13
                 </span>
             </td>
 
@@ -2914,10 +3176,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    13
-                </span>
+
+            <td class="first-confirmed days-ago">
+                41
             </td>
 
         </tr>
@@ -2929,9 +3190,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                30
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     543
@@ -2944,6 +3202,13 @@
                             ↑31
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    23
                 </span>
             </td>
 
@@ -2972,10 +3237,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    23
-                </span>
+
+            <td class="first-confirmed days-ago">
+                30
             </td>
 
         </tr>
@@ -2987,9 +3251,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                30
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2878
@@ -3002,6 +3263,13 @@
                             ↑241
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    54
                 </span>
             </td>
 
@@ -3030,10 +3298,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    54
-                </span>
+
+            <td class="first-confirmed days-ago">
+                30
             </td>
 
         </tr>
@@ -3045,9 +3312,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                23
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     43
@@ -3060,6 +3324,13 @@
                             ↑1
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    1
                 </span>
             </td>
 
@@ -3088,10 +3359,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    1
-                </span>
+
+            <td class="first-confirmed days-ago">
+                23
             </td>
 
         </tr>
@@ -3103,9 +3373,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                76
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     8384
@@ -3118,6 +3385,13 @@
                             ↑400
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    383
                 </span>
             </td>
 
@@ -3146,10 +3420,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    383
-                </span>
+
+            <td class="first-confirmed days-ago">
+                76
             </td>
 
         </tr>
@@ -3161,9 +3434,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                20
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     345
@@ -3176,6 +3446,13 @@
                             ↑21
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    4
                 </span>
             </td>
 
@@ -3204,10 +3481,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    4
-                </span>
+
+            <td class="first-confirmed days-ago">
+                20
             </td>
 
         </tr>
@@ -3219,9 +3495,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                61
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     2440
@@ -3234,6 +3507,13 @@
                             ↑173
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    83
                 </span>
             </td>
 
@@ -3262,10 +3542,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    83
-                </span>
+
+            <td class="first-confirmed days-ago">
+                61
             </td>
 
         </tr>
@@ -3277,9 +3556,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                26
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     212
@@ -3292,6 +3568,13 @@
                             ↑12
                         </span>
                     
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    0
                 </span>
             </td>
 
@@ -3320,10 +3603,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    0
-                </span>
+
+            <td class="first-confirmed days-ago">
+                26
             </td>
 
         </tr>
@@ -3332,6 +3614,8 @@
     </tbody>
 </table>
 
+        </div>
+    </section>
 
 
 

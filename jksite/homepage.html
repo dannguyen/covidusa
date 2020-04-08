@@ -3,43 +3,47 @@ layout: base
 permalink: /
 ---
 
-{ assign table_entities = "" | split: ',' %}
-{ assign entities = entities | push: site.data.summary.nation %}
-{ assign entities = entities | concat: site.data.summary.states %}
+{% comment %}
+    dont need to add nation row to states table for now...
+{% assign table_entities = "" | split: ',' %}
+{% assign table_entities = table_entities | push: site.data.summary.nation %}
+{% assign table_entities = table_entities | concat: site.data.summary.states %}
+{% endcomment %}
+
 {% assign table_entities = site.data.summary.states %}
 
+{% assign nation = site.data.summary.nation  %}
 
-<section class="hero">
 
-    <div class="container">
-        <h1 class="site-title">
-            Covid USA
-        </h1>
-
-        <h3>testing testing</h3>
-        <p>
-
-            <strong>super awesome description goes here</strong>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium asperiores illum alias inventore voluptas animi sed est nesciunt aspernatur. Tenetur natus autem dolor laudantium amet quisquam distinctio similique aperiam voluptatem?
-
-        </p>
-
-    </div>
-</section>
-
-<section class="tkmap">
-    <div class="container">
-        {% include charts/nation-map.html %}
-    </div>
-
-</section>
+<div class="homepage">
 
 
 
-<div class="container">
+
+    <section class="above-fold sec">
+        <div class="container">
+            {% include homepage/above-fold.html %}
+        </div>
+    </section>
 
 
-    {% include homepage/home_table.html entities=table_entities %}
+    <section class="hero sec">
+        {% include homepage/hero.html %}
+    </section>
+
+    <section class="nation-map sec">
+        {% include homepage/homepage-nation-map.html %}
+    </section>
+
+
+
+
+
+    <section class="states-table sec">
+        <div class="container">
+            {% include homepage/home_table.html entities=table_entities %}
+        </div>
+    </section>
 
 
 

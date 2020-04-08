@@ -65,6 +65,8 @@ plugins:
 #   - vendor/ruby/
 
 
+include:
+  - assets/js/vendor/
 
 
 # Sass/SCSS

@@ -1,0 +1,99 @@
+<style>
+
+    .data-values .main-value{
+        font-size: 3.5em;
+    }
+
+    .delta.positive{
+        color:red;
+    }
+    .delta.positive:before{
+        content: "+";
+    }
+
+    .delta.negative{
+        color: purple;
+    }
+    .delta.negative:before{
+        content: "-";
+    }
+
+
+
+</style>
+
+
+<div class="row">
+    <div class="col">
+
+        <section class="stats">
+
+            <div class="stat confirmed">
+                <div class="label">
+                    Confirmed cases
+                </div>
+
+                <section class="data-values">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="count main-value">
+                                    {{ nation.latest.confirmed | number_with_delimiter}}
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <div class="count diff">
+                                    {{ nation.latest.confirmed_daily_diff | number_with_delimiter | delta_value:nation.latest.confirmed_daily_diff  }}
+                                </div>
+
+                                <div class="diff pct">
+                                    {{ nation.latest.confirmed_daily_diff_pct | number_as_pct | delta_value: nation.latest.confirmed_daily_diff_pct }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="stat deaths">
+                <div class="label">
+                    Deaths
+                </div>
+                <section class="data-values">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="count main-value">
+                                    {{ nation.latest.deaths | number_with_delimiter}}
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <div class="count diff">
+                                    {{ nation.latest.deaths_daily_diff | number_with_delimiter | delta_value: nation.latest.deaths_daily_diff }}
+                                </div>
+
+                                <div class="diff pct">
+                                    {{ nation.latest.deaths_daily_diff_pct | number_as_pct | delta_value: nation.latest.deaths_daily_diff_pct }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+
+        </section>
+
+    </div>
+</div>

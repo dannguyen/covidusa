@@ -5,11 +5,13 @@
     <thead>
         <tr>
             <th>State</th>
-            <th>Days Since First Case</th>
             <th>Cases</th>
+            <th>Deaths</th>
             <th>Pct Change Yesterday</th>
             <th>Count Change Last Week</th>
-            <th>Deaths</th>
+
+            <th>Days Since First Case</th>
+
         </tr>
     </thead>
 
@@ -21,9 +23,6 @@
 
             </td>
 
-            <td class="first-confirmed days-ago">
-                {{ row.firsts.confirmed.days_ago }}
-            </td>
             <td class="confirmed daily">
                 <span class="today">
                     {{row.latest.confirmed}}
@@ -40,6 +39,13 @@
                             ↓{{ ctchange }}
                         </span>
                     {% endif %}
+                </span>
+            </td>
+
+
+             <td class="deaths">
+                <span class="today">
+                    {{row.latest.deaths}}
                 </span>
             </td>
 
@@ -76,10 +82,9 @@
             </td>
 
 
-             <td class="deaths">
-                <span class="today">
-                    {{row.latest.deaths}}
-                </span>
+
+            <td class="first-confirmed days-ago">
+                {{ row.firsts.confirmed.days_ago }}
             </td>
 
         </tr>
