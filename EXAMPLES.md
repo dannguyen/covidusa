@@ -45,6 +45,21 @@ https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
 <img src="repo_assets/images/nyt-cases-doubling-map.png" alt="nyt-cases-doubling-map.png">
 
 
+## FT: Coronavirus tracked: the latest figures as the pandemic spreads 
+
+https://www.ft.com/coronavirus-latest
+
+### Chart: Worldwide daily death toll, log scale
+
+<img src="repo_assets/images/ft-deaths-log.png" alt="ft-deaths-log.png">
+
+### Small multiples: Worldwide daily death tolls, logscale
+
+<img src="repo_assets/images/ft-deaths-small-multiples.png" alt="ft-deaths-small-multiples.png">
+
+
+
+
 -------------
 
 
@@ -108,6 +123,35 @@ https://www.cnn.com/interactive/2020/health/coronavirus-us-maps-and-cases/
 <img src="repo_assets/images/bloomberg-step-chart-daily-cases-rolling-average.png" alt="bloomberg-step-chart-daily-cases-rolling-average.png">
 
 
+
+----
+
+### LA Times: Tracking coronavirus in California
+
+
+https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/
+
+### Above the fold
+
+<img src="repo_assets/images/latimes-above-the-fold.png" alt="latimes-above-the-fold.png">
+
+
+### Chart: Cases/Deaths by Day, California, with rolling average
+
+<img src="repo_assets/images/latimes-chart-by-day.png" alt="latimes-chart-by-day.png">
+
+
+### Table: Heatmap by county, 3-day-average new cases
+
+<img src="repo_assets/images/latimes-chart-by-day.png" alt="latimes-table-heatmap.png">
+
+
+### Table: County-by-county restrictions
+
+<img src="repo_assets/images/latimes-table-county-restrictions.png" alt="latimes-table-county-restrictions.png">
+
+
+----
 
 ## nCov2019.live
 
